@@ -117,11 +117,6 @@ namespace MVC
                     public const string Index = "~/Modules/BasicSamples/Dialogs/GetInsertedRecordId/Index.cshtml";
                 }
 
-                public static class MultiColumnResponsiveDialog
-                {
-                    public const string Index = "~/Modules/BasicSamples/Dialogs/MultiColumnResponsiveDialog/Index.cshtml";
-                }
-
                 public static class OtherFormInTab
                 {
                     public const string Index = "~/Modules/BasicSamples/Dialogs/OtherFormInTab/Index.cshtml";
@@ -140,11 +135,6 @@ namespace MVC
                 public static class ReadOnlyDialog
                 {
                     public const string Index = "~/Modules/BasicSamples/Dialogs/ReadOnlyDialog/Index.cshtml";
-                }
-
-                public static class ResponsiveDialog
-                {
-                    public const string Index = "~/Modules/BasicSamples/Dialogs/ResponsiveDialog/Index.cshtml";
                 }
 
                 public static class SerialAutoNumber
