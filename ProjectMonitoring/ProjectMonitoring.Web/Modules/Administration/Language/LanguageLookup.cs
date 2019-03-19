@@ -1,6 +1,11 @@
 ﻿
 namespace ProjectMonitoring.Administration.Lookups
 {
+    //Fix-bug: Không tìm thấy package  ProjectMonitoring.Administration
+    //Giải pháp: bỏ khai báo namespace  ProjectMonitoring  là xong
+    //Nguyên nhân:  không biết tại sao
+
+    //using ProjectMonitoring.Administration.Entities;
     using Administration.Entities;
     using Serenity.ComponentModel;
     using Serenity.Data;
