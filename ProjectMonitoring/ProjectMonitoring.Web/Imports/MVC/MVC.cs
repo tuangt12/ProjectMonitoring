@@ -373,9 +373,39 @@ namespace MVC
 
         public static class ProjectMonitoring
         {
+            public static class Classes
+            {
+                public const string ClassesIndex = "~/Modules/ProjectMonitoring/Classes/ClassesIndex.cshtml";
+            }
+
             public static class Posts
             {
                 public const string PostsIndex = "~/Modules/ProjectMonitoring/Posts/PostsIndex.cshtml";
+            }
+
+            public static class ScMs
+            {
+                public const string SCMsIndex = "~/Modules/ProjectMonitoring/ScMs/SCMsIndex.cshtml";
+            }
+
+            public static class ScmTypes
+            {
+                public const string SCMTypesIndex = "~/Modules/ProjectMonitoring/ScmTypes/SCMTypesIndex.cshtml";
+            }
+
+            public static class Subjects
+            {
+                public const string SubjectsIndex = "~/Modules/ProjectMonitoring/Subjects/SubjectsIndex.cshtml";
+            }
+
+            public static class User
+            {
+                public const string UserIndex = "~/Modules/ProjectMonitoring/User/UserIndex.cshtml";
+            }
+
+            public static class UserClasses
+            {
+                public const string UserClassesIndex = "~/Modules/ProjectMonitoring/UserClasses/UserClassesIndex.cshtml";
             }
         }
 
