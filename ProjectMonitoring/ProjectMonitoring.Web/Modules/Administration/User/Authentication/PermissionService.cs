@@ -1,6 +1,6 @@
 ﻿namespace ProjectMonitoring.Administration
 {
-    using ProjectMonitoring.Administration.Entities;
+    using Administration.Entities;
     using Serenity;
     using Serenity.Abstractions;
     using Serenity.Data;

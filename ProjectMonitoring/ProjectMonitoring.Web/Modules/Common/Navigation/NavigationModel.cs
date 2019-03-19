@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectMonitoring.Navigation
 {
-    using ProjectMonitoring.Administration.Entities;
+    using Administration.Entities;
     using Serenity;
     using Serenity.Navigation;
     using System;

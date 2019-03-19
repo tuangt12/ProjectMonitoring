@@ -2,7 +2,7 @@
 namespace ProjectMonitoring.Administration.Repositories
 {
     using Newtonsoft.Json.Linq;
-    using ProjectMonitoring.Administration.Entities;
+    using Administration.Entities;
     using Serenity;
     using Serenity.Abstractions;
     using Serenity.ComponentModel;

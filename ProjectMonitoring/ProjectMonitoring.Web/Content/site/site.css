@@ -8042,3 +8042,9 @@ section.content > .s-DataGrid {
 .s-NoteDialog .ui-dialog-content {
   padding-bottom: 10px;
 }
+.s-ProjectMonitoring-PostsDialog > .size {
+  width: 650px;
+}
+.s-ProjectMonitoring-PostsDialog .caption {
+  width: 150px;
+}

@@ -1,5 +1,4 @@
-﻿
-namespace ProjectMonitoring.ProjectMonitoring {
+﻿namespace ProjectMonitoring.ProjectMonitoring {
     export interface PostsRow {
         Id?: number;
         Title?: string;
@@ -20,34 +19,20 @@ namespace ProjectMonitoring.ProjectMonitoring {
         export const nameProperty = 'Title';
         export const localTextPrefix = 'ProjectMonitoring.Posts';
 
-        export namespace Fields {
-            export declare const Id;
-            export declare const Title;
-            export declare const ContentPost;
-            export declare const UserClassId;
-            export declare const CreateDate;
-            export declare const CreateBy;
-            export declare const CreateByUserCode;
-            export declare const CreateByName;
-            export declare const CreateByBirthday;
-            export declare const CreateByPhone;
-            export declare const CreateByAddress;
-            export declare const CreateByEmail;
+        export declare const enum Fields {
+            Id = "Id",
+            Title = "Title",
+            ContentPost = "ContentPost",
+            UserClassId = "UserClassId",
+            CreateDate = "CreateDate",
+            CreateBy = "CreateBy",
+            CreateByUserCode = "CreateByUserCode",
+            CreateByName = "CreateByName",
+            CreateByBirthday = "CreateByBirthday",
+            CreateByPhone = "CreateByPhone",
+            CreateByAddress = "CreateByAddress",
+            CreateByEmail = "CreateByEmail"
         }
-
-        [
-            'Id',
-            'Title',
-            'ContentPost',
-            'UserClassId',
-            'CreateDate',
-            'CreateBy',
-            'CreateByUserCode',
-            'CreateByName',
-            'CreateByBirthday',
-            'CreateByPhone',
-            'CreateByAddress',
-            'CreateByEmail'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

@@ -1894,15 +1894,19 @@ declare namespace ProjectMonitoring.Northwind {
     }
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {
-    class PostsForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace ProjectMonitoring.ProjectMonitoring {
     interface PostsForm {
         Title: Serenity.StringEditor;
         ContentPost: Serenity.StringEditor;
         UserClassId: Serenity.IntegerEditor;
         CreateDate: Serenity.DateEditor;
         CreateBy: Serenity.IntegerEditor;
+    }
+    class PostsForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {
@@ -1924,19 +1928,19 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         const idProperty = "Id";
         const nameProperty = "Title";
         const localTextPrefix = "ProjectMonitoring.Posts";
-        namespace Fields {
-            const Id: any;
-            const Title: any;
-            const ContentPost: any;
-            const UserClassId: any;
-            const CreateDate: any;
-            const CreateBy: any;
-            const CreateByUserCode: any;
-            const CreateByName: any;
-            const CreateByBirthday: any;
-            const CreateByPhone: any;
-            const CreateByAddress: any;
-            const CreateByEmail: any;
+        const enum Fields {
+            Id = "Id",
+            Title = "Title",
+            ContentPost = "ContentPost",
+            UserClassId = "UserClassId",
+            CreateDate = "CreateDate",
+            CreateBy = "CreateBy",
+            CreateByUserCode = "CreateByUserCode",
+            CreateByName = "CreateByName",
+            CreateByBirthday = "CreateByBirthday",
+            CreateByPhone = "CreateByPhone",
+            CreateByAddress = "CreateByAddress",
+            CreateByEmail = "CreateByEmail"
         }
     }
 }
@@ -1948,12 +1952,12 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<PostsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<PostsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "ProjectMonitoring/Posts/Create",
+            Update = "ProjectMonitoring/Posts/Update",
+            Delete = "ProjectMonitoring/Posts/Delete",
+            Retrieve = "ProjectMonitoring/Posts/Retrieve",
+            List = "ProjectMonitoring/Posts/List"
         }
     }
 }

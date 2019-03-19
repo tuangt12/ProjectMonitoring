@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectMonitoring.Administration.Lookups
 {
-    using ProjectMonitoring.Administration.Entities;
+    using Administration.Entities;
     using Serenity.ComponentModel;
     using Serenity.Data;
     using Serenity.Web;
