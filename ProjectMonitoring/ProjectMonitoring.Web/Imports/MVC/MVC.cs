@@ -368,6 +368,15 @@ namespace MVC
             {
                 public const string TerritoryIndex = "~/Modules/Northwind/Territory/TerritoryIndex.cshtml";
             }
+
+        }
+
+        public static class ProjectMonitoring
+        {
+            public static class Posts
+            {
+                public const string PostsIndex = "~/Modules/ProjectMonitoring/Posts/PostsIndex.cshtml";
+            }
         }
 
         public static class Shared

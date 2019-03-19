@@ -1893,6 +1893,70 @@ declare namespace ProjectMonitoring.Northwind {
         }
     }
 }
+declare namespace ProjectMonitoring.ProjectMonitoring {
+    class PostsForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface PostsForm {
+        Title: Serenity.StringEditor;
+        ContentPost: Serenity.StringEditor;
+        UserClassId: Serenity.IntegerEditor;
+        CreateDate: Serenity.DateEditor;
+        CreateBy: Serenity.IntegerEditor;
+    }
+}
+declare namespace ProjectMonitoring.ProjectMonitoring {
+    interface PostsRow {
+        Id?: number;
+        Title?: string;
+        ContentPost?: string;
+        UserClassId?: number;
+        CreateDate?: string;
+        CreateBy?: number;
+        CreateByUserCode?: string;
+        CreateByName?: string;
+        CreateByBirthday?: string;
+        CreateByPhone?: string;
+        CreateByAddress?: string;
+        CreateByEmail?: string;
+    }
+    namespace PostsRow {
+        const idProperty = "Id";
+        const nameProperty = "Title";
+        const localTextPrefix = "ProjectMonitoring.Posts";
+        namespace Fields {
+            const Id: any;
+            const Title: any;
+            const ContentPost: any;
+            const UserClassId: any;
+            const CreateDate: any;
+            const CreateBy: any;
+            const CreateByUserCode: any;
+            const CreateByName: any;
+            const CreateByBirthday: any;
+            const CreateByPhone: any;
+            const CreateByAddress: any;
+            const CreateByEmail: any;
+        }
+    }
+}
+declare namespace ProjectMonitoring.ProjectMonitoring {
+    namespace PostsService {
+        const baseUrl = "ProjectMonitoring/Posts";
+        function Create(request: Serenity.SaveRequest<PostsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<PostsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<PostsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<PostsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
 declare namespace ProjectMonitoring {
     interface ScriptUserDefinition {
         Username?: string;
@@ -2628,6 +2692,26 @@ declare namespace ProjectMonitoring.Northwind {
     class TerritoryGrid extends Serenity.EntityGrid<TerritoryRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): any;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace ProjectMonitoring.ProjectMonitoring {
+    class PostsDialog extends Serenity.EntityDialog<PostsRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: PostsForm;
+    }
+}
+declare namespace ProjectMonitoring.ProjectMonitoring {
+    class PostsGrid extends Serenity.EntityGrid<PostsRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof PostsDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;

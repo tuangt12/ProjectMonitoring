@@ -1810,6 +1810,13 @@
     <TypeScriptCompile Include="Modules\BasicSamples\Grids\DragDropInTreeGrid\DragDropSampleGrid.ts" />
     <TypeScriptCompile Include="Modules\BasicSamples\Grids\DragDropInTreeGrid\DragDropSampleDialog.ts" />
     <TypeScriptCompile Include="Scripts\typings\serenity\Serenity.CoreLib.d.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.PostsRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.PostsService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <Content Include="Modules\ProjectMonitoring\Posts\PostsIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\Posts\PostsDialog.ts" />
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\Posts\PostsGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.PostsForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <Content Include="Content\site\site.projectmonitoring.less" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2130,6 +2137,13 @@
     <Compile Include="Modules\BasicSamples\Grids\DragDropInTreeGrid\DragDropSampleForm.cs" />
     <Compile Include="Modules\BasicSamples\Grids\DragDropInTreeGrid\DragDropSampleRepository.cs" />
     <Compile Include="Modules\BasicSamples\Grids\DragDropInTreeGrid\DragDropSampleEndpoint.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Posts\PostsRow.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Posts\PostsRepository.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Posts\PostsEndpoint.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Posts\PostsPage.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Posts\PostsColumns.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Posts\PostsForm.cs" />
+    <Compile Include="Modules\ProjectMonitoring\ProjectMonitoringNavigation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
