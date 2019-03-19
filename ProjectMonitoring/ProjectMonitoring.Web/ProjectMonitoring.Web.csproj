@@ -2044,6 +2044,7 @@
     <Compile Include="Modules\Northwind\Supplier\SupplierCountryLookup.cs" />
     <Compile Include="Modules\Northwind\Territory\TerritoryColumns.cs" />
     <Compile Include="Modules\Northwind\NorthwindTexts.cs" />
+    <Compile Include="Modules\ProjectMonitoring\ProjectMonitoringPermissionKeys.cs" />
     <Compile Include="Modules\Texts.cs" />
     <Compile Include="Modules\Membership\Account\AccountPage.cs" />
     <Compile Include="Modules\Administration\User\Authentication\AuthorizationService.cs" />
