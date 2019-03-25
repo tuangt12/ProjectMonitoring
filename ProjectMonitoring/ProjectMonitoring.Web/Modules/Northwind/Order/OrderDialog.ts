@@ -18,7 +18,7 @@
         getToolbarButtons() {
             var buttons = super.getToolbarButtons();
 
-            buttons.push(ProjectMonitoring.Common.ReportHelper.createToolButton({
+            buttons.push(Common.ReportHelper.createToolButton({
                 title: 'Invoice',
                 cssClass: 'export-pdf-button',
                 reportKey: 'Northwind.OrderDetail',

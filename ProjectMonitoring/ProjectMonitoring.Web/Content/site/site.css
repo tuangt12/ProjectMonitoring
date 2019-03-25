@@ -8048,3 +8048,39 @@ section.content > .s-DataGrid {
 .s-ProjectMonitoring-PostsDialog .caption {
   width: 150px;
 }
+.s-ProjectMonitoring-ClassesDialog > .size {
+  width: 650px;
+}
+.s-ProjectMonitoring-ClassesDialog .caption {
+  width: 150px;
+}
+.s-ProjectMonitoring-SCMsDialog > .size {
+  width: 650px;
+}
+.s-ProjectMonitoring-SCMsDialog .caption {
+  width: 150px;
+}
+.s-ProjectMonitoring-SCMTypesDialog > .size {
+  width: 650px;
+}
+.s-ProjectMonitoring-SCMTypesDialog .caption {
+  width: 150px;
+}
+.s-ProjectMonitoring-SubjectsDialog > .size {
+  width: 650px;
+}
+.s-ProjectMonitoring-SubjectsDialog .caption {
+  width: 150px;
+}
+.s-ProjectMonitoring-UserDialog > .size {
+  width: 650px;
+}
+.s-ProjectMonitoring-UserDialog .caption {
+  width: 150px;
+}
+.s-ProjectMonitoring-UserClassesDialog > .size {
+  width: 650px;
+}
+.s-ProjectMonitoring-UserClassesDialog .caption {
+  width: 150px;
+}

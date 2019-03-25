@@ -16,14 +16,14 @@
         getButtons() {
             var buttons = super.getButtons();
 
-            buttons.push(ProjectMonitoring.Common.ExcelExportHelper.createToolButton({
+            buttons.push(Common.ExcelExportHelper.createToolButton({
                 grid: this,
                 onViewSubmit: () => this.onViewSubmit(),
                 service: 'Northwind/Customer/ListExcel',
                 separator: true
             }));
 
-            buttons.push(ProjectMonitoring.Common.PdfExportHelper.createToolButton({
+            buttons.push(Common.PdfExportHelper.createToolButton({
                 grid: this,
                 onViewSubmit: () => this.onViewSubmit()
             }));
