@@ -34,7 +34,7 @@ namespace ProjectMonitoring.BasicSamples {
                 var prefix = (val || 'C').toUpperCase();
 
                 // call our service, see CustomerEndpoint.cs and CustomerRepository.cs
-                ProjectMonitoring.Northwind.CustomerService.GetNextNumber({
+                Northwind.CustomerService.GetNextNumber({
                     Prefix: prefix,
                     Length: 5 // we want service to search for and return serials of 5 in length
                 }, response => {

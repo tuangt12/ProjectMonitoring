@@ -973,7 +973,25 @@
     <Content Include="tools\Node\lessc.cmd" />
     <Content Include="tools\JsEngine\lib.d.ts_" />
     <None Include="tsconfig.json" />
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.ClassesColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.PostsColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.SCMsColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.SCMTypesColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.SubjectsColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserClassesColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Texts.ts">
@@ -1826,6 +1844,78 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <Content Include="Content\site\site.projectmonitoring.less" />
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.ClassesRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.ClassesService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\ProjectMonitoring\Classes\ClassesIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\Classes\ClassesDialog.ts" />
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\Classes\ClassesGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.ClassesForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.SCMsRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.SCMsService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\ProjectMonitoring\SCMs\SCMsIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\SCMs\SCMsDialog.ts" />
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\SCMs\SCMsGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.SCMsForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.SCMTypesRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.SCMTypesService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\ProjectMonitoring\SCMTypes\SCMTypesIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\SCMTypes\SCMTypesDialog.ts" />
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\SCMTypes\SCMTypesGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.SCMTypesForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.SubjectsRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.SubjectsService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\ProjectMonitoring\Subjects\SubjectsIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\Subjects\SubjectsDialog.ts" />
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\Subjects\SubjectsGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.SubjectsForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\ProjectMonitoring\User\UserIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\User\UserDialog.ts" />
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\User\UserGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserClassesRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserClassesService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <Content Include="Modules\ProjectMonitoring\UserClasses\UserClassesIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\UserClasses\UserClassesDialog.ts" />
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\UserClasses\UserClassesGrid.ts" />
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserClassesForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2154,6 +2244,42 @@
     <Compile Include="Modules\ProjectMonitoring\Posts\PostsColumns.cs" />
     <Compile Include="Modules\ProjectMonitoring\Posts\PostsForm.cs" />
     <Compile Include="Modules\ProjectMonitoring\ProjectMonitoringNavigation.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Classes\ClassesRow.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Classes\ClassesRepository.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Classes\ClassesEndpoint.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Classes\ClassesPage.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Classes\ClassesColumns.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Classes\ClassesForm.cs" />
+    <Compile Include="Modules\ProjectMonitoring\SCMs\SCMsRow.cs" />
+    <Compile Include="Modules\ProjectMonitoring\SCMs\SCMsRepository.cs" />
+    <Compile Include="Modules\ProjectMonitoring\SCMs\SCMsEndpoint.cs" />
+    <Compile Include="Modules\ProjectMonitoring\SCMs\SCMsPage.cs" />
+    <Compile Include="Modules\ProjectMonitoring\SCMs\SCMsColumns.cs" />
+    <Compile Include="Modules\ProjectMonitoring\SCMs\SCMsForm.cs" />
+    <Compile Include="Modules\ProjectMonitoring\SCMTypes\SCMTypesRow.cs" />
+    <Compile Include="Modules\ProjectMonitoring\SCMTypes\SCMTypesRepository.cs" />
+    <Compile Include="Modules\ProjectMonitoring\SCMTypes\SCMTypesEndpoint.cs" />
+    <Compile Include="Modules\ProjectMonitoring\SCMTypes\SCMTypesPage.cs" />
+    <Compile Include="Modules\ProjectMonitoring\SCMTypes\SCMTypesColumns.cs" />
+    <Compile Include="Modules\ProjectMonitoring\SCMTypes\SCMTypesForm.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Subjects\SubjectsRow.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Subjects\SubjectsRepository.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Subjects\SubjectsEndpoint.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Subjects\SubjectsPage.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Subjects\SubjectsColumns.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Subjects\SubjectsForm.cs" />
+    <Compile Include="Modules\ProjectMonitoring\User\UserRow.cs" />
+    <Compile Include="Modules\ProjectMonitoring\User\UserRepository.cs" />
+    <Compile Include="Modules\ProjectMonitoring\User\UserEndpoint.cs" />
+    <Compile Include="Modules\ProjectMonitoring\User\UserPage.cs" />
+    <Compile Include="Modules\ProjectMonitoring\User\UserColumns.cs" />
+    <Compile Include="Modules\ProjectMonitoring\User\UserForm.cs" />
+    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesRow.cs" />
+    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesRepository.cs" />
+    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesEndpoint.cs" />
+    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesPage.cs" />
+    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesColumns.cs" />
+    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

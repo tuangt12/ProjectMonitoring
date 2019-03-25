@@ -94,7 +94,7 @@
                 e.preventDefault();
 
                 if (target.hasClass('print-invoice')) {
-                    ProjectMonitoring.Common.ReportHelper.execute({
+                    Common.ReportHelper.execute({
                         reportKey: 'Northwind.OrderDetail',
                         params: {
                             OrderID: item.OrderID
