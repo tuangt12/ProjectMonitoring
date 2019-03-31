@@ -9,7 +9,8 @@ namespace ProjectMonitoring.Administration.Entities
 
     [ConnectionKey("Default"), Module("Administration"), TableName("Users")]
     [DisplayName("Users"), InstanceName("User")]
-    [ReadPermission(PermissionKeys.Security)]
+    //[ReadPermission(PermissionKeys.Security)]
+    [ReadPermission("PM:General")]
     [ModifyPermission(PermissionKeys.Security)]
     [LookupScript(Permission = PermissionKeys.Security)]
     public sealed class UserRow : LoggingRow, IIdRow, INameRow, IIsActiveRow

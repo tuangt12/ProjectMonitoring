@@ -1,4 +1,5 @@
 ﻿
+// Bảng User trong database Project Monitoring do mình tự tạo
 namespace ProjectMonitoring.ProjectMonitoring.Entities
 {
     using Serenity;
@@ -14,7 +15,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
 
     //Đặt quyền cho Student chỉ được xem bảng này, không được sửa
     [ReadPermission("PM:General")]
-    [ModifyPermission("PM:Teacher")]
+    [ModifyPermission(PermissionKeys.Teacher)]
     public sealed class UserRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), PrimaryKey]

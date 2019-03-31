@@ -14,7 +14,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
 
     //Đặt quyền cho Student chỉ được xem bảng này, không được sửa
     [ReadPermission("PM:General")]
-    [ModifyPermission("PM:Teacher")]
+    [ModifyPermission(PermissionKeys.Teacher)]
     public sealed class SubjectsRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]

@@ -15,6 +15,6 @@ namespace ProjectMonitoring.ProjectMonitoring
         public const string Translation = "PM:Translation";
 
         [Description("Teacher Permissions")]
-        public const string Student = "PM:Teacher";
+        public const string Teacher = "PM:Teacher";
     }
 }
