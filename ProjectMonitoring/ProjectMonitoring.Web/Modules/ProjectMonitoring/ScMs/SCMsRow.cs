@@ -10,7 +10,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
     using System.IO;
 
     [ConnectionKey("ProjectMonitoring"), Module("ProjectMonitoring"), TableName("[dbo].[SCMs]")]
-    [DisplayName("Sc Ms"), InstanceName("Sc Ms")]
+    [DisplayName("SCMs"), InstanceName("SCMs")]
     [ReadPermission("PM:General")]
     [ModifyPermission("PM:General")]
     public sealed class SCMsRow : Row, IIdRow, INameRow
@@ -22,14 +22,14 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Scm Type"), Column("SCMTypeId"), ForeignKey("[dbo].[SCMTypes]", "Id"), LeftJoin("jScmType"), TextualField("ScmTypeName")]
+        [DisplayName("SCM Type"), Column("SCMTypeId"), ForeignKey("[dbo].[SCMTypes]", "Id"), LeftJoin("jScmType"), TextualField("ScmTypeName")]
         public Int32? ScmTypeId
         {
             get { return Fields.ScmTypeId[this]; }
             set { Fields.ScmTypeId[this] = value; }
         }
 
-        [DisplayName("Scm Link"), Column("SCMLink"), QuickSearch]
+        [DisplayName("SCM Link"), Column("SCMLink"), QuickSearch]
         public String ScmLink
         {
             get { return Fields.ScmLink[this]; }

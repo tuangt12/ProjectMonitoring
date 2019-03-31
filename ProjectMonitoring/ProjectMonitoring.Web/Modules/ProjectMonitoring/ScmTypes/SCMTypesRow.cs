@@ -10,7 +10,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
     using System.IO;
 
     [ConnectionKey("ProjectMonitoring"), Module("ProjectMonitoring"), TableName("[dbo].[SCMTypes]")]
-    [DisplayName("Scm Types"), InstanceName("Scm Types")]
+    [DisplayName("SCM Types"), InstanceName("Scm Types")]
     [ReadPermission("PM:General")]
     [ModifyPermission("PM:General")]
     public sealed class SCMTypesRow : Row, IIdRow, INameRow
