@@ -6,5 +6,5 @@ using Administration = ProjectMonitoring.Administration.Pages;
 [assembly: NavigationLink(9000, "Administration/Languages", typeof(Administration.LanguageController), icon: "fa-comments")]
 [assembly: NavigationLink(9000, "Administration/Translations", typeof(Administration.TranslationController), icon: "fa-comment-o")]
 [assembly: NavigationLink(9000, "Administration/Roles", typeof(Administration.RoleController), icon: "fa-lock")]
-[assembly: NavigationLink(9000, "Administration/User Management", typeof(Administration.UserController), icon: "fa-users", Permission =ProjectMonitoring.ProjectMonitoring.PermissionKeys.Teacher
+[assembly: NavigationLink(9000, "Administration/User Management", typeof(Administration.UserController), icon: "fa-users", Permission = ProjectMonitoring.Administration.PermissionKeys.Security
     )]
