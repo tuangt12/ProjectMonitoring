@@ -16,5 +16,14 @@ namespace ProjectMonitoring.ProjectMonitoring
 
         [Description("Teacher Permissions")]
         public const string Teacher = "PM:Teacher";
+        
+        public class SCM
+        {
+            [Description("General")]
+            public const string General = "PM:SCM:General";
+
+            [Description("Modify"), ImplicitPermission(General)]
+            public const string Modify = "PM:SCM:Mdify";
+        }
     }
 }
