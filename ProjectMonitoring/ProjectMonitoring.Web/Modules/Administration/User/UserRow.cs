@@ -29,8 +29,34 @@ namespace ProjectMonitoring.Administration.Entities
             set { Fields.Username[this] = value; }
         }
 
+
+        // Mã số sinh viên
         [DisplayName("Student Code"), Size(100), NotNull, LookupInclude]
         public String UserCode
+        {
+            get { return Fields.UserCode[this]; }
+            set { Fields.UserCode[this] = value; }
+        }
+
+        // Ngày sinh
+        [DisplayName("Birthday"), Size(100)]
+        public DateTime? Birthday
+        {
+            get { return Fields.Birthday[this]; }
+            set { Fields.Birthday[this] = value; }
+        }
+
+        // Số điện thoại
+        [DisplayName("Phone"), Size(100), NotNull, LookupInclude]
+        public Int16? Phone
+        {
+            get { return Fields.Phone[this]; }
+            set { Fields.Phone[this] = value; }
+        }
+
+        // Hệ đang học
+        [DisplayName("Level"), Size(100), NotNull, LookupInclude]
+        public String Level
         {
             get { return Fields.UserCode[this]; }
             set { Fields.UserCode[this] = value; }
@@ -145,6 +171,9 @@ namespace ProjectMonitoring.Administration.Entities
             public StringField Password;
             public StringField PasswordConfirm;
             public StringField UserCode;
+            public DateTimeField Birthday;
+            public Int16Field Phone;
+            public StringField Level;
         }
     }
 }
