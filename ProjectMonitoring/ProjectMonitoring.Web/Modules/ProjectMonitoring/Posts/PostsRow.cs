@@ -11,8 +11,12 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
 
     [ConnectionKey("ProjectMonitoring"), Module("ProjectMonitoring"), TableName("[dbo].[Posts]")]
     [DisplayName("Posts"), InstanceName("Posts")]
-    [ReadPermission("PM:General")]
-    [ModifyPermission("PM:General")]
+
+    // xác định quyền tương ứng cho bảng Posts
+    [ReadPermission(PermissionKeys.Post.View)]
+    [ModifyPermission(PermissionKeys.Post.Modify)]
+    [DeletePermission(PermissionKeys.Post.Delete)]
+
     public sealed class PostsRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]

@@ -11,8 +11,12 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
 
     [ConnectionKey("ProjectMonitoring"), Module("ProjectMonitoring"), TableName("[dbo].[SCMTypes]")]
     [DisplayName("SCM Types"), InstanceName("SCM Types")]
-    [ReadPermission("PM:General")]
-    [ModifyPermission("PM:General")]
+
+    // xác định quyền tương ứng cho bảng SCMTypes
+    [ReadPermission(PermissionKeys.SCMType.View)]
+    [ModifyPermission(PermissionKeys.SCMType.Modify)]
+    [DeletePermission(PermissionKeys.SCMType.Delete)]
+
     public sealed class SCMTypesRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), PrimaryKey]

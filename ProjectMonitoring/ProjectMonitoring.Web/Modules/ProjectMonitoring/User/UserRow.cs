@@ -13,9 +13,10 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
     [ConnectionKey("ProjectMonitoring"), Module("ProjectMonitoring"), TableName("[dbo].[User]")]
     [DisplayName("User"), InstanceName("User")]
 
-    //Đặt quyền cho Student chỉ được xem bảng này, không được sửa
-    [ReadPermission("PM:General")]
-    [ModifyPermission(PermissionKeys.Teacher)]
+    // xác định quyền tương ứng cho bảng Subjects
+    [ReadPermission(PermissionKeys.General)]
+    [ModifyPermission(PermissionKeys.General)]
+
     public sealed class UserRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), PrimaryKey]

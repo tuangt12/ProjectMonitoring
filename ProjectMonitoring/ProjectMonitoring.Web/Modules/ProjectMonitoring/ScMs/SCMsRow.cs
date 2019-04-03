@@ -12,7 +12,8 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
     [ConnectionKey("ProjectMonitoring"), Module("ProjectMonitoring"), TableName("[dbo].[SCMs]")]
     [DisplayName("SCMs"), InstanceName("SCMs")]
 
-    [ReadPermission(PermissionKeys.General)]
+    // xác định quyền tương ứng cho bảng SCMs
+    [ReadPermission(PermissionKeys.SCM.View)]
     [ModifyPermission(PermissionKeys.SCM.Modify)]
     [DeletePermission(PermissionKeys.SCM.Delete)]
 

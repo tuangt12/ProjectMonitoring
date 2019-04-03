@@ -12,9 +12,11 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
     [ConnectionKey("ProjectMonitoring"), Module("ProjectMonitoring"), TableName("[dbo].[Subjects]")]
     [DisplayName("Subjects"), InstanceName("Subjects")]
 
-    //Đặt quyền cho Student chỉ được xem bảng này, không được sửa
-    [ReadPermission("PM:General")]
-    [ModifyPermission(PermissionKeys.Teacher)]
+    // xác định quyền tương ứng cho bảng Subjects
+    [ReadPermission(PermissionKeys.Subject.View)]
+    [ModifyPermission(PermissionKeys.Subject.Modify)]
+    [DeletePermission(PermissionKeys.Subject.Delete)]
+
     public sealed class SubjectsRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]
