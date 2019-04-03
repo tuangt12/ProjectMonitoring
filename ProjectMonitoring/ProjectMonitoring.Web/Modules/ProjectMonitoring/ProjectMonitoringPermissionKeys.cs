@@ -8,22 +8,20 @@ namespace ProjectMonitoring.ProjectMonitoring
     [DisplayName("PermissionKeys PM")]
     public class PermissionKeys
     {
-        [Description("User, Role Management and Permissions")]
-        public const string Security = "PM:Security";
-
-        [Description("Languages and Translations")]
-        public const string Translation = "PM:Translation";
+        [Description("[General]")]
+        public const string General = "PM:General";
 
         [Description("Teacher Permissions")]
         public const string Teacher = "PM:Teacher";
         
+        // Thiết đặt quyền cho bảng SCM
         public class SCM
         {
-            [Description("General")]
-            public const string General = "PM:SCM:General";
-
-            [Description("Modify"), ImplicitPermission(General)]
-            public const string Modify = "PM:SCM:Mdify";
+            [ImplicitPermission(General), ImplicitPermission(View)]
+            public const string Delete = "PM:SCM:Delete";
+            [Description("Create/Update"), ImplicitPermission(General), ImplicitPermission(View)]
+            public const string Modify = "PM:SCM:Modify";
+            public const string View = "PM:SCM:View";
         }
     }
 }

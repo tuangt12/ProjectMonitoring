@@ -11,8 +11,11 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
 
     [ConnectionKey("ProjectMonitoring"), Module("ProjectMonitoring"), TableName("[dbo].[SCMs]")]
     [DisplayName("SCMs"), InstanceName("SCMs")]
-    [ReadPermission("PM:General")]
-    [ModifyPermission("PM:General")]
+
+    [ReadPermission(PermissionKeys.General)]
+    [ModifyPermission(PermissionKeys.SCM.Modify)]
+    [DeletePermission(PermissionKeys.SCM.Delete)]
+
     public sealed class SCMsRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]
