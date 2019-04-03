@@ -15,21 +15,22 @@ namespace ProjectMonitoring.Administration.Entities
     [LookupScript(Permission = PermissionKeys.Security)]
     public sealed class UserRow : LoggingRow, IIdRow, INameRow, IIsActiveRow
     {
+        // Id trong bảng User (thuộc database Default)
         [DisplayName("User Id"), Identity]
         public Int32? UserId
         {
             get { return Fields.UserId[this]; }
             set { Fields.UserId[this] = value; }
         }
-
+        
+        // Tên đăng nhập của sinh viên (hoặc giáo viên)
         [DisplayName("Username"), Size(100), NotNull, QuickSearch, LookupInclude]
         public String Username
         {
             get { return Fields.Username[this]; }
             set { Fields.Username[this] = value; }
         }
-
-
+        
         // Mã số sinh viên
         [DisplayName("Student Code"), Size(100), NotNull, LookupInclude]
         public String UserCode
@@ -83,6 +84,8 @@ namespace ProjectMonitoring.Administration.Entities
             set { Fields.PasswordSalt[this] = value; }
         }
 
+
+        // Họ và tên đầy đủ
         [DisplayName("Display Name"), Size(100), NotNull, LookupInclude]
         public String DisplayName
         {
@@ -90,6 +93,7 @@ namespace ProjectMonitoring.Administration.Entities
             set { Fields.DisplayName[this] = value; }
         }
 
+        // Địa chỉ email
         [DisplayName("Email"), Size(100)]
         public String Email
         {
