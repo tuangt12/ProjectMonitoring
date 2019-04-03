@@ -1,5 +1,7 @@
 ﻿using Serenity.Navigation;
 using MyPages = ProjectMonitoring.ProjectMonitoring.Pages;
+using Administration = ProjectMonitoring.Administration.Pages;
+
 
 [assembly: NavigationLink(1000, "Dashboard", url: "~/", permission: "",
     icon: "fa-tachometer")]
@@ -11,3 +13,5 @@ using MyPages = ProjectMonitoring.ProjectMonitoring.Pages;
 [assembly: NavigationLink(2400, "ProjectMonitoring/SCMTypes", typeof(MyPages.SCMTypesController), icon: "fa-github-square")]
 [assembly: NavigationLink(2500, "ProjectMonitoring/Subjects", typeof(MyPages.SubjectsController), icon: "fa-book")]
 [assembly: NavigationLink(2600, "ProjectMonitoring/User", typeof(MyPages.UserController), icon: "fa-user")]
+[assembly: NavigationLink(2700, "ProjectMonitoring/Account", typeof(Administration.UserController), icon: "fa-user")]
+
