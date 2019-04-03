@@ -11,9 +11,6 @@ namespace ProjectMonitoring.ProjectMonitoring
         [Description("[General]")]
         public const string General = "PM:General";
 
-        [Description("Teacher Permissions")]
-        public const string Teacher = "PM:Teacher";
-
         // Thiết đặt quyền cho bảng Classes
         public class Class
         {
