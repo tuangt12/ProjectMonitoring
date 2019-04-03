@@ -29,6 +29,13 @@ namespace ProjectMonitoring.Administration.Entities
             set { Fields.Username[this] = value; }
         }
 
+        [DisplayName("Student Code"), Size(100), NotNull, LookupInclude]
+        public String UserCode
+        {
+            get { return Fields.UserCode[this]; }
+            set { Fields.UserCode[this] = value; }
+        }
+
         [DisplayName("Source"), Size(4), NotNull, Insertable(false), Updatable(false), DefaultValue("site")]
         public String Source
         {
@@ -137,6 +144,7 @@ namespace ProjectMonitoring.Administration.Entities
 
             public StringField Password;
             public StringField PasswordConfirm;
+            public StringField UserCode;
         }
     }
 }

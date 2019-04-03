@@ -8,6 +8,7 @@
     public class UserForm
     {
         public String Username { get; set; }
+        public String UserCode { get; set; }
         public String DisplayName { get; set; }
         [EmailEditor]
         public String Email { get; set; }
