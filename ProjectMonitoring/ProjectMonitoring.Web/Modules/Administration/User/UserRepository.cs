@@ -272,6 +272,25 @@ namespace ProjectMonitoring.Administration.Repositories
 
         private class MyUndeleteHandler : UndeleteRequestHandler<MyRow> { }
         private class MyRetrieveHandler : RetrieveRequestHandler<MyRow> { }
-        private class MyListHandler : ListRequestHandler<MyRow> { }
+        /// <summary>
+        ///         Tùy chỉnh danh sách hiển thị của bảng User với từng user khác nhau
+        /// </summary>
+        private class MyListHandler : ListRequestHandler<MyRow>
+        {
+            /// <summary>
+            ///         Áp dụng bộ lọc để chỉ lọc ra user hiện đang đăng nhập để hiển thị
+            /// </summary>
+            /// <param name="query">câu lệnh sql</param>
+            protected override void ApplyFilters(SqlQuery query)
+            {
+                base.ApplyFilters(query);
+                // Lấy thông tin của user đang đăng nhập
+                var user = (UserDefinition)Authorization.UserDefinition;
+                // Nếu user hiện tại không có quyền admin
+                if (!Authorization.HasPermission(PermissionKeys.Security))
+                    // thì chỉ hiển thị thông tin của chính mình
+                    query.Where(fld.UserId == user.UserId);
+            }
+        }
     }
 }
