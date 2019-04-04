@@ -106,6 +106,10 @@ namespace ProjectMonitoring.Administration.Repositories
                 return null;
             }
 
+            /// <summary>
+            ///         Thiết đặt quyền chỉnh sửa đối với các Row (ở phía server)
+            /// </summary>
+            /// <param name="editable"></param>
             protected override void GetEditableFields(HashSet<Field> editable)
             {
                 base.GetEditableFields(editable);
@@ -272,6 +276,7 @@ namespace ProjectMonitoring.Administration.Repositories
 
         private class MyUndeleteHandler : UndeleteRequestHandler<MyRow> { }
         private class MyRetrieveHandler : RetrieveRequestHandler<MyRow> { }
+
         /// <summary>
         ///         Tùy chỉnh danh sách hiển thị của bảng User với từng user khác nhau
         /// </summary>
