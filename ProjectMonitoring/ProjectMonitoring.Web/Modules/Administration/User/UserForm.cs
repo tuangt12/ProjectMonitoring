@@ -13,7 +13,7 @@
         [DateTimeEditor]
         public DateTime? Birthday { get; set; }
         [NumberFormatter]
-        public Int16? Phone { get; set; }
+        public String Phone { get; set; }
         public String Level { get; set; }
         [EmailEditor]
         public String Email { get; set; }

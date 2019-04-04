@@ -10,17 +10,14 @@ namespace ProjectMonitoring.Administration.Columns
     {
         [EditLink, AlignRight, Width(55)]
         public String UserId { get; set; }
-        [EditLink, AlignRight, Width(150)]
+        [EditLink, AlignRight]
         public String UserCode { get; set; }
         [EditLink, Width(150)]
         public String Username { get; set; }
         [Width(150)]
         public String DisplayName { get; set; }
-
-        [Width(200)]
         public DateTime? Birthday { get; set; }
-        public Int16? Phone { get; set; }
-        [Width(100)]
+        public String Phone { get; set; }
         public String Level { get; set; }
 
         [Width(250)]

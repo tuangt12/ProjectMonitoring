@@ -51,7 +51,7 @@ namespace ProjectMonitoring.Administration.Entities
 
         // Số điện thoại
         [DisplayName("Phone"), Size(100), NotNull, LookupInclude]
-        public Int16? Phone
+        public String Phone
         {
             get { return Fields.Phone[this]; }
             set { Fields.Phone[this] = value; }
@@ -178,7 +178,7 @@ namespace ProjectMonitoring.Administration.Entities
             public StringField PasswordConfirm;
             public StringField UserCode;
             public DateTimeField Birthday;
-            public Int16Field Phone;
+            public StringField Phone;
             public StringField Level;
         }
     }
