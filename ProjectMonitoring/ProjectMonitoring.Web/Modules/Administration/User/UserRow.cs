@@ -34,7 +34,7 @@ namespace ProjectMonitoring.Administration.Entities
         }
         
         // Mã số sinh viên
-        [DisplayName("Student Code"), Size(100), NotNull, LookupInclude]
+        [DisplayName("Student Code"), Size(100), NotNull, QuickSearch, LookupInclude]
         public String UserCode
         {
             get { return Fields.UserCode[this]; }
