@@ -2,6 +2,7 @@
 {
     using Serenity.ComponentModel;
     using System;
+    using System.Collections.Generic;
 
     [FormScript("Administration.User")]
     [BasedOnRow(typeof(Entities.UserRow), CheckNames = true)]
@@ -22,6 +23,10 @@
         public String Password { get; set; }
         [PasswordEditor, OneWay, Required(true)]
         public String PasswordConfirm { get; set; }
+
+        // Hiển thị danh sách Class trên form
+        public List<Int32> ClassList { get; set; }
+
         //Không cho nhập source nữa
         //[OneWay]
         //public string Source { get; set; }
