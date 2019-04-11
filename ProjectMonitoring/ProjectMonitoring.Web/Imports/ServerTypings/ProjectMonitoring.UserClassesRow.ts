@@ -20,6 +20,11 @@
     export namespace UserClassesRow {
         export const idProperty = 'Id';
         export const localTextPrefix = 'ProjectMonitoring.UserClasses';
+        export const lookupKey = 'dbo.UserClasses';
+
+        export function getLookup(): Q.Lookup<UserClassesRow> {
+            return Q.getLookup<UserClassesRow>('dbo.UserClasses');
+        }
 
         export declare const enum Fields {
             Id = "Id",

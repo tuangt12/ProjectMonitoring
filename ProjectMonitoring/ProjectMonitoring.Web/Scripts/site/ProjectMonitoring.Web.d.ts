@@ -182,12 +182,16 @@ declare namespace ProjectMonitoring.Administration {
 declare namespace ProjectMonitoring.Administration {
     interface UserForm {
         Username: Serenity.StringEditor;
+        UserCode: Serenity.StringEditor;
         DisplayName: Serenity.StringEditor;
+        Birthday: Serenity.DateTimeEditor;
+        Phone: Serenity.StringEditor;
+        Level: Serenity.StringEditor;
         Email: Serenity.EmailEditor;
         UserImage: Serenity.ImageUploadEditor;
         Password: Serenity.PasswordEditor;
         PasswordConfirm: Serenity.PasswordEditor;
-        Source: Serenity.StringEditor;
+        ClassList: Serenity.LookupEditor;
     }
     class UserForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -308,6 +312,11 @@ declare namespace ProjectMonitoring.Administration {
         IsActive?: number;
         Password?: string;
         PasswordConfirm?: string;
+        UserCode?: string;
+        Birthday?: string;
+        Phone?: string;
+        Level?: string;
+        ClassList?: number[];
         InsertUserId?: number;
         InsertDate?: string;
         UpdateUserId?: number;
@@ -333,6 +342,11 @@ declare namespace ProjectMonitoring.Administration {
             IsActive = "IsActive",
             Password = "Password",
             PasswordConfirm = "PasswordConfirm",
+            UserCode = "UserCode",
+            Birthday = "Birthday",
+            Phone = "Phone",
+            Level = "Level",
+            ClassList = "ClassList",
             InsertUserId = "InsertUserId",
             InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
@@ -1924,6 +1938,8 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         const idProperty = "Id";
         const nameProperty = "ClassCode";
         const localTextPrefix = "ProjectMonitoring.Classes";
+        const lookupKey = "dbo.Classes";
+        function getLookup(): Q.Lookup<ClassesRow>;
         const enum Fields {
             Id = "Id",
             ClassCode = "ClassCode",
@@ -2201,6 +2217,8 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
     namespace UserClassesRow {
         const idProperty = "Id";
         const localTextPrefix = "ProjectMonitoring.UserClasses";
+        const lookupKey = "dbo.UserClasses";
+        function getLookup(): Q.Lookup<UserClassesRow>;
         const enum Fields {
             Id = "Id",
             UserId = "UserId",

@@ -1,10 +1,12 @@
 ﻿
 namespace ProjectMonitoring.Administration.Entities
 {
+    using Newtonsoft.Json;
     using Serenity.ComponentModel;
     using Serenity.Data;
     using Serenity.Data.Mapping;
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel;
 
     [ConnectionKey("Default"), Module("Administration"), TableName("Users")]
@@ -12,9 +14,10 @@ namespace ProjectMonitoring.Administration.Entities
 
     //[ReadPermission(PermissionKeys.Security)]
     [ReadPermission(ProjectMonitoring.PermissionKeys.General)]
-    [ModifyPermission(PermissionKeys.Security)]
+    [ModifyPermission(ProjectMonitoring.PermissionKeys.General)]
 
-    [LookupScript(Permission = PermissionKeys.Security)]
+    [LookupScript(Permission = ProjectMonitoring.PermissionKeys.General)]
+    [JsonConverter(typeof(JsonRowConverter))]
     public sealed class UserRow : LoggingRow, IIdRow, INameRow, IIsActiveRow
     {
         // Id trong bảng User (thuộc database Default)
@@ -63,6 +66,16 @@ namespace ProjectMonitoring.Administration.Entities
         {
             get { return Fields.UserCode[this]; }
             set { Fields.UserCode[this] = value; }
+        }
+
+        // Các lớp mà sinh viên này đang tham gia
+        [DisplayName("Class")]
+        [LookupEditor("dbo.Classes", Multiple = true), NotMapped]
+        //[LinkingSetRelation(typeof(ProjectMonitoring.Entities.UserClassesRow), "UserId", "ClassId")]
+        public List<Int32> ClassList
+        {
+            get { return Fields.ClassList[this]; }
+            set { Fields.ClassList[this] = value; }
         }
 
         [DisplayName("Source"), Size(4), NotNull, Insertable(false), Updatable(false), DefaultValue("site")]
@@ -180,6 +193,9 @@ namespace ProjectMonitoring.Administration.Entities
             public DateTimeField Birthday;
             public StringField Phone;
             public StringField Level;
+
+            // Khai báo danh sách Class là 1 list
+            public ListField<Int32> ClassList;
         }
     }
 }
