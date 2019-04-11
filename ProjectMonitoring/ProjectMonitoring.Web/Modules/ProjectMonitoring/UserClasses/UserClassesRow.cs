@@ -1,6 +1,7 @@
 ﻿
 namespace ProjectMonitoring.ProjectMonitoring.Entities
 {
+    using Newtonsoft.Json;
     using Serenity;
     using Serenity.ComponentModel;
     using Serenity.Data;
@@ -12,9 +13,12 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
     [ConnectionKey("ProjectMonitoring"), Module("ProjectMonitoring"), TableName("[dbo].[UserClasses]")]
     [DisplayName("User Classes"), InstanceName("User Classes")]
 
-    // xác định quyền tương ứng cho bảng Subjects
+    // xác định quyền tương ứng cho bảng UserClasses
     [ReadPermission(PermissionKeys.General)]
     [ModifyPermission(PermissionKeys.General)]
+
+    [JsonConverter(typeof(JsonRowConverter))]
+    [LookupScript("dbo.UserClasses")]
 
     public sealed class UserClassesRow : Row, IIdRow
     {
