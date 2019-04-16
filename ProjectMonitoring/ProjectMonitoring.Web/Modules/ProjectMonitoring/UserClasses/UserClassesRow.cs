@@ -43,14 +43,14 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.ClassId[this] = value; }
         }
 
-        [DisplayName("User User Code"), Expression("jUser.[UserCode]")]
+        [DisplayName("User Code"), Expression("jUser.[UserCode]")]
         public String UserUserCode
         {
             get { return Fields.UserUserCode[this]; }
             set { Fields.UserUserCode[this] = value; }
         }
 
-        [DisplayName("User Name"), Expression("jUser.[Name]")]
+        [DisplayName("User Name"), Expression("jUser.[Username]")]
         public String UserName
         {
             get { return Fields.UserName[this]; }
@@ -71,13 +71,6 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.UserPhone[this] = value; }
         }
 
-        [DisplayName("User Address"), Expression("jUser.[Address]")]
-        public String UserAddress
-        {
-            get { return Fields.UserAddress[this]; }
-            set { Fields.UserAddress[this] = value; }
-        }
-
         [DisplayName("User Email"), Expression("jUser.[Email]")]
         public String UserEmail
         {
@@ -85,7 +78,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.UserEmail[this] = value; }
         }
 
-        [DisplayName("Class Class Code"), Expression("jClass.[ClassCode]")]
+        [DisplayName("Class Code"), Expression("jClass.[ClassCode]")]
         public String ClassClassCode
         {
             get { return Fields.ClassClassCode[this]; }
@@ -149,7 +142,6 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             public StringField UserName;
             public DateTimeField UserBirthday;
             public StringField UserPhone;
-            public StringField UserAddress;
             public StringField UserEmail;
 
             public StringField ClassClassCode;
