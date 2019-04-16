@@ -54,7 +54,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.CreateDate[this] = value; }
         }
 
-        [DisplayName("Create By"), ForeignKey("[dbo].[User]", "Id"), LeftJoin("jCreateBy"), TextualField("CreateByUserCode")]
+        [DisplayName("Create By"), ForeignKey("[ProjectMonitoring_Default_v1].[dbo].[Users]", "UserId"), LeftJoin("jCreateBy"), TextualField("CreateByUserCode")]
         public Int32? CreateBy
         {
             get { return Fields.CreateBy[this]; }
