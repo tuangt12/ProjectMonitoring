@@ -18,15 +18,14 @@
         public String Level { get; set; }
         [EmailEditor]
         public String Email { get; set; }
-
-        // Hiển thị danh sách Class trên form
-        public List<Int32> ClassList { get; set; }
-
         public String UserImage { get; set; }
         [PasswordEditor, Required(true)]
         public String Password { get; set; }
         [PasswordEditor, OneWay, Required(true)]
         public String PasswordConfirm { get; set; }
+
+        // Hiển thị danh sách Class trên form
+        public List<Int32> ClassList { get; set; }
 
         //Không cho nhập source nữa
         //[OneWay]
