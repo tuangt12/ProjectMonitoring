@@ -29,7 +29,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("User"), ForeignKey("[dbo].[User]", "Id"), LeftJoin("jUser"), TextualField("UserUserCode")]
+        [DisplayName("User"), ForeignKey("[ProjectMonitoring_Default_v1].[dbo].[Users]", "UserId"), LeftJoin("jUser"), TextualField("UserUserCode")]
         public Int32? UserId
         {
             get { return Fields.UserId[this]; }
