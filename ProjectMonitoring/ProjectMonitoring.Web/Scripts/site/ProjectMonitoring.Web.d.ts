@@ -2255,65 +2255,6 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         }
     }
 }
-declare namespace ProjectMonitoring.ProjectMonitoring {
-}
-declare namespace ProjectMonitoring.ProjectMonitoring {
-    interface UserForm {
-        UserCode: Serenity.StringEditor;
-        Name: Serenity.StringEditor;
-        Birthday: Serenity.DateEditor;
-        Phone: Serenity.StringEditor;
-        Address: Serenity.StringEditor;
-        Email: Serenity.StringEditor;
-    }
-    class UserForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace ProjectMonitoring.ProjectMonitoring {
-    interface UserRow {
-        Id?: number;
-        UserCode?: string;
-        Name?: string;
-        Birthday?: string;
-        Phone?: string;
-        Address?: string;
-        Email?: string;
-    }
-    namespace UserRow {
-        const idProperty = "Id";
-        const nameProperty = "UserCode";
-        const localTextPrefix = "ProjectMonitoring.User";
-        const enum Fields {
-            Id = "Id",
-            UserCode = "UserCode",
-            Name = "Name",
-            Birthday = "Birthday",
-            Phone = "Phone",
-            Address = "Address",
-            Email = "Email"
-        }
-    }
-}
-declare namespace ProjectMonitoring.ProjectMonitoring {
-    namespace UserService {
-        const baseUrl = "ProjectMonitoring/User";
-        function Create(request: Serenity.SaveRequest<UserRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<UserRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<UserRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<UserRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "ProjectMonitoring/User/Create",
-            Update = "ProjectMonitoring/User/Update",
-            Delete = "ProjectMonitoring/User/Delete",
-            Retrieve = "ProjectMonitoring/User/Retrieve",
-            List = "ProjectMonitoring/User/List"
-        }
-    }
-}
 declare namespace ProjectMonitoring {
     interface ScriptUserDefinition {
         Username?: string;
@@ -3149,26 +3090,6 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
     class SubjectsGrid extends Serenity.EntityGrid<SubjectsRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof SubjectsDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace ProjectMonitoring.ProjectMonitoring {
-    class UserDialog extends Serenity.EntityDialog<UserRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: UserForm;
-    }
-}
-declare namespace ProjectMonitoring.ProjectMonitoring {
-    class UserGrid extends Serenity.EntityGrid<UserRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof UserDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;

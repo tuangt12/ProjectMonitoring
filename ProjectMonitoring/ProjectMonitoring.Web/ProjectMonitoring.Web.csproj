@@ -991,9 +991,6 @@
     <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserClassesColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserColumns.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Texts.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1892,18 +1889,6 @@
     <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.SubjectsForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <Content Include="Modules\ProjectMonitoring\User\UserIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\ProjectMonitoring\User\UserDialog.ts" />
-    <TypeScriptCompile Include="Modules\ProjectMonitoring\User\UserGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserClassesRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -2268,12 +2253,6 @@
     <Compile Include="Modules\ProjectMonitoring\Subjects\SubjectsPage.cs" />
     <Compile Include="Modules\ProjectMonitoring\Subjects\SubjectsColumns.cs" />
     <Compile Include="Modules\ProjectMonitoring\Subjects\SubjectsForm.cs" />
-    <Compile Include="Modules\ProjectMonitoring\User\UserRow.cs" />
-    <Compile Include="Modules\ProjectMonitoring\User\UserRepository.cs" />
-    <Compile Include="Modules\ProjectMonitoring\User\UserEndpoint.cs" />
-    <Compile Include="Modules\ProjectMonitoring\User\UserPage.cs" />
-    <Compile Include="Modules\ProjectMonitoring\User\UserColumns.cs" />
-    <Compile Include="Modules\ProjectMonitoring\User\UserForm.cs" />
     <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesRow.cs" />
     <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesRepository.cs" />
     <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesEndpoint.cs" />
