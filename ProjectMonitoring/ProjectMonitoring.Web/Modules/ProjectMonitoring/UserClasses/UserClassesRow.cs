@@ -87,7 +87,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.ClassClassCode[this] = value; }
         }
 
-        [DisplayName("Class Subject Code"), Expression("jClass.[SubjectCode]")]
+        [DisplayName("Subject Code"), Expression("jClass.[SubjectCode]")]
         public String ClassSubjectCode
         {
             get { return Fields.ClassSubjectCode[this]; }
