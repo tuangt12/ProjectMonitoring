@@ -36,7 +36,9 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.UserId[this] = value; }
         }
 
+        // Danh sách Class được lấy từ bảng Class
         [DisplayName("Class"), ForeignKey("[dbo].[Classes]", "Id"), LeftJoin("jClass"), TextualField("ClassClassCode")]
+        [LookupEditor("dbo.Classes")]
         public Int32? ClassId
         {
             get { return Fields.ClassId[this]; }
