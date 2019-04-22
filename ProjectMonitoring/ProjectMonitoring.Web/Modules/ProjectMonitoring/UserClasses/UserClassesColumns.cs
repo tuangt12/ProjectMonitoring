@@ -18,7 +18,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Columns
         //public String UserUserCode { get; set; }
         [EditLink, Width(200)]
         public String ClassClassCode { get; set; }
-        [Width(300)]
+        [Width(200)]
         public String ClassSubjectCode { get; set; }
     }
 }

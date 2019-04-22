@@ -316,6 +316,7 @@ declare namespace ProjectMonitoring.Administration {
         Birthday?: string;
         Phone?: string;
         Level?: string;
+        ClassList?: ProjectMonitoring.UserClassesRow[];
         InsertUserId?: number;
         InsertDate?: string;
         UpdateUserId?: number;
@@ -345,6 +346,7 @@ declare namespace ProjectMonitoring.Administration {
             Birthday = "Birthday",
             Phone = "Phone",
             Level = "Level",
+            ClassList = "ClassList",
             InsertUserId = "InsertUserId",
             InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
@@ -2186,7 +2188,6 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
 declare namespace ProjectMonitoring.ProjectMonitoring {
     interface UserClassesForm {
         ClassId: Serenity.LookupEditor;
-        ClassSubjectCode: Serenity.StringEditor;
     }
     class UserClassesForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -3116,6 +3117,7 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         protected getLocalTextPrefix(): string;
         constructor(container: JQuery);
         protected getAddButtonCaption(): string;
+        protected validateEntity(row: UserClassesRow, id: number): boolean;
     }
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {

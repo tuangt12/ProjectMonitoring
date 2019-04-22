@@ -1,7 +1,6 @@
 ﻿namespace ProjectMonitoring.ProjectMonitoring {
     export interface UserClassesForm {
         ClassId: Serenity.LookupEditor;
-        ClassSubjectCode: Serenity.StringEditor;
     }
 
     export class UserClassesForm extends Serenity.PrefixedContext {
@@ -16,11 +15,9 @@
 
                 var s = Serenity;
                 var w0 = s.LookupEditor;
-                var w1 = s.StringEditor;
 
                 Q.initFormType(UserClassesForm, [
-                    'ClassId', w0,
-                    'ClassSubjectCode', w1
+                    'ClassId', w0
                 ]);
             }
         }

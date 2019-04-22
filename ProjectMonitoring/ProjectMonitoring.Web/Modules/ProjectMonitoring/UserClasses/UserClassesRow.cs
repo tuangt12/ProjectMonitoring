@@ -10,7 +10,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
     using System.ComponentModel;
     using System.IO;
 
-    [ConnectionKey("ProjectMonitoring"), Module("ProjectMonitoring"), TableName("[dbo].[UserClasses]")]
+    [ConnectionKey("ProjectMonitoring"), Module("ProjectMonitoring"), TableName("[ProjectMonitoring].[dbo].[UserClasses]")]
     [DisplayName("User Classes"), InstanceName("User Classes")]
 
     // xác định quyền tương ứng cho bảng UserClasses
@@ -29,6 +29,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.Id[this] = value; }
         }
 
+        // Danh sách User được lấy từ bảng User
         [DisplayName("User"), ForeignKey("[ProjectMonitoring_Default_v1].[dbo].[Users]", "UserId"), LeftJoin("jUser"), TextualField("UserUserCode")]
         public Int32? UserId
         {
@@ -37,7 +38,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
         }
 
         // Danh sách Class được lấy từ bảng Class
-        [DisplayName("Class"), ForeignKey("[dbo].[Classes]", "Id"), LeftJoin("jClass"), TextualField("ClassClassCode")]
+        [DisplayName("Class"), ForeignKey("[ProjectMonitoring].[dbo].[Classes]", "Id"), LeftJoin("jClass"), TextualField("ClassClassCode")]
         [LookupEditor("dbo.Classes")]
         public Int32? ClassId
         {

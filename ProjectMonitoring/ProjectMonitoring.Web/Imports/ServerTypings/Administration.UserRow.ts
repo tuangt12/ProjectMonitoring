@@ -16,6 +16,7 @@
         Birthday?: string;
         Phone?: string;
         Level?: string;
+        ClassList?: ProjectMonitoring.UserClassesRow[];
         InsertUserId?: number;
         InsertDate?: string;
         UpdateUserId?: number;
@@ -50,6 +51,7 @@
             Birthday = "Birthday",
             Phone = "Phone",
             Level = "Level",
+            ClassList = "ClassList",
             InsertUserId = "InsertUserId",
             InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
