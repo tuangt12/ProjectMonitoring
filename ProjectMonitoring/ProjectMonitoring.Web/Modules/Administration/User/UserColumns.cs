@@ -26,9 +26,6 @@ namespace ProjectMonitoring.Administration.Columns
         [Width(250)]
         public String Email { get; set; }
 
-        [Width(100)]
-        public String ClassList { get; set; }
-
         // Không hiển thị cột Source ra nữa
         //[Width(100)]
         //public String Source { get; set; }

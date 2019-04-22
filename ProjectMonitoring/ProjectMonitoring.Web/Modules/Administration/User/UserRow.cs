@@ -68,16 +68,6 @@ namespace ProjectMonitoring.Administration.Entities
             set { Fields.UserCode[this] = value; }
         }
 
-        // Các lớp mà sinh viên này đang tham gia
-        [DisplayName("Class")]
-        [LookupEditor("dbo.Classes", Multiple = true), NotMapped]
-        //[LinkingSetRelation(typeof(ProjectMonitoring.Entities.UserClassesRow), "UserId", "ClassId")]
-        public List<Int32> ClassList
-        {
-            get { return Fields.ClassList[this]; }
-            set { Fields.ClassList[this] = value; }
-        }
-
         [DisplayName("Source"), Size(4), NotNull, Insertable(false), Updatable(false), DefaultValue("site")]
         public String Source
         {
@@ -194,8 +184,6 @@ namespace ProjectMonitoring.Administration.Entities
             public StringField Phone;
             public StringField Level;
 
-            // Khai báo danh sách Class là 1 list
-            public ListField<Int32> ClassList;
         }
     }
 }
