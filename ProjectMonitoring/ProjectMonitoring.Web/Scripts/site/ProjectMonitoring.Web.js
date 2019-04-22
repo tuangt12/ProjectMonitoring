@@ -1979,10 +1979,11 @@ var ProjectMonitoring;
                 if (!UserClassesForm.init) {
                     UserClassesForm.init = true;
                     var s = Serenity;
-                    var w0 = s.IntegerEditor;
+                    var w0 = s.LookupEditor;
+                    var w1 = s.StringEditor;
                     Q.initFormType(UserClassesForm, [
-                        'UserId', w0,
-                        'ClassId', w0
+                        'ClassId', w0,
+                        'ClassSubjectCode', w1
                     ]);
                 }
                 return _this;

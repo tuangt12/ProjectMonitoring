@@ -2185,8 +2185,8 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {
     interface UserClassesForm {
-        UserId: Serenity.IntegerEditor;
-        ClassId: Serenity.IntegerEditor;
+        ClassId: Serenity.LookupEditor;
+        ClassSubjectCode: Serenity.StringEditor;
     }
     class UserClassesForm extends Serenity.PrefixedContext {
         static formKey: string;
