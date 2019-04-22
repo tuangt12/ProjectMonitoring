@@ -7,10 +7,10 @@
         Phone: Serenity.StringEditor;
         Level: Serenity.StringEditor;
         Email: Serenity.EmailEditor;
+        ClassList: ProjectMonitoring.UserClassesEditor;
         UserImage: Serenity.ImageUploadEditor;
         Password: Serenity.PasswordEditor;
         PasswordConfirm: Serenity.PasswordEditor;
-        ClassList: Serenity.LookupEditor;
     }
 
     export class UserForm extends Serenity.PrefixedContext {
@@ -27,9 +27,9 @@
                 var w0 = s.StringEditor;
                 var w1 = s.DateTimeEditor;
                 var w2 = s.EmailEditor;
-                var w3 = s.ImageUploadEditor;
-                var w4 = s.PasswordEditor;
-                var w5 = s.LookupEditor;
+                var w3 = ProjectMonitoring.UserClassesEditor;
+                var w4 = s.ImageUploadEditor;
+                var w5 = s.PasswordEditor;
 
                 Q.initFormType(UserForm, [
                     'Username', w0,
@@ -39,10 +39,10 @@
                     'Phone', w0,
                     'Level', w0,
                     'Email', w2,
-                    'UserImage', w3,
-                    'Password', w4,
-                    'PasswordConfirm', w4,
-                    'ClassList', w5
+                    'ClassList', w3,
+                    'UserImage', w4,
+                    'Password', w5,
+                    'PasswordConfirm', w5
                 ]);
             }
         }

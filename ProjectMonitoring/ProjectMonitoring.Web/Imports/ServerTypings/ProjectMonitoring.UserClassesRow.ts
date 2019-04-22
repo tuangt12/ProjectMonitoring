@@ -7,7 +7,6 @@
         UserName?: string;
         UserBirthday?: string;
         UserPhone?: string;
-        UserAddress?: string;
         UserEmail?: string;
         ClassClassCode?: string;
         ClassSubjectCode?: string;
@@ -34,7 +33,6 @@
             UserName = "UserName",
             UserBirthday = "UserBirthday",
             UserPhone = "UserPhone",
-            UserAddress = "UserAddress",
             UserEmail = "UserEmail",
             ClassClassCode = "ClassClassCode",
             ClassSubjectCode = "ClassSubjectCode",

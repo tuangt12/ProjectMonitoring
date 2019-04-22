@@ -188,10 +188,10 @@ declare namespace ProjectMonitoring.Administration {
         Phone: Serenity.StringEditor;
         Level: Serenity.StringEditor;
         Email: Serenity.EmailEditor;
+        ClassList: ProjectMonitoring.UserClassesEditor;
         UserImage: Serenity.ImageUploadEditor;
         Password: Serenity.PasswordEditor;
         PasswordConfirm: Serenity.PasswordEditor;
-        ClassList: Serenity.LookupEditor;
     }
     class UserForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -316,7 +316,6 @@ declare namespace ProjectMonitoring.Administration {
         Birthday?: string;
         Phone?: string;
         Level?: string;
-        ClassList?: number[];
         InsertUserId?: number;
         InsertDate?: string;
         UpdateUserId?: number;
@@ -346,7 +345,6 @@ declare namespace ProjectMonitoring.Administration {
             Birthday = "Birthday",
             Phone = "Phone",
             Level = "Level",
-            ClassList = "ClassList",
             InsertUserId = "InsertUserId",
             InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
@@ -2205,7 +2203,6 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         UserName?: string;
         UserBirthday?: string;
         UserPhone?: string;
-        UserAddress?: string;
         UserEmail?: string;
         ClassClassCode?: string;
         ClassSubjectCode?: string;
@@ -2227,7 +2224,6 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
             UserName = "UserName",
             UserBirthday = "UserBirthday",
             UserPhone = "UserPhone",
-            UserAddress = "UserAddress",
             UserEmail = "UserEmail",
             ClassClassCode = "ClassClassCode",
             ClassSubjectCode = "ClassSubjectCode",
@@ -3103,6 +3099,13 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         protected form: UserClassesForm;
+    }
+}
+declare namespace ProjectMonitoring.ProjectMonitoring {
+    class UserClassesEditor extends Common.GridEditorBase<UserClassesRow> {
+        protected getColumnsKey(): string;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {
