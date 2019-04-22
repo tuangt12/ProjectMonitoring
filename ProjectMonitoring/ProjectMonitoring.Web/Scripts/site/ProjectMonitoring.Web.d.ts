@@ -3102,10 +3102,20 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
     }
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {
+    class UserClassesEditDialog extends Common.GridEditorDialog<UserClassesRow> {
+        protected getFormKey(): string;
+        protected getLocalTextPrefix(): string;
+        protected form: UserClassesForm;
+        constructor();
+    }
+}
+declare namespace ProjectMonitoring.ProjectMonitoring {
     class UserClassesEditor extends Common.GridEditorBase<UserClassesRow> {
         protected getColumnsKey(): string;
+        protected getDialogType(): typeof UserClassesEditDialog;
         protected getLocalTextPrefix(): string;
         constructor(container: JQuery);
+        protected getAddButtonCaption(): string;
     }
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {
