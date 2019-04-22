@@ -106,6 +106,15 @@ namespace ProjectMonitoring.Administration.Entities
             set { Fields.Email[this] = value; }
         }
 
+        // Danh sách lớp hiện tại
+        //[MasterDetailRelation(foreignKey: "UserId", IncludeColumns = "ClassSubjectCode")]
+        [DisplayName("Class List"), NotMapped]
+        public List<ProjectMonitoring.Entities.UserClassesRow> ClassList
+        {
+            get { return Fields.ClassList[this]; }
+            set { Fields.ClassList[this] = value; }
+        }
+
         [DisplayName("User Image"), Size(100)]
         [ImageUploadEditor(FilenameFormat = "UserImage/~", CopyToHistory = true)]
         public String UserImage
@@ -184,6 +193,8 @@ namespace ProjectMonitoring.Administration.Entities
             public StringField Phone;
             public StringField Level;
 
+            // Khai báo ClassList để khi thêm mới Class cho User thì có thể lưu lại được ở phía server
+            public readonly RowListField<ProjectMonitoring.Entities.UserClassesRow> ClassList;
         }
     }
 }
