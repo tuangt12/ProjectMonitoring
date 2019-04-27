@@ -1993,16 +1993,17 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         CreateDate?: string;
         CreateBy?: number;
         CreateByUserCode?: string;
-        CreateByName?: string;
+        CreateByUsername?: string;
         CreateByBirthday?: string;
         CreateByPhone?: string;
-        CreateByAddress?: string;
         CreateByEmail?: string;
     }
     namespace PostsRow {
         const idProperty = "Id";
         const nameProperty = "Title";
         const localTextPrefix = "ProjectMonitoring.Posts";
+        const lookupKey = "dbo.Posts";
+        function getLookup(): Q.Lookup<PostsRow>;
         const enum Fields {
             Id = "Id",
             Title = "Title",
@@ -2011,10 +2012,9 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
             CreateDate = "CreateDate",
             CreateBy = "CreateBy",
             CreateByUserCode = "CreateByUserCode",
-            CreateByName = "CreateByName",
+            CreateByUsername = "CreateByUsername",
             CreateByBirthday = "CreateByBirthday",
             CreateByPhone = "CreateByPhone",
-            CreateByAddress = "CreateByAddress",
             CreateByEmail = "CreateByEmail"
         }
     }

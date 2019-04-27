@@ -7,10 +7,9 @@
         CreateDate?: string;
         CreateBy?: number;
         CreateByUserCode?: string;
-        CreateByName?: string;
+        CreateByUsername?: string;
         CreateByBirthday?: string;
         CreateByPhone?: string;
-        CreateByAddress?: string;
         CreateByEmail?: string;
     }
 
@@ -18,6 +17,11 @@
         export const idProperty = 'Id';
         export const nameProperty = 'Title';
         export const localTextPrefix = 'ProjectMonitoring.Posts';
+        export const lookupKey = 'dbo.Posts';
+
+        export function getLookup(): Q.Lookup<PostsRow> {
+            return Q.getLookup<PostsRow>('dbo.Posts');
+        }
 
         export declare const enum Fields {
             Id = "Id",
@@ -27,10 +31,9 @@
             CreateDate = "CreateDate",
             CreateBy = "CreateBy",
             CreateByUserCode = "CreateByUserCode",
-            CreateByName = "CreateByName",
+            CreateByUsername = "CreateByUsername",
             CreateByBirthday = "CreateByBirthday",
             CreateByPhone = "CreateByPhone",
-            CreateByAddress = "CreateByAddress",
             CreateByEmail = "CreateByEmail"
         }
     }
