@@ -3117,7 +3117,7 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         protected getLocalTextPrefix(): string;
         constructor(container: JQuery);
         protected getAddButtonCaption(): string;
-        protected validateEntity(row: UserClassesRow, id: number): boolean;
+        validateEntity(row: any, id: any): boolean;
     }
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {
