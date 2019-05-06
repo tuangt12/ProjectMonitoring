@@ -347,6 +347,7 @@ namespace ProjectMonitoring.Administration.Repositories
                     // Lấy ra trường ClassCode trong UserClassesRow
                     .Select(mc.ClassClassCode)
                     .Select(mc.ClassSubjectCode)
+                    .Select(mc.SubjectName)
                     // Với điều kiện UserId trong bảng trùng với UserId hiện tại
                     .Where(mc.UserId == Row.UserId.Value));
             }
