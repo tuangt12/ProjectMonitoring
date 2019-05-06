@@ -46,6 +46,22 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.ClassId[this] = value; }
         }
 
+        // Danh sách Subject được lấy từ bảng Subjects
+        [DisplayName("Subject"), ForeignKey("[ProjectMonitoring].[dbo].[Subjects]", "Id"), LeftJoin("jSubject"), TextualField("SubjectSubjectCode")]
+        [LookupEditor("dbo.Classes")]
+        public Int32? SubjectId
+        {
+            get { return Fields.SubjectId[this]; }
+            set { Fields.SubjectId[this] = value; }
+        }
+
+        [DisplayName("Subject Name"), Expression("jSubject.[Name]")]
+        public String SubjectName
+        {
+            get { return Fields.SubjectName[this]; }
+            set { Fields.SubjectName[this] = value; }
+        }
+
         [DisplayName("User Code"), Expression("jUser.[UserCode]")]
         public String UserUserCode
         {
@@ -146,6 +162,9 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             public DateTimeField UserBirthday;
             public StringField UserPhone;
             public StringField UserEmail;
+
+            public Int32Field SubjectId;
+            public StringField SubjectName;
 
             public StringField ClassClassCode;
             public StringField ClassSubjectCode;

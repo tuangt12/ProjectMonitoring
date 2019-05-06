@@ -8,6 +8,8 @@
         UserBirthday?: string;
         UserPhone?: string;
         UserEmail?: string;
+        SubjectId?: number;
+        SubjectName?: string;
         ClassClassCode?: string;
         ClassSubjectCode?: string;
         ClassMidExamCode?: string;
@@ -34,6 +36,8 @@
             UserBirthday = "UserBirthday",
             UserPhone = "UserPhone",
             UserEmail = "UserEmail",
+            SubjectId = "SubjectId",
+            SubjectName = "SubjectName",
             ClassClassCode = "ClassClassCode",
             ClassSubjectCode = "ClassSubjectCode",
             ClassMidExamCode = "ClassMidExamCode",
