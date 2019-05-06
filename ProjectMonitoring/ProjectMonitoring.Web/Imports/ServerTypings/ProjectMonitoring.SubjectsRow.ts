@@ -9,6 +9,11 @@
         export const idProperty = 'Id';
         export const nameProperty = 'SubjectCode';
         export const localTextPrefix = 'ProjectMonitoring.Subjects';
+        export const lookupKey = 'dbo.Subjects';
+
+        export function getLookup(): Q.Lookup<SubjectsRow> {
+            return Q.getLookup<SubjectsRow>('dbo.Subjects');
+        }
 
         export declare const enum Fields {
             Id = "Id",

@@ -1,6 +1,7 @@
 ﻿
 namespace ProjectMonitoring.ProjectMonitoring.Entities
 {
+    using Newtonsoft.Json;
     using Serenity;
     using Serenity.ComponentModel;
     using Serenity.Data;
@@ -16,6 +17,9 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
     [ReadPermission(PermissionKeys.Subject.View)]
     [ModifyPermission(PermissionKeys.Subject.Modify)]
     [DeletePermission(PermissionKeys.Subject.Delete)]
+
+    [JsonConverter(typeof(JsonRowConverter))]
+    [LookupScript("dbo.Subjects")]
 
     public sealed class SubjectsRow : Row, IIdRow, INameRow
     {
