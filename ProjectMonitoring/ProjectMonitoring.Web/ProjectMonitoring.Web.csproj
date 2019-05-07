@@ -995,6 +995,7 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Texts.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\SCMs\SCMUserNameFormatter.ts" />
     <TypeScriptCompile Include="Modules\ProjectMonitoring\UserClasses\UserClassesDialog.ts" />
     <TypeScriptCompile Include="Modules\ProjectMonitoring\UserClasses\UserClassesEditDialog.ts" />
     <TypeScriptCompile Include="Modules\ProjectMonitoring\UserClasses\UserClassesEditor.ts" />
@@ -1919,6 +1920,9 @@
     <Compile Include="App_Start\SiteInitialization.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\ProjectMonitoring.SCMUserNameFormatterAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\ProjectMonitoring.UserClassesEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>

@@ -5623,6 +5623,34 @@ var ProjectMonitoring;
 (function (ProjectMonitoring_26) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
+        var SCMUserNameFormatter = /** @class */ (function () {
+            function SCMUserNameFormatter() {
+            }
+            SCMUserNameFormatter.prototype.format = function (ctx) {
+                // Lấy giá trị id của từng dòng trong cột UserName
+                var idUser = ctx.value;
+                // Config tìm kiếm trong bảng User theo Id
+                var byId = ProjectMonitoring_26.Administration.UserRow.getLookup().itemById;
+                // Tìm kiếm trong bảng User với idUser vừa lấy được phía trên
+                var userName = byId[idUser];
+                // Nếu không có thì để trống
+                if (!userName)
+                    return "";
+                // Mặc đinh hiển thị tên tác giả, lấy theo trường DisplayName trong bảng User
+                return Q.htmlEncode(userName.DisplayName);
+            };
+            SCMUserNameFormatter = __decorate([
+                Serenity.Decorators.registerFormatter()
+            ], SCMUserNameFormatter);
+            return SCMUserNameFormatter;
+        }());
+        ProjectMonitoring.SCMUserNameFormatter = SCMUserNameFormatter;
+    })(ProjectMonitoring = ProjectMonitoring_26.ProjectMonitoring || (ProjectMonitoring_26.ProjectMonitoring = {}));
+})(ProjectMonitoring || (ProjectMonitoring = {}));
+var ProjectMonitoring;
+(function (ProjectMonitoring_27) {
+    var ProjectMonitoring;
+    (function (ProjectMonitoring) {
         var SCMTypesDialog = /** @class */ (function (_super) {
             __extends(SCMTypesDialog, _super);
             function SCMTypesDialog() {
@@ -5641,10 +5669,10 @@ var ProjectMonitoring;
             return SCMTypesDialog;
         }(Serenity.EntityDialog));
         ProjectMonitoring.SCMTypesDialog = SCMTypesDialog;
-    })(ProjectMonitoring = ProjectMonitoring_26.ProjectMonitoring || (ProjectMonitoring_26.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_27.ProjectMonitoring || (ProjectMonitoring_27.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
-(function (ProjectMonitoring_27) {
+(function (ProjectMonitoring_28) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var SCMTypesGrid = /** @class */ (function (_super) {
@@ -5663,10 +5691,10 @@ var ProjectMonitoring;
             return SCMTypesGrid;
         }(Serenity.EntityGrid));
         ProjectMonitoring.SCMTypesGrid = SCMTypesGrid;
-    })(ProjectMonitoring = ProjectMonitoring_27.ProjectMonitoring || (ProjectMonitoring_27.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_28.ProjectMonitoring || (ProjectMonitoring_28.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
-(function (ProjectMonitoring_28) {
+(function (ProjectMonitoring_29) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var SubjectsDialog = /** @class */ (function (_super) {
@@ -5687,10 +5715,10 @@ var ProjectMonitoring;
             return SubjectsDialog;
         }(Serenity.EntityDialog));
         ProjectMonitoring.SubjectsDialog = SubjectsDialog;
-    })(ProjectMonitoring = ProjectMonitoring_28.ProjectMonitoring || (ProjectMonitoring_28.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_29.ProjectMonitoring || (ProjectMonitoring_29.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
-(function (ProjectMonitoring_29) {
+(function (ProjectMonitoring_30) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var SubjectsGrid = /** @class */ (function (_super) {
@@ -5709,10 +5737,10 @@ var ProjectMonitoring;
             return SubjectsGrid;
         }(Serenity.EntityGrid));
         ProjectMonitoring.SubjectsGrid = SubjectsGrid;
-    })(ProjectMonitoring = ProjectMonitoring_29.ProjectMonitoring || (ProjectMonitoring_29.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_30.ProjectMonitoring || (ProjectMonitoring_30.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
-(function (ProjectMonitoring_30) {
+(function (ProjectMonitoring_31) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var UserClassesDialog = /** @class */ (function (_super) {
@@ -5732,11 +5760,11 @@ var ProjectMonitoring;
             return UserClassesDialog;
         }(Serenity.EntityDialog));
         ProjectMonitoring.UserClassesDialog = UserClassesDialog;
-    })(ProjectMonitoring = ProjectMonitoring_30.ProjectMonitoring || (ProjectMonitoring_30.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_31.ProjectMonitoring || (ProjectMonitoring_31.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 /// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
 var ProjectMonitoring;
-(function (ProjectMonitoring_31) {
+(function (ProjectMonitoring_32) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var UserClassesEditDialog = /** @class */ (function (_super) {
@@ -5753,13 +5781,13 @@ var ProjectMonitoring;
                 Serenity.Decorators.registerClass()
             ], UserClassesEditDialog);
             return UserClassesEditDialog;
-        }(ProjectMonitoring_31.Common.GridEditorDialog));
+        }(ProjectMonitoring_32.Common.GridEditorDialog));
         ProjectMonitoring.UserClassesEditDialog = UserClassesEditDialog;
-    })(ProjectMonitoring = ProjectMonitoring_31.ProjectMonitoring || (ProjectMonitoring_31.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_32.ProjectMonitoring || (ProjectMonitoring_32.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 /// <reference path="../../Common/Helpers/GridEditorBase.ts" />
 var ProjectMonitoring;
-(function (ProjectMonitoring_32) {
+(function (ProjectMonitoring_33) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var UserClassesEditor = /** @class */ (function (_super) {
@@ -5773,22 +5801,6 @@ var ProjectMonitoring;
             UserClassesEditor.prototype.getAddButtonCaption = function () {
                 return "Add to a Class";
             };
-            /*protected validateEntity(row: UserClassesRow, id: number) {
-                if (!super.validateEntity(row, id))
-                    return false;
-    
-                // Gán trường ClassCode của UserClass hiện tại bằng cách
-                // Lấy ra trường ClassCode trong ClassesRow theo Id
-                // (Id này chính là ClassId lấy từ row hiện tại, Row hiện tại là Row của UserClasses)
-                row.ClassClassCode = ClassesRow.getLookup()
-                    .itemById[row.ClassId].ClassCode;
-    
-                // Gán trường SubjectCode của UserClass hiện tại
-                row.ClassSubjectCode = ClassesRow.getLookup()
-                    .itemById[row.ClassId].SubjectCode;
-    
-                return true;
-            } */
             // Xác thực dữ liệu khi đăng ký một lớp mới
             // Không cho phép đăng ký một lớp đã đăng ký trước đó
             UserClassesEditor.prototype.validateEntity = function (row, id) {
@@ -5818,12 +5830,12 @@ var ProjectMonitoring;
                 Serenity.Decorators.registerEditor()
             ], UserClassesEditor);
             return UserClassesEditor;
-        }(ProjectMonitoring_32.Common.GridEditorBase));
+        }(ProjectMonitoring_33.Common.GridEditorBase));
         ProjectMonitoring.UserClassesEditor = UserClassesEditor;
-    })(ProjectMonitoring = ProjectMonitoring_32.ProjectMonitoring || (ProjectMonitoring_32.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_33.ProjectMonitoring || (ProjectMonitoring_33.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
-(function (ProjectMonitoring_33) {
+(function (ProjectMonitoring_34) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var UserClassesGrid = /** @class */ (function (_super) {
@@ -5842,7 +5854,7 @@ var ProjectMonitoring;
             return UserClassesGrid;
         }(Serenity.EntityGrid));
         ProjectMonitoring.UserClassesGrid = UserClassesGrid;
-    })(ProjectMonitoring = ProjectMonitoring_33.ProjectMonitoring || (ProjectMonitoring_33.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_34.ProjectMonitoring || (ProjectMonitoring_34.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
 (function (ProjectMonitoring) {

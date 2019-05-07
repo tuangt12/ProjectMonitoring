@@ -3054,6 +3054,11 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
     }
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {
+    class SCMUserNameFormatter implements Slick.Formatter {
+        format(ctx: Slick.FormatterContext): string;
+    }
+}
+declare namespace ProjectMonitoring.ProjectMonitoring {
     class SCMTypesDialog extends Serenity.EntityDialog<SCMTypesRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
