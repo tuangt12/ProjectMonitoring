@@ -1971,6 +1971,8 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
 declare namespace ProjectMonitoring.ProjectMonitoring {
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {
+}
+declare namespace ProjectMonitoring.ProjectMonitoring {
     interface PostsForm {
         Title: Serenity.StringEditor;
         ContentPost: Serenity.StringEditor;
@@ -2202,6 +2204,7 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         ClassId?: number;
         UserUserCode?: string;
         UserName?: string;
+        UserDisplayName?: string;
         UserBirthday?: string;
         UserPhone?: string;
         UserEmail?: string;
@@ -2223,6 +2226,7 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
             ClassId = "ClassId",
             UserUserCode = "UserUserCode",
             UserName = "UserName",
+            UserDisplayName = "UserDisplayName",
             UserBirthday = "UserBirthday",
             UserPhone = "UserPhone",
             UserEmail = "UserEmail",
@@ -3001,6 +3005,9 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: ClassesForm;
+        private userGrid;
+        constructor(container: JQuery);
+        protected afterLoadEntity(): void;
     }
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {
@@ -3011,6 +3018,21 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+    }
+}
+declare namespace ProjectMonitoring.ProjectMonitoring {
+    class ClassesUserGrid extends Serenity.EntityGrid<UserClassesRow, any> {
+        protected getColumnsKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected getButtons(): any;
+        protected getInitialTitle(): any;
+        protected usePager(): boolean;
+        protected getGridCanLoad(): boolean;
+        private _classesID;
+        classesID: number;
     }
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {

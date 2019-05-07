@@ -566,6 +566,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\ionicons.svg" />
     <Content Include="fonts\Simple-Line-Icons.svg" />
+    <Content Include="Modules\ProjectMonitoring\Classes\ProjectMonitoring.ClassesDialog.Template.html" />
     <Content Include="Modules\ProjectMonitoring\UserClasses\UserClassesIndex.cshtml" />
     <Content Include="Readme.CodeGenerator.txt" />
     <Content Include="Scripts\bootstrap.js" />
@@ -822,6 +823,7 @@
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
     <Content Include="wkhtmltopdf-license.txt" />
+    <Content Include="Modules\ProjectMonitoring\Classes\ViewPage1.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -977,6 +979,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.ClassesColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.ClassesUserColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.PostsColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -995,6 +1000,7 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Texts.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\Classes\ClassesUserGrid.ts" />
     <TypeScriptCompile Include="Modules\ProjectMonitoring\SCMs\SCMUserNameFormatter.ts" />
     <TypeScriptCompile Include="Modules\ProjectMonitoring\UserClasses\UserClassesDialog.ts" />
     <TypeScriptCompile Include="Modules\ProjectMonitoring\UserClasses\UserClassesEditDialog.ts" />
@@ -2128,6 +2134,7 @@
     <Compile Include="Modules\Northwind\Supplier\SupplierCountryLookup.cs" />
     <Compile Include="Modules\Northwind\Territory\TerritoryColumns.cs" />
     <Compile Include="Modules\Northwind\NorthwindTexts.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Classes\ClassesUserColumns.cs" />
     <Compile Include="Modules\ProjectMonitoring\ProjectMonitoringPermissionKeys.cs" />
     <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesColumns.cs" />
     <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesEndpoint.cs" />

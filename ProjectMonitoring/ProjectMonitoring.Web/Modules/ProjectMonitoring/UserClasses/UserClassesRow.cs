@@ -60,6 +60,13 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.UserName[this] = value; }
         }
 
+        [DisplayName("Student Name"), Expression("jUser.[DisplayName]")]
+        public String UserDisplayName
+        {
+            get { return Fields.UserDisplayName[this]; }
+            set { Fields.UserDisplayName[this] = value; }
+        }
+
         [DisplayName("User Birthday"), Expression("jUser.[Birthday]")]
         public DateTime? UserBirthday
         {
@@ -143,6 +150,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
 
             public StringField UserUserCode;
             public StringField UserName;
+            public StringField UserDisplayName;
             public DateTimeField UserBirthday;
             public StringField UserPhone;
             public StringField UserEmail;
