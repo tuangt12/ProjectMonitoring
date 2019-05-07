@@ -19,6 +19,8 @@
   "Db.ProjectMonitoring.Posts.EntityPlural": "Danh sách bài viết",
   "Db.ProjectMonitoring.Posts.EntitySingular": "Danh sách bài viết",
   "Db.ProjectMonitoring.Posts.Title": "Tiêu đề",
+  "Db.ProjectMonitoring.SCMs.ScmTypeName": "Loại",
+  "Db.ProjectMonitoring.SCMs.UserClassUserId": "Tác giả",
   "Db.ProjectMonitoring.Subjects.EntityPlural": "Danh sách môn học",
   "Db.ProjectMonitoring.Subjects.EntitySingular": "Danh sách môn học",
   "Db.ProjectMonitoring.Subjects.Name": "Tên môn học",
