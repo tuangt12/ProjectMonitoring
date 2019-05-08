@@ -1928,6 +1928,8 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
     interface ClassesRow {
         Id?: number;
         ClassCode?: string;
+        SubjectId?: number;
+        SubjectName?: string;
         SubjectCode?: string;
         MidExamCode?: string;
         FinalExamCode?: string;
@@ -1943,6 +1945,8 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         const enum Fields {
             Id = "Id",
             ClassCode = "ClassCode",
+            SubjectId = "SubjectId",
+            SubjectName = "SubjectName",
             SubjectCode = "SubjectCode",
             MidExamCode = "MidExamCode",
             FinalExamCode = "FinalExamCode",
