@@ -12,6 +12,11 @@
         IsActive?: number;
         Password?: string;
         PasswordConfirm?: string;
+        UserCode?: string;
+        Birthday?: string;
+        Phone?: string;
+        Level?: string;
+        ClassList?: ProjectMonitoring.UserClassesRow[];
         InsertUserId?: number;
         InsertDate?: string;
         UpdateUserId?: number;
@@ -42,6 +47,11 @@
             IsActive = "IsActive",
             Password = "Password",
             PasswordConfirm = "PasswordConfirm",
+            UserCode = "UserCode",
+            Birthday = "Birthday",
+            Phone = "Phone",
+            Level = "Level",
+            ClassList = "ClassList",
             InsertUserId = "InsertUserId",
             InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",

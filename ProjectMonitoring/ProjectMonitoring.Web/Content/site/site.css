@@ -8084,3 +8084,15 @@ section.content > .s-DataGrid {
 .s-ProjectMonitoring-UserClassesDialog .caption {
   width: 150px;
 }
+
+.s-ProjectMonitoring-UserClassesEditDialog > .size {
+  width: 450px;
+}
+
+.s-ProjectMonitoring-UserClassesEditDialog .caption {
+  width: 120px;
+}
+
+.s-ProjectMonitoring-UserClassesEditDialog .s-PropertyGrid .categories {
+  height: 120px;
+}

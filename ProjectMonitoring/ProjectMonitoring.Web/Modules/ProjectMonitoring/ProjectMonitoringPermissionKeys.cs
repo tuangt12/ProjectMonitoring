@@ -2,19 +2,17 @@
 using Serenity.Extensibility;
 using System.ComponentModel;
 
+/// <summary>
+///         Định nghĩa các quyền của Project Monitoring
+///         Sẽ hiển thị trên giao diện Adminstrator / User Role / tab Edit Permission
+/// </summary>
 namespace ProjectMonitoring.ProjectMonitoring
 {
-    /// <summary>
-    ///         Định nghĩa các quyền của Project Monitoring
-    ///         Sẽ hiển thị trên giao diện Adminstrator / User Role / tab Edit Permission
-    /// </summary>
     [NestedPermissionKeys]
     [DisplayName("PermissionKeys PM")]
     public class PermissionKeys
     {
-        /// <summary>
-        ///         Quyền chung cho ProjectMonitoring
-        /// </summary>
+        // Quyền cơ bản
         [Description("[General]")]
         public const string General = "PM:General";
 
@@ -23,21 +21,15 @@ namespace ProjectMonitoring.ProjectMonitoring
         /// </summary>
         public class Class
         {
-            /// <summary>
-            ///         Quyền xóa dữ liệu trong bảng Classes
-            /// </summary>
+            // Quyền xóa
             [ImplicitPermission(General), ImplicitPermission(View)]
             public const string Delete = "PM:Class:Delete";
 
-            /// <summary>
-            ///         Quyền chỉnh sửa dữ liệu trong bảng Classes
-            /// </summary>
+            // Quyền chỉnh sửa
             [Description("Create/Update"), ImplicitPermission(General), ImplicitPermission(View)]
             public const string Modify = "PM:Class:Modify";
 
-            /// <summary>
-            ///         Quyền xem dữ liệu trong bảng Classes
-            /// </summary>
+            // Quyền xem
             public const string View = "PM:Class:View";
         }
 
@@ -46,21 +38,15 @@ namespace ProjectMonitoring.ProjectMonitoring
         /// </summary>
         public class Post
         {
-            /// <summary>
-            ///         Quyền xóa dữ liệu trong bảng Posts
-            /// </summary>
+            // Quyền xóa
             [ImplicitPermission(General), ImplicitPermission(View)]
             public const string Delete = "PM:Post:Delete";
 
-            /// <summary>
-            ///         Quyền chỉnh sửa dữ liệu trong bảng Posts
-            /// </summary>
+            // Quyền chỉnh sửa
             [Description("Create/Update"), ImplicitPermission(General), ImplicitPermission(View)]
             public const string Modify = "PM:Post:Modify";
 
-            /// <summary>
-            ///         Quyền xem dữ liệu trong bảng Posts
-            /// </summary>
+            // Quyền xem
             public const string View = "PM:Post:View";
         }
 
@@ -69,21 +55,15 @@ namespace ProjectMonitoring.ProjectMonitoring
         /// </summary>
         public class SCM
         {
-            /// <summary>
-            ///         Quyền xóa dữ liệu trong bảng SCMs
-            /// </summary>
+            // Quyền xóa
             [ImplicitPermission(General), ImplicitPermission(View)]
             public const string Delete = "PM:SCM:Delete";
 
-            /// <summary>
-            ///         Quyền chỉnh sửa dữ liệu trong bảng SCMs
-            /// </summary>
+            // Quyền chỉnh sửa
             [Description("Create/Update"), ImplicitPermission(General), ImplicitPermission(View)]
             public const string Modify = "PM:SCM:Modify";
 
-            /// <summary>
-            ///         Quyền xem dữ liệu trong bảng SCMs
-            /// </summary>
+            // Quyền xem
             public const string View = "PM:SCM:View";
         }
 
@@ -92,21 +72,15 @@ namespace ProjectMonitoring.ProjectMonitoring
         /// </summary>
         public class SCMType
         {
-            /// <summary>
-            ///         Quyền xóa dữ liệu trong bảng SCMTypes
-            /// </summary>
+            // Quyền xóa
             [ImplicitPermission(General), ImplicitPermission(View)]
             public const string Delete = "PM:SCMType:Delete";
 
-            /// <summary>
-            ///         Quyền chỉnh sửa dữ liệu trong bảng SCMTypes
-            /// </summary>
+            // Quyền chỉnh sửa
             [Description("Create/Update"), ImplicitPermission(General), ImplicitPermission(View)]
             public const string Modify = "PM:SCMType:Modify";
 
-            /// <summary>
-            ///         Quyền xem dữ liệu trong bảng SCMTypes
-            /// </summary>
+            // Quyền xem
             public const string View = "PM:SCMType:View";
         }
 
@@ -115,21 +89,15 @@ namespace ProjectMonitoring.ProjectMonitoring
         /// </summary>
         public class Subject
         {
-            /// <summary>
-            ///         Quyền xóa dữ liệu trong bảng Subjects
-            /// </summary>
+            // Quyền xóa
             [ImplicitPermission(General), ImplicitPermission(View)]
             public const string Delete = "PM:Subject:Delete";
 
-            /// <summary>
-            ///         Quyền chỉnh sửa dữ liệu trong bảng Subjects
-            /// </summary>
+            // Quyền chỉnh sửa
             [Description("Create/Update"), ImplicitPermission(General), ImplicitPermission(View)]
             public const string Modify = "PM:Subject:Modify";
 
-            /// <summary>
-            ///         Quyền xem dữ liệu trong bảng Subjects
-            /// </summary>
+            // Quyền xem
             public const string View = "PM:Subject:View";
         }
 

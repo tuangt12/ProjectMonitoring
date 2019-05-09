@@ -20,6 +20,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Columns
         public String ContentPost { get; set; }
         public Int32 UserClassId { get; set; }
         public DateTime CreateDate { get; set; }
-        public String CreateByUserCode { get; set; }
+        [Width(100)]
+        public String CreateBy { get; set; }
     }
 }

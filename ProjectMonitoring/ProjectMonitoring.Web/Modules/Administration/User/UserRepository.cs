@@ -121,6 +121,42 @@ namespace ProjectMonitoring.Administration.Repositories
                 }
             }
 
+            /// <summary>
+            ///     Lưu giá trị khi tạo mới hoặc cập nhật đối với ClassList
+            /// </summary>
+            protected override void AfterSave()
+            {
+                base.AfterSave();
+
+                if (Row.ClassList != null)
+                {
+                    // Lấy ra các trường trong UserClass
+                    var mc = ProjectMonitoring.Entities.UserClassesRow.Fields;
+                    // Nếu là tạo mới thì oldList = null
+                    // Còn nếu là Update thì lưu giá trị cũ vào oldList (là danh sách cũ)
+                    // lưu theo UserId
+                    var oldList = IsCreate ? null :
+                        // Connection là thuộc tính của SaveRequestHandler
+                        // trả về kết nối hiện tại đang được sử dụng
+
+                        // List sẽ chọn ra các bản ghi phù hợp với điều kiện trong ngoặc
+                        // This.Row trả về giá trị của bản ghi hiện tại vừa được thực hiện chỉnh sửa
+                        Connection.List<ProjectMonitoring.Entities.UserClassesRow>(
+                            mc.UserId == this.Row.UserId.Value);
+
+                    // DetailListSaveHandler cho biết danh sách cũ và danh sách mới
+                    // và một biến x, ở đây dại diện cho UserId
+                    // để liên kết các bản ghi thông tin Class với UserId hiện tại
+                    new Common.DetailListSaveHandler<ProjectMonitoring.Entities.UserClassesRow>(
+                        oldList, Row.ClassList,
+                        // UnitOfWork là một đối tượng bao gồm các tác vụ hiện tại
+                        // gọi tới hàm Process để thực thi tác vụ hiện tại
+                        x => x.UserId = Row.UserId.Value).Process(this.UnitOfWork);
+                }
+
+                BatchGenerationUpdater.OnCommit(this.UnitOfWork, fld.GenerationKey);
+            }
+
             private static bool IsInvariantLetter(Char c)
             {
                 return (c >= 'A' && c <= 'Z') ||
@@ -228,12 +264,12 @@ namespace ProjectMonitoring.Administration.Repositories
                 }
             }
 
-            protected override void AfterSave()
-            {
-                base.AfterSave();
+            //protected override void AfterSave()
+            //{
+            //    base.AfterSave();
 
-                BatchGenerationUpdater.OnCommit(this.UnitOfWork, fld.GenerationKey);
-            }
+            //    BatchGenerationUpdater.OnCommit(this.UnitOfWork, fld.GenerationKey);
+            //}
         }
 
         public static string CalculateHash(string password, string salt)
@@ -271,11 +307,51 @@ namespace ProjectMonitoring.Administration.Repositories
                 new SqlDelete(Entities.UserPermissionRow.Fields.TableName)
                     .Where(Entities.UserPermissionRow.Fields.UserId == Row.UserId.Value)
                     .Execute(Connection, ExpectedRows.Ignore);
+
+
+                /// Xử lý khi xóa với vấn đề khóa ngoại
+                // Lấy ra các trường
+                var mc = ProjectMonitoring.Entities.UserClassesRow.Fields;
+                // Sửa câu truy vấn 
+                foreach (var detailID in Connection.Query<Int32>(
+                    new SqlQuery()
+                        .From(mc)
+                        .Select(mc.Id) // UserClassId
+                        .Where(mc.UserId == Row.UserId.Value)))
+                {
+                    new DeleteRequestHandler<ProjectMonitoring.Entities.UserClassesRow>().Process(this.UnitOfWork,
+                        new DeleteRequest
+                        {
+                            EntityId = detailID
+                        });
+                }
             }
         }
 
         private class MyUndeleteHandler : UndeleteRequestHandler<MyRow> { }
-        private class MyRetrieveHandler : RetrieveRequestHandler<MyRow> { }
+        private class MyRetrieveHandler : RetrieveRequestHandler<MyRow>
+        {
+            
+            /// <summary>
+            ///     Ghi đè phương thức OnReturn để thêm ClassList vào hàng của User
+            ///     ngay trước khi trả về từ phía dịch vụ
+            /// </summary>
+            protected override void OnReturn()
+            {
+                base.OnReturn();
+
+                var mc = ProjectMonitoring.Entities.UserClassesRow.Fields;
+                // Sử dụng overload của Connection.List để chỉnh sửa câu truy vấn select
+                Row.ClassList = Connection.List<ProjectMonitoring.Entities.UserClassesRow>(q => q
+                    .SelectTableFields()
+                    // Lấy ra trường ClassCode trong UserClassesRow
+                    .Select(mc.ClassClassCode)
+                    .Select(mc.ClassSubjectCode)
+                    // Với điều kiện UserId trong bảng trùng với UserId hiện tại
+                    .Where(mc.UserId == Row.UserId.Value));
+            }
+            
+        }
 
         /// <summary>
         ///         Tùy chỉnh danh sách hiển thị của bảng User với từng user khác nhau

@@ -566,6 +566,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\ionicons.svg" />
     <Content Include="fonts\Simple-Line-Icons.svg" />
+    <Content Include="Modules\ProjectMonitoring\UserClasses\UserClassesIndex.cshtml" />
     <Content Include="Readme.CodeGenerator.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -991,12 +992,13 @@
     <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserClassesColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserColumns.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Texts.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\UserClasses\UserClassesDialog.ts" />
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\UserClasses\UserClassesEditDialog.ts" />
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\UserClasses\UserClassesEditor.ts" />
+    <TypeScriptCompile Include="Modules\ProjectMonitoring\UserClasses\UserClassesGrid.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jquery\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jqueryui\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jquery.blockui\index.d.ts" />
@@ -1892,27 +1894,12 @@
     <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.SubjectsForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <Content Include="Modules\ProjectMonitoring\User\UserIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\ProjectMonitoring\User\UserDialog.ts" />
-    <TypeScriptCompile Include="Modules\ProjectMonitoring\User\UserGrid.ts" />
-    <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserClassesRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserClassesService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <Content Include="Modules\ProjectMonitoring\UserClasses\UserClassesIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\ProjectMonitoring\UserClasses\UserClassesDialog.ts" />
-    <TypeScriptCompile Include="Modules\ProjectMonitoring\UserClasses\UserClassesGrid.ts" />
     <TypeScriptCompile Include="Imports\ServerTypings\ProjectMonitoring.UserClassesForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1932,6 +1919,9 @@
     <Compile Include="App_Start\SiteInitialization.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\ProjectMonitoring.UserClassesEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Modules\Administration\AdministrationNavigation.cs" />
     <Compile Include="Modules\Administration\Language\LanguageLookup.cs" />
@@ -2135,6 +2125,12 @@
     <Compile Include="Modules\Northwind\Territory\TerritoryColumns.cs" />
     <Compile Include="Modules\Northwind\NorthwindTexts.cs" />
     <Compile Include="Modules\ProjectMonitoring\ProjectMonitoringPermissionKeys.cs" />
+    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesColumns.cs" />
+    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesEndpoint.cs" />
+    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesForm.cs" />
+    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesPage.cs" />
+    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesRepository.cs" />
+    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesRow.cs" />
     <Compile Include="Modules\Texts.cs" />
     <Compile Include="Modules\Membership\Account\AccountPage.cs" />
     <Compile Include="Modules\Administration\User\Authentication\AuthorizationService.cs" />
@@ -2268,18 +2264,6 @@
     <Compile Include="Modules\ProjectMonitoring\Subjects\SubjectsPage.cs" />
     <Compile Include="Modules\ProjectMonitoring\Subjects\SubjectsColumns.cs" />
     <Compile Include="Modules\ProjectMonitoring\Subjects\SubjectsForm.cs" />
-    <Compile Include="Modules\ProjectMonitoring\User\UserRow.cs" />
-    <Compile Include="Modules\ProjectMonitoring\User\UserRepository.cs" />
-    <Compile Include="Modules\ProjectMonitoring\User\UserEndpoint.cs" />
-    <Compile Include="Modules\ProjectMonitoring\User\UserPage.cs" />
-    <Compile Include="Modules\ProjectMonitoring\User\UserColumns.cs" />
-    <Compile Include="Modules\ProjectMonitoring\User\UserForm.cs" />
-    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesRow.cs" />
-    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesRepository.cs" />
-    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesEndpoint.cs" />
-    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesPage.cs" />
-    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesColumns.cs" />
-    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -182,12 +182,16 @@ declare namespace ProjectMonitoring.Administration {
 declare namespace ProjectMonitoring.Administration {
     interface UserForm {
         Username: Serenity.StringEditor;
+        UserCode: Serenity.StringEditor;
         DisplayName: Serenity.StringEditor;
+        Birthday: Serenity.DateTimeEditor;
+        Phone: Serenity.StringEditor;
+        Level: Serenity.StringEditor;
         Email: Serenity.EmailEditor;
+        ClassList: ProjectMonitoring.UserClassesEditor;
         UserImage: Serenity.ImageUploadEditor;
         Password: Serenity.PasswordEditor;
         PasswordConfirm: Serenity.PasswordEditor;
-        Source: Serenity.StringEditor;
     }
     class UserForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -308,6 +312,11 @@ declare namespace ProjectMonitoring.Administration {
         IsActive?: number;
         Password?: string;
         PasswordConfirm?: string;
+        UserCode?: string;
+        Birthday?: string;
+        Phone?: string;
+        Level?: string;
+        ClassList?: ProjectMonitoring.UserClassesRow[];
         InsertUserId?: number;
         InsertDate?: string;
         UpdateUserId?: number;
@@ -333,6 +342,11 @@ declare namespace ProjectMonitoring.Administration {
             IsActive = "IsActive",
             Password = "Password",
             PasswordConfirm = "PasswordConfirm",
+            UserCode = "UserCode",
+            Birthday = "Birthday",
+            Phone = "Phone",
+            Level = "Level",
+            ClassList = "ClassList",
             InsertUserId = "InsertUserId",
             InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
@@ -1924,6 +1938,8 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         const idProperty = "Id";
         const nameProperty = "ClassCode";
         const localTextPrefix = "ProjectMonitoring.Classes";
+        const lookupKey = "dbo.Classes";
+        function getLookup(): Q.Lookup<ClassesRow>;
         const enum Fields {
             Id = "Id",
             ClassCode = "ClassCode",
@@ -1977,16 +1993,17 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         CreateDate?: string;
         CreateBy?: number;
         CreateByUserCode?: string;
-        CreateByName?: string;
+        CreateByUsername?: string;
         CreateByBirthday?: string;
         CreateByPhone?: string;
-        CreateByAddress?: string;
         CreateByEmail?: string;
     }
     namespace PostsRow {
         const idProperty = "Id";
         const nameProperty = "Title";
         const localTextPrefix = "ProjectMonitoring.Posts";
+        const lookupKey = "dbo.Posts";
+        function getLookup(): Q.Lookup<PostsRow>;
         const enum Fields {
             Id = "Id",
             Title = "Title",
@@ -1995,10 +2012,9 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
             CreateDate = "CreateDate",
             CreateBy = "CreateBy",
             CreateByUserCode = "CreateByUserCode",
-            CreateByName = "CreateByName",
+            CreateByUsername = "CreateByUsername",
             CreateByBirthday = "CreateByBirthday",
             CreateByPhone = "CreateByPhone",
-            CreateByAddress = "CreateByAddress",
             CreateByEmail = "CreateByEmail"
         }
     }
@@ -2171,8 +2187,7 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {
     interface UserClassesForm {
-        UserId: Serenity.IntegerEditor;
-        ClassId: Serenity.IntegerEditor;
+        ClassId: Serenity.LookupEditor;
     }
     class UserClassesForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -2189,7 +2204,6 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         UserName?: string;
         UserBirthday?: string;
         UserPhone?: string;
-        UserAddress?: string;
         UserEmail?: string;
         ClassClassCode?: string;
         ClassSubjectCode?: string;
@@ -2201,6 +2215,8 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
     namespace UserClassesRow {
         const idProperty = "Id";
         const localTextPrefix = "ProjectMonitoring.UserClasses";
+        const lookupKey = "dbo.UserClasses";
+        function getLookup(): Q.Lookup<UserClassesRow>;
         const enum Fields {
             Id = "Id",
             UserId = "UserId",
@@ -2209,7 +2225,6 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
             UserName = "UserName",
             UserBirthday = "UserBirthday",
             UserPhone = "UserPhone",
-            UserAddress = "UserAddress",
             UserEmail = "UserEmail",
             ClassClassCode = "ClassClassCode",
             ClassSubjectCode = "ClassSubjectCode",
@@ -2234,65 +2249,6 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
             Delete = "ProjectMonitoring/UserClasses/Delete",
             Retrieve = "ProjectMonitoring/UserClasses/Retrieve",
             List = "ProjectMonitoring/UserClasses/List"
-        }
-    }
-}
-declare namespace ProjectMonitoring.ProjectMonitoring {
-}
-declare namespace ProjectMonitoring.ProjectMonitoring {
-    interface UserForm {
-        UserCode: Serenity.StringEditor;
-        Name: Serenity.StringEditor;
-        Birthday: Serenity.DateEditor;
-        Phone: Serenity.StringEditor;
-        Address: Serenity.StringEditor;
-        Email: Serenity.StringEditor;
-    }
-    class UserForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace ProjectMonitoring.ProjectMonitoring {
-    interface UserRow {
-        Id?: number;
-        UserCode?: string;
-        Name?: string;
-        Birthday?: string;
-        Phone?: string;
-        Address?: string;
-        Email?: string;
-    }
-    namespace UserRow {
-        const idProperty = "Id";
-        const nameProperty = "UserCode";
-        const localTextPrefix = "ProjectMonitoring.User";
-        const enum Fields {
-            Id = "Id",
-            UserCode = "UserCode",
-            Name = "Name",
-            Birthday = "Birthday",
-            Phone = "Phone",
-            Address = "Address",
-            Email = "Email"
-        }
-    }
-}
-declare namespace ProjectMonitoring.ProjectMonitoring {
-    namespace UserService {
-        const baseUrl = "ProjectMonitoring/User";
-        function Create(request: Serenity.SaveRequest<UserRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<UserRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<UserRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<UserRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "ProjectMonitoring/User/Create",
-            Update = "ProjectMonitoring/User/Update",
-            Delete = "ProjectMonitoring/User/Delete",
-            Retrieve = "ProjectMonitoring/User/Retrieve",
-            List = "ProjectMonitoring/User/List"
         }
     }
 }
@@ -3138,32 +3094,30 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
     }
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {
-    class UserDialog extends Serenity.EntityDialog<UserRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: UserForm;
-    }
-}
-declare namespace ProjectMonitoring.ProjectMonitoring {
-    class UserGrid extends Serenity.EntityGrid<UserRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof UserDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace ProjectMonitoring.ProjectMonitoring {
     class UserClassesDialog extends Serenity.EntityDialog<UserClassesRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         protected form: UserClassesForm;
+    }
+}
+declare namespace ProjectMonitoring.ProjectMonitoring {
+    class UserClassesEditDialog extends Common.GridEditorDialog<UserClassesRow> {
+        protected getFormKey(): string;
+        protected getLocalTextPrefix(): string;
+        protected form: UserClassesForm;
+        constructor();
+    }
+}
+declare namespace ProjectMonitoring.ProjectMonitoring {
+    class UserClassesEditor extends Common.GridEditorBase<UserClassesRow> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof UserClassesEditDialog;
+        protected getLocalTextPrefix(): string;
+        constructor(container: JQuery);
+        protected getAddButtonCaption(): string;
+        validateEntity(row: any, id: any): boolean;
     }
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {

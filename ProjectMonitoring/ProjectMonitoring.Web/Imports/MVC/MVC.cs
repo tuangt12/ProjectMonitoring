@@ -398,11 +398,6 @@ namespace MVC
                 public const string SubjectsIndex = "~/Modules/ProjectMonitoring/Subjects/SubjectsIndex.cshtml";
             }
 
-            public static class User
-            {
-                public const string UserIndex = "~/Modules/ProjectMonitoring/User/UserIndex.cshtml";
-            }
-
             public static class UserClasses
             {
                 public const string UserClassesIndex = "~/Modules/ProjectMonitoring/UserClasses/UserClassesIndex.cshtml";

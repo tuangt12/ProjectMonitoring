@@ -1,10 +1,12 @@
 ﻿
 namespace ProjectMonitoring.Administration.Entities
 {
+    using Newtonsoft.Json;
     using Serenity.ComponentModel;
     using Serenity.Data;
     using Serenity.Data.Mapping;
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel;
 
     [ConnectionKey("Default"), Module("Administration"), TableName("Users")]
@@ -12,9 +14,10 @@ namespace ProjectMonitoring.Administration.Entities
 
     //[ReadPermission(PermissionKeys.Security)]
     [ReadPermission(ProjectMonitoring.PermissionKeys.General)]
-    [ModifyPermission(PermissionKeys.Security)]
+    [ModifyPermission(ProjectMonitoring.PermissionKeys.General)]
 
-    [LookupScript(Permission = PermissionKeys.Security)]
+    [LookupScript(Permission = ProjectMonitoring.PermissionKeys.General)]
+    [JsonConverter(typeof(JsonRowConverter))]
     public sealed class UserRow : LoggingRow, IIdRow, INameRow, IIsActiveRow
     {
         // Id trong bảng User (thuộc database Default)
@@ -103,6 +106,15 @@ namespace ProjectMonitoring.Administration.Entities
             set { Fields.Email[this] = value; }
         }
 
+        // Danh sách lớp hiện tại
+        //[MasterDetailRelation(foreignKey: "UserId", IncludeColumns = "ClassSubjectCode")]
+        [DisplayName("Class List"), NotMapped]
+        public List<ProjectMonitoring.Entities.UserClassesRow> ClassList
+        {
+            get { return Fields.ClassList[this]; }
+            set { Fields.ClassList[this] = value; }
+        }
+
         [DisplayName("User Image"), Size(100)]
         [ImageUploadEditor(FilenameFormat = "UserImage/~", CopyToHistory = true)]
         public String UserImage
@@ -180,6 +192,9 @@ namespace ProjectMonitoring.Administration.Entities
             public DateTimeField Birthday;
             public StringField Phone;
             public StringField Level;
+
+            // Khai báo ClassList để khi thêm mới Class cho User thì có thể lưu lại được ở phía server
+            public readonly RowListField<ProjectMonitoring.Entities.UserClassesRow> ClassList;
         }
     }
 }

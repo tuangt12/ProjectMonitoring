@@ -13,6 +13,11 @@
         export const idProperty = 'Id';
         export const nameProperty = 'ClassCode';
         export const localTextPrefix = 'ProjectMonitoring.Classes';
+        export const lookupKey = 'dbo.Classes';
+
+        export function getLookup(): Q.Lookup<ClassesRow> {
+            return Q.getLookup<ClassesRow>('dbo.Classes');
+        }
 
         export declare const enum Fields {
             Id = "Id",

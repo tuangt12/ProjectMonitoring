@@ -16,6 +16,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
     [ReadPermission(PermissionKeys.Post.View)]
     [ModifyPermission(PermissionKeys.Post.Modify)]
     [DeletePermission(PermissionKeys.Post.Delete)]
+    [LookupScript("dbo.Posts")]
 
     public sealed class PostsRow : Row, IIdRow, INameRow
     {
@@ -54,7 +55,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.CreateDate[this] = value; }
         }
 
-        [DisplayName("Create By"), ForeignKey("[dbo].[User]", "Id"), LeftJoin("jCreateBy"), TextualField("CreateByUserCode")]
+        [DisplayName("Create By"), ForeignKey("[ProjectMonitoring_Default_v1].[dbo].[Users]", "UserId"), LeftJoin("jCreateBy"), TextualField("CreateByUserCode")]
         public Int32? CreateBy
         {
             get { return Fields.CreateBy[this]; }
@@ -68,11 +69,11 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.CreateByUserCode[this] = value; }
         }
 
-        [DisplayName("Create By Name"), Expression("jCreateBy.[Name]")]
-        public String CreateByName
+        [DisplayName("Create By User Name"), Expression("jCreateBy.[Username]")]
+        public String CreateByUsername
         {
-            get { return Fields.CreateByName[this]; }
-            set { Fields.CreateByName[this] = value; }
+            get { return Fields.CreateByUsername[this]; }
+            set { Fields.CreateByUsername[this] = value; }
         }
 
         [DisplayName("Create By Birthday"), Expression("jCreateBy.[Birthday]")]
@@ -87,13 +88,6 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
         {
             get { return Fields.CreateByPhone[this]; }
             set { Fields.CreateByPhone[this] = value; }
-        }
-
-        [DisplayName("Create By Address"), Expression("jCreateBy.[Address]")]
-        public String CreateByAddress
-        {
-            get { return Fields.CreateByAddress[this]; }
-            set { Fields.CreateByAddress[this] = value; }
         }
 
         [DisplayName("Create By Email"), Expression("jCreateBy.[Email]")]
@@ -130,10 +124,9 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             public Int32Field CreateBy;
 
             public StringField CreateByUserCode;
-            public StringField CreateByName;
+            public StringField CreateByUsername;
             public DateTimeField CreateByBirthday;
             public StringField CreateByPhone;
-            public StringField CreateByAddress;
             public StringField CreateByEmail;
         }
     }

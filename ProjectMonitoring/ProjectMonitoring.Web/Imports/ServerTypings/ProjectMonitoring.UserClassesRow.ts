@@ -7,7 +7,6 @@
         UserName?: string;
         UserBirthday?: string;
         UserPhone?: string;
-        UserAddress?: string;
         UserEmail?: string;
         ClassClassCode?: string;
         ClassSubjectCode?: string;
@@ -20,6 +19,11 @@
     export namespace UserClassesRow {
         export const idProperty = 'Id';
         export const localTextPrefix = 'ProjectMonitoring.UserClasses';
+        export const lookupKey = 'dbo.UserClasses';
+
+        export function getLookup(): Q.Lookup<UserClassesRow> {
+            return Q.getLookup<UserClassesRow>('dbo.UserClasses');
+        }
 
         export declare const enum Fields {
             Id = "Id",
@@ -29,7 +33,6 @@
             UserName = "UserName",
             UserBirthday = "UserBirthday",
             UserPhone = "UserPhone",
-            UserAddress = "UserAddress",
             UserEmail = "UserEmail",
             ClassClassCode = "ClassClassCode",
             ClassSubjectCode = "ClassSubjectCode",

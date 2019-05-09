@@ -1,6 +1,7 @@
 ﻿
 namespace ProjectMonitoring.ProjectMonitoring.Entities
 {
+    using Newtonsoft.Json;
     using Serenity;
     using Serenity.ComponentModel;
     using Serenity.Data;
@@ -9,12 +10,15 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
     using System.ComponentModel;
     using System.IO;
 
-    [ConnectionKey("ProjectMonitoring"), Module("ProjectMonitoring"), TableName("[dbo].[UserClasses]")]
+    [ConnectionKey("ProjectMonitoring"), Module("ProjectMonitoring"), TableName("[ProjectMonitoring].[dbo].[UserClasses]")]
     [DisplayName("User Classes"), InstanceName("User Classes")]
 
-    // xác định quyền tương ứng cho bảng Subjects
+    // xác định quyền tương ứng cho bảng UserClasses
     [ReadPermission(PermissionKeys.General)]
     [ModifyPermission(PermissionKeys.General)]
+
+    [JsonConverter(typeof(JsonRowConverter))]
+    [LookupScript("dbo.UserClasses")]
 
     public sealed class UserClassesRow : Row, IIdRow
     {
@@ -25,28 +29,31 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("User"), ForeignKey("[dbo].[User]", "Id"), LeftJoin("jUser"), TextualField("UserUserCode")]
+        // Danh sách User được lấy từ bảng User
+        [DisplayName("User"), ForeignKey("[ProjectMonitoring_Default_v1].[dbo].[Users]", "UserId"), LeftJoin("jUser"), TextualField("UserUserCode")]
         public Int32? UserId
         {
             get { return Fields.UserId[this]; }
             set { Fields.UserId[this] = value; }
         }
 
-        [DisplayName("Class"), ForeignKey("[dbo].[Classes]", "Id"), LeftJoin("jClass"), TextualField("ClassClassCode")]
+        // Danh sách Class được lấy từ bảng Class
+        [DisplayName("Class"), ForeignKey("[ProjectMonitoring].[dbo].[Classes]", "Id"), LeftJoin("jClass"), TextualField("ClassClassCode")]
+        [LookupEditor("dbo.Classes")]
         public Int32? ClassId
         {
             get { return Fields.ClassId[this]; }
             set { Fields.ClassId[this] = value; }
         }
 
-        [DisplayName("User User Code"), Expression("jUser.[UserCode]")]
+        [DisplayName("User Code"), Expression("jUser.[UserCode]")]
         public String UserUserCode
         {
             get { return Fields.UserUserCode[this]; }
             set { Fields.UserUserCode[this] = value; }
         }
 
-        [DisplayName("User Name"), Expression("jUser.[Name]")]
+        [DisplayName("User Name"), Expression("jUser.[Username]")]
         public String UserName
         {
             get { return Fields.UserName[this]; }
@@ -67,13 +74,6 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.UserPhone[this] = value; }
         }
 
-        [DisplayName("User Address"), Expression("jUser.[Address]")]
-        public String UserAddress
-        {
-            get { return Fields.UserAddress[this]; }
-            set { Fields.UserAddress[this] = value; }
-        }
-
         [DisplayName("User Email"), Expression("jUser.[Email]")]
         public String UserEmail
         {
@@ -81,14 +81,14 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.UserEmail[this] = value; }
         }
 
-        [DisplayName("Class Class Code"), Expression("jClass.[ClassCode]")]
+        [DisplayName("Class Code"), Expression("jClass.[ClassCode]")]
         public String ClassClassCode
         {
             get { return Fields.ClassClassCode[this]; }
             set { Fields.ClassClassCode[this] = value; }
         }
 
-        [DisplayName("Class Subject Code"), Expression("jClass.[SubjectCode]")]
+        [DisplayName("Subject Code"), Expression("jClass.[SubjectCode]")]
         public String ClassSubjectCode
         {
             get { return Fields.ClassSubjectCode[this]; }
@@ -145,7 +145,6 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             public StringField UserName;
             public DateTimeField UserBirthday;
             public StringField UserPhone;
-            public StringField UserAddress;
             public StringField UserEmail;
 
             public StringField ClassClassCode;
