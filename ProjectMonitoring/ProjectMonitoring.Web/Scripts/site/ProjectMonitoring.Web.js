@@ -1699,7 +1699,7 @@ var ProjectMonitoring;
         var ClassesRow;
         (function (ClassesRow) {
             ClassesRow.idProperty = 'Id';
-            ClassesRow.nameProperty = 'SubjectCode';
+            ClassesRow.nameProperty = 'ClassCode';
             ClassesRow.localTextPrefix = 'ProjectMonitoring.Classes';
             ClassesRow.lookupKey = 'dbo.Classes';
             function getLookup() {
@@ -5754,8 +5754,6 @@ var ProjectMonitoring;
                 _this.form.ClassId.changeSelect2(function (e) {
                     var classID = Q.toId(_this.form.ClassId.value);
                     if (classID != null) {
-                        //var subjectCode = ClassesRow.getLookup().itemById[classID].SubjectId;
-                        var vlue1 = ProjectMonitoring.ClassesRow.getLookup().itemById[classID];
                         _this.form.SubjectName.value = ProjectMonitoring.ClassesRow.getLookup().itemById[classID].SubjectName;
                         var i = 1;
                     }

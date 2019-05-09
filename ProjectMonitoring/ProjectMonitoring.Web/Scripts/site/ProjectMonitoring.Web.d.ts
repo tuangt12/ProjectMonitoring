@@ -1937,7 +1937,7 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
     }
     namespace ClassesRow {
         const idProperty = "Id";
-        const nameProperty = "SubjectCode";
+        const nameProperty = "ClassCode";
         const localTextPrefix = "ProjectMonitoring.Classes";
         const lookupKey = "dbo.Classes";
         function getLookup(): Q.Lookup<ClassesRow>;

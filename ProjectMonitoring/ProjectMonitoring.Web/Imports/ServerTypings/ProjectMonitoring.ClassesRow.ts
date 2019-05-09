@@ -12,7 +12,7 @@
 
     export namespace ClassesRow {
         export const idProperty = 'Id';
-        export const nameProperty = 'SubjectCode';
+        export const nameProperty = 'ClassCode';
         export const localTextPrefix = 'ProjectMonitoring.Classes';
         export const lookupKey = 'dbo.Classes';
 
