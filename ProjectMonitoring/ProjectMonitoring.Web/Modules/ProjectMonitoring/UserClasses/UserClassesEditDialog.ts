@@ -14,6 +14,15 @@ namespace ProjectMonitoring.ProjectMonitoring {
         constructor() {
             super();
             this.form = new UserClassesForm(this.idPrefix);
+
+            this.form.ClassId.changeSelect2(e => {
+                var classID = Q.toId(this.form.ClassId.value);
+                if (classID != null) {
+
+                    this.form.SubjectName.value = ClassesRow.getLookup().itemById[classID].SubjectName;
+                    var i = 1;
+                }
+            });
         }
     }
 }

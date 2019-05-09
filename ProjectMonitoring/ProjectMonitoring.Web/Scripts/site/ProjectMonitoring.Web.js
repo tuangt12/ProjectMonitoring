@@ -1949,6 +1949,11 @@ var ProjectMonitoring;
             SubjectsRow.idProperty = 'Id';
             SubjectsRow.nameProperty = 'SubjectCode';
             SubjectsRow.localTextPrefix = 'ProjectMonitoring.Subjects';
+            SubjectsRow.lookupKey = 'dbo.Subjects';
+            function getLookup() {
+                return Q.getLookup('dbo.Subjects');
+            }
+            SubjectsRow.getLookup = getLookup;
         })(SubjectsRow = ProjectMonitoring.SubjectsRow || (ProjectMonitoring.SubjectsRow = {}));
     })(ProjectMonitoring = ProjectMonitoring_14.ProjectMonitoring || (ProjectMonitoring_14.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
@@ -1985,8 +1990,10 @@ var ProjectMonitoring;
                     UserClassesForm.init = true;
                     var s = Serenity;
                     var w0 = s.LookupEditor;
+                    var w1 = s.StringEditor;
                     Q.initFormType(UserClassesForm, [
-                        'ClassId', w0
+                        'ClassId', w0,
+                        'SubjectName', w1
                     ]);
                 }
                 return _this;
@@ -2038,7 +2045,7 @@ var ProjectMonitoring;
 (function (ProjectMonitoring_19) {
     var Texts;
     (function (Texts) {
-        ProjectMonitoring_19.ProjectMonitoring['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { Birthday: 1, ClassList: 1, DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Level: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Phone: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserCode: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Northwind: { Category: { CategoryID: 1, CategoryName: 1, Description: 1, Picture: 1 }, CategoryLang: { CategoryId: 1, CategoryName: 1, Description: 1, Id: 1, LanguageId: 1 }, Customer: { Address: 1, City: 1, CompanyName: 1, ContactName: 1, ContactTitle: 1, Country: 1, CustomerID: 1, Email: 1, Fax: 1, ID: 1, LastContactDate: 1, LastContactedBy: 1, NoteList: 1, Phone: 1, PostalCode: 1, Region: 1, Representatives: 1, SendBulletin: 1 }, CustomerCustomerDemo: { CustomerAddress: 1, CustomerCity: 1, CustomerCompanyName: 1, CustomerContactName: 1, CustomerContactTitle: 1, CustomerCountry: 1, CustomerFax: 1, CustomerID: 1, CustomerPhone: 1, CustomerPostalCode: 1, CustomerRegion: 1, CustomerTypeCustomerDesc: 1, CustomerTypeID: 1, ID: 1 }, CustomerDemographic: { CustomerDesc: 1, CustomerTypeID: 1, ID: 1 }, CustomerDetails: { Email: 1, Id: 1, LastContactDate: 1, LastContactedBy: 1, LastContactedByAddress: 1, LastContactedByBirthDate: 1, LastContactedByCity: 1, LastContactedByCountry: 1, LastContactedByExtension: 1, LastContactedByFirstName: 1, LastContactedByHireDate: 1, LastContactedByHomePhone: 1, LastContactedByLastName: 1, LastContactedByNotes: 1, LastContactedByPhoto: 1, LastContactedByPhotoPath: 1, LastContactedByPostalCode: 1, LastContactedByRegion: 1, LastContactedByReportsTo: 1, LastContactedByTitle: 1, LastContactedByTitleOfCourtesy: 1, SendBulletin: 1 }, CustomerGrossSales: { ContactName: 1, CustomerId: 1, GrossAmount: 1, ProductId: 1, ProductName: 1 }, CustomerRepresentatives: { CustomerId: 1, EmployeeId: 1, RepresentativeId: 1 }, DragDropSample: { Id: 1, ParentId: 1, Title: 1 }, Employee: { Address: 1, BirthDate: 1, City: 1, Country: 1, EmployeeID: 1, Extension: 1, FirstName: 1, FullName: 1, Gender: 1, HireDate: 1, HomePhone: 1, LastName: 1, Notes: 1, Photo: 1, PhotoPath: 1, PostalCode: 1, Region: 1, ReportsTo: 1, ReportsToAddress: 1, ReportsToBirthDate: 1, ReportsToCity: 1, ReportsToCountry: 1, ReportsToExtension: 1, ReportsToFirstName: 1, ReportsToFullName: 1, ReportsToHireDate: 1, ReportsToHomePhone: 1, ReportsToLastName: 1, ReportsToNotes: 1, ReportsToPhoto: 1, ReportsToPhotoPath: 1, ReportsToPostalCode: 1, ReportsToRegion: 1, ReportsToReportsTo: 1, ReportsToTitle: 1, ReportsToTitleOfCourtesy: 1, Title: 1, TitleOfCourtesy: 1 }, EmployeeTerritory: { EmployeeAddress: 1, EmployeeBirthDate: 1, EmployeeCity: 1, EmployeeCountry: 1, EmployeeExtension: 1, EmployeeFirstName: 1, EmployeeHireDate: 1, EmployeeHomePhone: 1, EmployeeID: 1, EmployeeLastName: 1, EmployeeNotes: 1, EmployeePhoto: 1, EmployeePhotoPath: 1, EmployeePostalCode: 1, EmployeeRegion: 1, EmployeeReportsTo: 1, EmployeeTitle: 1, EmployeeTitleOfCourtesy: 1, TerritoryID: 1, TerritoryRegionID: 1, TerritoryTerritoryDescription: 1 }, Note: { EntityId: 1, EntityType: 1, InsertDate: 1, InsertUserDisplayName: 1, InsertUserId: 1, NoteId: 1, Text: 1 }, Order: { CustomerCity: 1, CustomerCompanyName: 1, CustomerContactName: 1, CustomerContactTitle: 1, CustomerCountry: 1, CustomerFax: 1, CustomerID: 1, CustomerPhone: 1, CustomerRegion: 1, DetailList: 1, EmployeeFullName: 1, EmployeeGender: 1, EmployeeID: 1, EmployeeReportsToFullName: 1, Freight: 1, OrderDate: 1, OrderID: 1, RequiredDate: 1, ShipAddress: 1, ShipCity: 1, ShipCountry: 1, ShipName: 1, ShipPostalCode: 1, ShipRegion: 1, ShipVia: 1, ShipViaCompanyName: 1, ShipViaPhone: 1, ShippedDate: 1, ShippingState: 1 }, OrderDetail: { DetailID: 1, Discount: 1, LineTotal: 1, OrderCustomerID: 1, OrderDate: 1, OrderEmployeeID: 1, OrderID: 1, OrderShipCity: 1, OrderShipCountry: 1, OrderShipVia: 1, OrderShippedDate: 1, ProductDiscontinued: 1, ProductID: 1, ProductName: 1, ProductQuantityPerUnit: 1, ProductSupplierID: 1, ProductUnitPrice: 1, Quantity: 1, UnitPrice: 1 }, Product: { CategoryDescription: 1, CategoryID: 1, CategoryName: 1, CategoryPicture: 1, Discontinued: 1, ProductID: 1, ProductImage: 1, ProductName: 1, QuantityPerUnit: 1, ReorderLevel: 1, SupplierAddress: 1, SupplierCity: 1, SupplierCompanyName: 1, SupplierContactName: 1, SupplierContactTitle: 1, SupplierCountry: 1, SupplierFax: 1, SupplierHomePage: 1, SupplierID: 1, SupplierPhone: 1, SupplierPostalCode: 1, SupplierRegion: 1, UnitPrice: 1, UnitsInStock: 1, UnitsOnOrder: 1 }, ProductLang: { Id: 1, LanguageId: 1, ProductId: 1, ProductName: 1 }, ProductLog: { CategoryID: 1, ChangingUserId: 1, Discontinued: 1, OperationType: 1, ProductID: 1, ProductImage: 1, ProductLogID: 1, ProductName: 1, QuantityPerUnit: 1, ReorderLevel: 1, SupplierID: 1, UnitPrice: 1, UnitsInStock: 1, UnitsOnOrder: 1, ValidFrom: 1, ValidUntil: 1 }, Region: { RegionDescription: 1, RegionID: 1 }, SalesByCategory: { CategoryId: 1, CategoryName: 1, ProductName: 1, ProductSales: 1 }, Shipper: { CompanyName: 1, Phone: 1, ShipperID: 1 }, Supplier: { Address: 1, City: 1, CompanyName: 1, ContactName: 1, ContactTitle: 1, Country: 1, Fax: 1, HomePage: 1, Phone: 1, PostalCode: 1, Region: 1, SupplierID: 1 }, Territory: { ID: 1, RegionDescription: 1, RegionID: 1, TerritoryDescription: 1, TerritoryID: 1 } }, ProjectMonitoring: { Classes: { ClassCode: 1, FinalExamCode: 1, Id: 1, IsFinished: 1, MidExamCode: 1, StartDate: 1, SubjectCode: 1 }, Posts: { ContentPost: 1, CreateBy: 1, CreateByBirthday: 1, CreateByEmail: 1, CreateByPhone: 1, CreateByUserCode: 1, CreateByUsername: 1, CreateDate: 1, Id: 1, Title: 1, UserClassId: 1 }, SCMTypes: { Id: 1, Name: 1 }, SCMs: { Id: 1, ScmLink: 1, ScmTypeId: 1, ScmTypeName: 1, UserClassClassId: 1, UserClassId: 1, UserClassUserId: 1 }, Subjects: { Id: 1, Name: 1, SubjectCode: 1 }, UserClasses: { ClassClassCode: 1, ClassFinalExamCode: 1, ClassId: 1, ClassIsFinished: 1, ClassMidExamCode: 1, ClassStartDate: 1, ClassSubjectCode: 1, Id: 1, UserBirthday: 1, UserDisplayName: 1, UserEmail: 1, UserId: 1, UserName: 1, UserPhone: 1, UserUserCode: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, NorthwindPhone: 1, NorthwindPhoneMultiple: 1, SavePrimaryKeyError: 1 } });
+        ProjectMonitoring_19.ProjectMonitoring['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { Birthday: 1, ClassList: 1, DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Level: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Phone: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserCode: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Northwind: { Category: { CategoryID: 1, CategoryName: 1, Description: 1, Picture: 1 }, CategoryLang: { CategoryId: 1, CategoryName: 1, Description: 1, Id: 1, LanguageId: 1 }, Customer: { Address: 1, City: 1, CompanyName: 1, ContactName: 1, ContactTitle: 1, Country: 1, CustomerID: 1, Email: 1, Fax: 1, ID: 1, LastContactDate: 1, LastContactedBy: 1, NoteList: 1, Phone: 1, PostalCode: 1, Region: 1, Representatives: 1, SendBulletin: 1 }, CustomerCustomerDemo: { CustomerAddress: 1, CustomerCity: 1, CustomerCompanyName: 1, CustomerContactName: 1, CustomerContactTitle: 1, CustomerCountry: 1, CustomerFax: 1, CustomerID: 1, CustomerPhone: 1, CustomerPostalCode: 1, CustomerRegion: 1, CustomerTypeCustomerDesc: 1, CustomerTypeID: 1, ID: 1 }, CustomerDemographic: { CustomerDesc: 1, CustomerTypeID: 1, ID: 1 }, CustomerDetails: { Email: 1, Id: 1, LastContactDate: 1, LastContactedBy: 1, LastContactedByAddress: 1, LastContactedByBirthDate: 1, LastContactedByCity: 1, LastContactedByCountry: 1, LastContactedByExtension: 1, LastContactedByFirstName: 1, LastContactedByHireDate: 1, LastContactedByHomePhone: 1, LastContactedByLastName: 1, LastContactedByNotes: 1, LastContactedByPhoto: 1, LastContactedByPhotoPath: 1, LastContactedByPostalCode: 1, LastContactedByRegion: 1, LastContactedByReportsTo: 1, LastContactedByTitle: 1, LastContactedByTitleOfCourtesy: 1, SendBulletin: 1 }, CustomerGrossSales: { ContactName: 1, CustomerId: 1, GrossAmount: 1, ProductId: 1, ProductName: 1 }, CustomerRepresentatives: { CustomerId: 1, EmployeeId: 1, RepresentativeId: 1 }, DragDropSample: { Id: 1, ParentId: 1, Title: 1 }, Employee: { Address: 1, BirthDate: 1, City: 1, Country: 1, EmployeeID: 1, Extension: 1, FirstName: 1, FullName: 1, Gender: 1, HireDate: 1, HomePhone: 1, LastName: 1, Notes: 1, Photo: 1, PhotoPath: 1, PostalCode: 1, Region: 1, ReportsTo: 1, ReportsToAddress: 1, ReportsToBirthDate: 1, ReportsToCity: 1, ReportsToCountry: 1, ReportsToExtension: 1, ReportsToFirstName: 1, ReportsToFullName: 1, ReportsToHireDate: 1, ReportsToHomePhone: 1, ReportsToLastName: 1, ReportsToNotes: 1, ReportsToPhoto: 1, ReportsToPhotoPath: 1, ReportsToPostalCode: 1, ReportsToRegion: 1, ReportsToReportsTo: 1, ReportsToTitle: 1, ReportsToTitleOfCourtesy: 1, Title: 1, TitleOfCourtesy: 1 }, EmployeeTerritory: { EmployeeAddress: 1, EmployeeBirthDate: 1, EmployeeCity: 1, EmployeeCountry: 1, EmployeeExtension: 1, EmployeeFirstName: 1, EmployeeHireDate: 1, EmployeeHomePhone: 1, EmployeeID: 1, EmployeeLastName: 1, EmployeeNotes: 1, EmployeePhoto: 1, EmployeePhotoPath: 1, EmployeePostalCode: 1, EmployeeRegion: 1, EmployeeReportsTo: 1, EmployeeTitle: 1, EmployeeTitleOfCourtesy: 1, TerritoryID: 1, TerritoryRegionID: 1, TerritoryTerritoryDescription: 1 }, Note: { EntityId: 1, EntityType: 1, InsertDate: 1, InsertUserDisplayName: 1, InsertUserId: 1, NoteId: 1, Text: 1 }, Order: { CustomerCity: 1, CustomerCompanyName: 1, CustomerContactName: 1, CustomerContactTitle: 1, CustomerCountry: 1, CustomerFax: 1, CustomerID: 1, CustomerPhone: 1, CustomerRegion: 1, DetailList: 1, EmployeeFullName: 1, EmployeeGender: 1, EmployeeID: 1, EmployeeReportsToFullName: 1, Freight: 1, OrderDate: 1, OrderID: 1, RequiredDate: 1, ShipAddress: 1, ShipCity: 1, ShipCountry: 1, ShipName: 1, ShipPostalCode: 1, ShipRegion: 1, ShipVia: 1, ShipViaCompanyName: 1, ShipViaPhone: 1, ShippedDate: 1, ShippingState: 1 }, OrderDetail: { DetailID: 1, Discount: 1, LineTotal: 1, OrderCustomerID: 1, OrderDate: 1, OrderEmployeeID: 1, OrderID: 1, OrderShipCity: 1, OrderShipCountry: 1, OrderShipVia: 1, OrderShippedDate: 1, ProductDiscontinued: 1, ProductID: 1, ProductName: 1, ProductQuantityPerUnit: 1, ProductSupplierID: 1, ProductUnitPrice: 1, Quantity: 1, UnitPrice: 1 }, Product: { CategoryDescription: 1, CategoryID: 1, CategoryName: 1, CategoryPicture: 1, Discontinued: 1, ProductID: 1, ProductImage: 1, ProductName: 1, QuantityPerUnit: 1, ReorderLevel: 1, SupplierAddress: 1, SupplierCity: 1, SupplierCompanyName: 1, SupplierContactName: 1, SupplierContactTitle: 1, SupplierCountry: 1, SupplierFax: 1, SupplierHomePage: 1, SupplierID: 1, SupplierPhone: 1, SupplierPostalCode: 1, SupplierRegion: 1, UnitPrice: 1, UnitsInStock: 1, UnitsOnOrder: 1 }, ProductLang: { Id: 1, LanguageId: 1, ProductId: 1, ProductName: 1 }, ProductLog: { CategoryID: 1, ChangingUserId: 1, Discontinued: 1, OperationType: 1, ProductID: 1, ProductImage: 1, ProductLogID: 1, ProductName: 1, QuantityPerUnit: 1, ReorderLevel: 1, SupplierID: 1, UnitPrice: 1, UnitsInStock: 1, UnitsOnOrder: 1, ValidFrom: 1, ValidUntil: 1 }, Region: { RegionDescription: 1, RegionID: 1 }, SalesByCategory: { CategoryId: 1, CategoryName: 1, ProductName: 1, ProductSales: 1 }, Shipper: { CompanyName: 1, Phone: 1, ShipperID: 1 }, Supplier: { Address: 1, City: 1, CompanyName: 1, ContactName: 1, ContactTitle: 1, Country: 1, Fax: 1, HomePage: 1, Phone: 1, PostalCode: 1, Region: 1, SupplierID: 1 }, Territory: { ID: 1, RegionDescription: 1, RegionID: 1, TerritoryDescription: 1, TerritoryID: 1 } }, ProjectMonitoring: { Classes: { ClassCode: 1, FinalExamCode: 1, Id: 1, IsFinished: 1, MidExamCode: 1, StartDate: 1, SubjectCode: 1, SubjectName: 1 }, Posts: { ContentPost: 1, CreateBy: 1, CreateByBirthday: 1, CreateByEmail: 1, CreateByPhone: 1, CreateByUserCode: 1, CreateByUsername: 1, CreateDate: 1, Id: 1, Title: 1, UserClassId: 1 }, SCMTypes: { Id: 1, Name: 1 }, SCMs: { Id: 1, ScmLink: 1, ScmTypeId: 1, ScmTypeName: 1, UserClassClassId: 1, UserClassId: 1, UserClassUserId: 1 }, Subjects: { Id: 1, Name: 1, SubjectCode: 1 }, UserClasses: { ClassClassCode: 1, ClassFinalExamCode: 1, ClassId: 1, ClassIsFinished: 1, ClassMidExamCode: 1, ClassStartDate: 1, ClassSubjectCode: 1, Id: 1, SubjectId: 1, SubjectName: 1, UserBirthday: 1, UserEmail: 1, UserId: 1, UserName: 1, UserPhone: 1, UserUserCode: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, NorthwindPhone: 1, NorthwindPhoneMultiple: 1, SavePrimaryKeyError: 1 } });
     })(Texts = ProjectMonitoring_19.Texts || (ProjectMonitoring_19.Texts = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
@@ -5487,14 +5494,9 @@ var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var ClassesDialog = /** @class */ (function (_super) {
             __extends(ClassesDialog, _super);
-            function ClassesDialog(container) {
-                var _this = _super.call(this, container) || this;
+            function ClassesDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
                 _this.form = new ProjectMonitoring.ClassesForm(_this.idPrefix);
-                // gán tab danh sách User bằng Grid hiển thị của bảng User
-                _this.userGrid = new ProjectMonitoring.ClassesUserGrid(_this.byId("UserGrid"));
-                _this.tabs.on('tabsactivate', function (e, i) {
-                    _this.arrange();
-                });
                 return _this;
             }
             ClassesDialog.prototype.getFormKey = function () { return ProjectMonitoring.ClassesForm.formKey; };
@@ -5502,14 +5504,8 @@ var ProjectMonitoring;
             ClassesDialog.prototype.getLocalTextPrefix = function () { return ProjectMonitoring.ClassesRow.localTextPrefix; };
             ClassesDialog.prototype.getNameProperty = function () { return ProjectMonitoring.ClassesRow.nameProperty; };
             ClassesDialog.prototype.getService = function () { return ProjectMonitoring.ClassesService.baseUrl; };
-            ClassesDialog.prototype.afterLoadEntity = function () {
-                _super.prototype.afterLoadEntity.call(this);
-                // Chỉ định mở đúng userGrid tương ứng cới Class đang chọn thao tác
-                this.userGrid.classesID = this.entityId;
-            };
             ClassesDialog = __decorate([
-                Serenity.Decorators.registerClass(),
-                Serenity.Decorators.responsive()
+                Serenity.Decorators.registerClass()
             ], ClassesDialog);
             return ClassesDialog;
         }(Serenity.EntityDialog));
@@ -5538,61 +5534,8 @@ var ProjectMonitoring;
         ProjectMonitoring.ClassesGrid = ClassesGrid;
     })(ProjectMonitoring = ProjectMonitoring_21.ProjectMonitoring || (ProjectMonitoring_21.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
-//Tab hiển thị danh sách User thuộc Class đang chọn
 var ProjectMonitoring;
 (function (ProjectMonitoring_22) {
-    var ProjectMonitoring;
-    (function (ProjectMonitoring) {
-        var ClassesUserGrid = /** @class */ (function (_super) {
-            __extends(ClassesUserGrid, _super);
-            function ClassesUserGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            ClassesUserGrid.prototype.getColumnsKey = function () { return 'ProjectMonitoring.ClassesUser'; };
-            ClassesUserGrid.prototype.getIdProperty = function () { return ProjectMonitoring.UserClassesRow.idProperty; };
-            ClassesUserGrid.prototype.getLocalTextPrefix = function () { return ProjectMonitoring.UserClassesRow.localTextPrefix; };
-            ClassesUserGrid.prototype.getService = function () { return ProjectMonitoring.UserClassesService.baseUrl; };
-            // Ghi đè để loại bỏ Button
-            ClassesUserGrid.prototype.getButtons = function () {
-                return null;
-            };
-            // Ghi đè để loại bỏ Title
-            ClassesUserGrid.prototype.getInitialTitle = function () {
-                return null;
-            };
-            ClassesUserGrid.prototype.usePager = function () {
-                return false;
-            };
-            ClassesUserGrid.prototype.getGridCanLoad = function () {
-                return this.classesID != null;
-            };
-            Object.defineProperty(ClassesUserGrid.prototype, "classesID", {
-                get: function () {
-                    return this._classesID;
-                },
-                // Tạo bộ lọc để chỉ hiển thị danh sách các user thuộc lớp hiện tại
-                // Nếu không có bộ lọc này thì bảng sẽ hiển thị tất cả các User
-                set: function (value) {
-                    if (this._classesID != value) {
-                        this._classesID = value;
-                        // Đặt giá trị của classesID bằng Id của Class đang mở Dialog
-                        this.setEquality("ClassId" /* ClassId */, value);
-                        this.refresh();
-                    }
-                },
-                enumerable: true,
-                configurable: true
-            });
-            ClassesUserGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], ClassesUserGrid);
-            return ClassesUserGrid;
-        }(Serenity.EntityGrid));
-        ProjectMonitoring.ClassesUserGrid = ClassesUserGrid;
-    })(ProjectMonitoring = ProjectMonitoring_22.ProjectMonitoring || (ProjectMonitoring_22.ProjectMonitoring = {}));
-})(ProjectMonitoring || (ProjectMonitoring = {}));
-var ProjectMonitoring;
-(function (ProjectMonitoring_23) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var PostsDialog = /** @class */ (function (_super) {
@@ -5613,10 +5556,10 @@ var ProjectMonitoring;
             return PostsDialog;
         }(Serenity.EntityDialog));
         ProjectMonitoring.PostsDialog = PostsDialog;
-    })(ProjectMonitoring = ProjectMonitoring_23.ProjectMonitoring || (ProjectMonitoring_23.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_22.ProjectMonitoring || (ProjectMonitoring_22.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
-(function (ProjectMonitoring_24) {
+(function (ProjectMonitoring_23) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var PostsGrid = /** @class */ (function (_super) {
@@ -5635,10 +5578,10 @@ var ProjectMonitoring;
             return PostsGrid;
         }(Serenity.EntityGrid));
         ProjectMonitoring.PostsGrid = PostsGrid;
-    })(ProjectMonitoring = ProjectMonitoring_24.ProjectMonitoring || (ProjectMonitoring_24.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_23.ProjectMonitoring || (ProjectMonitoring_23.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
-(function (ProjectMonitoring_25) {
+(function (ProjectMonitoring_24) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var SCMsDialog = /** @class */ (function (_super) {
@@ -5659,10 +5602,10 @@ var ProjectMonitoring;
             return SCMsDialog;
         }(Serenity.EntityDialog));
         ProjectMonitoring.SCMsDialog = SCMsDialog;
-    })(ProjectMonitoring = ProjectMonitoring_25.ProjectMonitoring || (ProjectMonitoring_25.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_24.ProjectMonitoring || (ProjectMonitoring_24.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
-(function (ProjectMonitoring_26) {
+(function (ProjectMonitoring_25) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var SCMsGrid = /** @class */ (function (_super) {
@@ -5681,38 +5624,10 @@ var ProjectMonitoring;
             return SCMsGrid;
         }(Serenity.EntityGrid));
         ProjectMonitoring.SCMsGrid = SCMsGrid;
-    })(ProjectMonitoring = ProjectMonitoring_26.ProjectMonitoring || (ProjectMonitoring_26.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_25.ProjectMonitoring || (ProjectMonitoring_25.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
-(function (ProjectMonitoring_27) {
-    var ProjectMonitoring;
-    (function (ProjectMonitoring) {
-        var SCMUserNameFormatter = /** @class */ (function () {
-            function SCMUserNameFormatter() {
-            }
-            SCMUserNameFormatter.prototype.format = function (ctx) {
-                // Lấy giá trị id của từng dòng trong cột UserName
-                var idUser = ctx.value;
-                // Config tìm kiếm trong bảng User theo Id
-                var byId = ProjectMonitoring_27.Administration.UserRow.getLookup().itemById;
-                // Tìm kiếm trong bảng User với idUser vừa lấy được phía trên
-                var userName = byId[idUser];
-                // Nếu không có thì để trống
-                if (!userName)
-                    return "";
-                // Mặc đinh hiển thị tên tác giả, lấy theo trường DisplayName trong bảng User
-                return Q.htmlEncode(userName.DisplayName);
-            };
-            SCMUserNameFormatter = __decorate([
-                Serenity.Decorators.registerFormatter()
-            ], SCMUserNameFormatter);
-            return SCMUserNameFormatter;
-        }());
-        ProjectMonitoring.SCMUserNameFormatter = SCMUserNameFormatter;
-    })(ProjectMonitoring = ProjectMonitoring_27.ProjectMonitoring || (ProjectMonitoring_27.ProjectMonitoring = {}));
-})(ProjectMonitoring || (ProjectMonitoring = {}));
-var ProjectMonitoring;
-(function (ProjectMonitoring_28) {
+(function (ProjectMonitoring_26) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var SCMTypesDialog = /** @class */ (function (_super) {
@@ -5733,10 +5648,10 @@ var ProjectMonitoring;
             return SCMTypesDialog;
         }(Serenity.EntityDialog));
         ProjectMonitoring.SCMTypesDialog = SCMTypesDialog;
-    })(ProjectMonitoring = ProjectMonitoring_28.ProjectMonitoring || (ProjectMonitoring_28.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_26.ProjectMonitoring || (ProjectMonitoring_26.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
-(function (ProjectMonitoring_29) {
+(function (ProjectMonitoring_27) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var SCMTypesGrid = /** @class */ (function (_super) {
@@ -5755,10 +5670,10 @@ var ProjectMonitoring;
             return SCMTypesGrid;
         }(Serenity.EntityGrid));
         ProjectMonitoring.SCMTypesGrid = SCMTypesGrid;
-    })(ProjectMonitoring = ProjectMonitoring_29.ProjectMonitoring || (ProjectMonitoring_29.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_27.ProjectMonitoring || (ProjectMonitoring_27.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
-(function (ProjectMonitoring_30) {
+(function (ProjectMonitoring_28) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var SubjectsDialog = /** @class */ (function (_super) {
@@ -5779,10 +5694,10 @@ var ProjectMonitoring;
             return SubjectsDialog;
         }(Serenity.EntityDialog));
         ProjectMonitoring.SubjectsDialog = SubjectsDialog;
-    })(ProjectMonitoring = ProjectMonitoring_30.ProjectMonitoring || (ProjectMonitoring_30.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_28.ProjectMonitoring || (ProjectMonitoring_28.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
-(function (ProjectMonitoring_31) {
+(function (ProjectMonitoring_29) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var SubjectsGrid = /** @class */ (function (_super) {
@@ -5801,10 +5716,10 @@ var ProjectMonitoring;
             return SubjectsGrid;
         }(Serenity.EntityGrid));
         ProjectMonitoring.SubjectsGrid = SubjectsGrid;
-    })(ProjectMonitoring = ProjectMonitoring_31.ProjectMonitoring || (ProjectMonitoring_31.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_29.ProjectMonitoring || (ProjectMonitoring_29.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
-(function (ProjectMonitoring_32) {
+(function (ProjectMonitoring_30) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var UserClassesDialog = /** @class */ (function (_super) {
@@ -5824,11 +5739,11 @@ var ProjectMonitoring;
             return UserClassesDialog;
         }(Serenity.EntityDialog));
         ProjectMonitoring.UserClassesDialog = UserClassesDialog;
-    })(ProjectMonitoring = ProjectMonitoring_32.ProjectMonitoring || (ProjectMonitoring_32.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_30.ProjectMonitoring || (ProjectMonitoring_30.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 /// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
 var ProjectMonitoring;
-(function (ProjectMonitoring_33) {
+(function (ProjectMonitoring_31) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var UserClassesEditDialog = /** @class */ (function (_super) {
@@ -5836,6 +5751,13 @@ var ProjectMonitoring;
             function UserClassesEditDialog() {
                 var _this = _super.call(this) || this;
                 _this.form = new ProjectMonitoring.UserClassesForm(_this.idPrefix);
+                _this.form.ClassId.changeSelect2(function (e) {
+                    var classID = Q.toId(_this.form.ClassId.value);
+                    if (classID != null) {
+                        _this.form.SubjectName.value = ProjectMonitoring.ClassesRow.getLookup().itemById[classID].SubjectName;
+                        var i = 1;
+                    }
+                });
                 return _this;
             }
             UserClassesEditDialog.prototype.getFormKey = function () { return ProjectMonitoring.UserClassesForm.formKey; };
@@ -5845,13 +5767,13 @@ var ProjectMonitoring;
                 Serenity.Decorators.registerClass()
             ], UserClassesEditDialog);
             return UserClassesEditDialog;
-        }(ProjectMonitoring_33.Common.GridEditorDialog));
+        }(ProjectMonitoring_31.Common.GridEditorDialog));
         ProjectMonitoring.UserClassesEditDialog = UserClassesEditDialog;
-    })(ProjectMonitoring = ProjectMonitoring_33.ProjectMonitoring || (ProjectMonitoring_33.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_31.ProjectMonitoring || (ProjectMonitoring_31.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 /// <reference path="../../Common/Helpers/GridEditorBase.ts" />
 var ProjectMonitoring;
-(function (ProjectMonitoring_34) {
+(function (ProjectMonitoring_32) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var UserClassesEditor = /** @class */ (function (_super) {
@@ -5894,12 +5816,12 @@ var ProjectMonitoring;
                 Serenity.Decorators.registerEditor()
             ], UserClassesEditor);
             return UserClassesEditor;
-        }(ProjectMonitoring_34.Common.GridEditorBase));
+        }(ProjectMonitoring_32.Common.GridEditorBase));
         ProjectMonitoring.UserClassesEditor = UserClassesEditor;
-    })(ProjectMonitoring = ProjectMonitoring_34.ProjectMonitoring || (ProjectMonitoring_34.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_32.ProjectMonitoring || (ProjectMonitoring_32.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
-(function (ProjectMonitoring_35) {
+(function (ProjectMonitoring_33) {
     var ProjectMonitoring;
     (function (ProjectMonitoring) {
         var UserClassesGrid = /** @class */ (function (_super) {
@@ -5918,7 +5840,7 @@ var ProjectMonitoring;
             return UserClassesGrid;
         }(Serenity.EntityGrid));
         ProjectMonitoring.UserClassesGrid = UserClassesGrid;
-    })(ProjectMonitoring = ProjectMonitoring_35.ProjectMonitoring || (ProjectMonitoring_35.ProjectMonitoring = {}));
+    })(ProjectMonitoring = ProjectMonitoring_33.ProjectMonitoring || (ProjectMonitoring_33.ProjectMonitoring = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
 (function (ProjectMonitoring) {

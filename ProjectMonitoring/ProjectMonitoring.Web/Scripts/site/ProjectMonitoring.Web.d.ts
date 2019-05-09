@@ -1928,6 +1928,7 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
     interface ClassesRow {
         Id?: number;
         ClassCode?: string;
+        SubjectName?: string;
         SubjectCode?: string;
         MidExamCode?: string;
         FinalExamCode?: string;
@@ -1943,6 +1944,7 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         const enum Fields {
             Id = "Id",
             ClassCode = "ClassCode",
+            SubjectName = "SubjectName",
             SubjectCode = "SubjectCode",
             MidExamCode = "MidExamCode",
             FinalExamCode = "FinalExamCode",
@@ -2161,6 +2163,8 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         const idProperty = "Id";
         const nameProperty = "SubjectCode";
         const localTextPrefix = "ProjectMonitoring.Subjects";
+        const lookupKey = "dbo.Subjects";
+        function getLookup(): Q.Lookup<SubjectsRow>;
         const enum Fields {
             Id = "Id",
             SubjectCode = "SubjectCode",
@@ -2190,6 +2194,7 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
 declare namespace ProjectMonitoring.ProjectMonitoring {
     interface UserClassesForm {
         ClassId: Serenity.LookupEditor;
+        SubjectName: Serenity.StringEditor;
     }
     class UserClassesForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -2208,6 +2213,8 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         UserBirthday?: string;
         UserPhone?: string;
         UserEmail?: string;
+        SubjectId?: number;
+        SubjectName?: string;
         ClassClassCode?: string;
         ClassSubjectCode?: string;
         ClassMidExamCode?: string;
@@ -2230,6 +2237,8 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
             UserBirthday = "UserBirthday",
             UserPhone = "UserPhone",
             UserEmail = "UserEmail",
+            SubjectId = "SubjectId",
+            SubjectName = "SubjectName",
             ClassClassCode = "ClassClassCode",
             ClassSubjectCode = "ClassSubjectCode",
             ClassMidExamCode = "ClassMidExamCode",

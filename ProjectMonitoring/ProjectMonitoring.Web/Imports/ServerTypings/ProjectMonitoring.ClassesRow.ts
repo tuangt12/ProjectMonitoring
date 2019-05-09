@@ -2,6 +2,7 @@
     export interface ClassesRow {
         Id?: number;
         ClassCode?: string;
+        SubjectName?: string;
         SubjectCode?: string;
         MidExamCode?: string;
         FinalExamCode?: string;
@@ -22,6 +23,7 @@
         export declare const enum Fields {
             Id = "Id",
             ClassCode = "ClassCode",
+            SubjectName = "SubjectName",
             SubjectCode = "SubjectCode",
             MidExamCode = "MidExamCode",
             FinalExamCode = "FinalExamCode",

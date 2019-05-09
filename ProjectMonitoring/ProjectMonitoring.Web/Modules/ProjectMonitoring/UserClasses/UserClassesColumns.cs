@@ -20,5 +20,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Columns
         public String ClassClassCode { get; set; }
         [Width(200)]
         public String ClassSubjectCode { get; set; }
+        [Width(250)]
+        public String SubjectName { get; set; }
     }
 }

@@ -37,7 +37,14 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.ClassCode[this] = value; }
         }
 
-        [DisplayName("Subject Code"), Size(10)]
+        [DisplayName("Subject Name"), Expression("jSubject.[Name]"), NotMapped, LookupInclude]
+        public String SubjectName
+        {
+            get { return Fields.SubjectName[this]; }
+            set { Fields.SubjectName[this] = value; }
+        }
+
+        [DisplayName("Subject Code"), Size(10), Column("SubjectCode"), ForeignKey("[dbo].[Subjects]", "SubjectCode"), LeftJoin("jSubject"), TextualField("ClassSubjectCode")]
         public String SubjectCode
         {
             get { return Fields.SubjectCode[this]; }
@@ -93,6 +100,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
         {
             public Int32Field Id;
             public StringField ClassCode;
+            public StringField SubjectName;
             public StringField SubjectCode;
             public StringField MidExamCode;
             public StringField FinalExamCode;
