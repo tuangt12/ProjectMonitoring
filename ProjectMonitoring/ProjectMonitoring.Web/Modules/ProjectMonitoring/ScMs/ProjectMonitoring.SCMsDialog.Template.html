@@ -1,24 +1,4 @@
-﻿<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
-<script>
-
-    $(document).ready(function () {
-        function getCommits(user, repo, branch, callback) {
-            $.ajax({
-                url: "https://api.github.com/repos/" + user + "/" + repo + "/commits?sha=" + branch,
-                dataType: 'jsonp',
-                success: callback
-            });
-        }
-
-        $(function () {
-            $('#github-commits').getCommits(
-                { user: 'tuangt', repo: 'ProjectMonitoring', branch: 'User_Interface_Try1' });
-        });
-    }
-</script>
-
-
-<div id="~_Tabs" class="s-DialogContent">
+﻿<div id="~_Tabs" class="s-DialogContent">
     <div id="~_Toolbar" class="s-DialogToolbar">
     </div>
     <div class="s-Form">
