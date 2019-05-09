@@ -2,7 +2,6 @@
     export interface ClassesRow {
         Id?: number;
         ClassCode?: string;
-        SubjectId?: number;
         SubjectName?: string;
         SubjectCode?: string;
         MidExamCode?: string;
@@ -13,7 +12,7 @@
 
     export namespace ClassesRow {
         export const idProperty = 'Id';
-        export const nameProperty = 'ClassCode';
+        export const nameProperty = 'SubjectCode';
         export const localTextPrefix = 'ProjectMonitoring.Classes';
         export const lookupKey = 'dbo.Classes';
 
@@ -24,7 +23,6 @@
         export declare const enum Fields {
             Id = "Id",
             ClassCode = "ClassCode",
-            SubjectId = "SubjectId",
             SubjectName = "SubjectName",
             SubjectCode = "SubjectCode",
             MidExamCode = "MidExamCode",

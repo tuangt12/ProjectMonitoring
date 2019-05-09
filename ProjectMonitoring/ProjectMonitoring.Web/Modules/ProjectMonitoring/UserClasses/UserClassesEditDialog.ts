@@ -18,8 +18,10 @@ namespace ProjectMonitoring.ProjectMonitoring {
             this.form.ClassId.changeSelect2(e => {
                 var classID = Q.toId(this.form.ClassId.value);
                 if (classID != null) {
-                    var subjectID = ClassesRow.getLookup().itemById[classID].SubjectId;
-                    this.form.SubjectName.value = SubjectsRow.getLookup().itemById[subjectID].Name;
+                    //var subjectCode = ClassesRow.getLookup().itemById[classID].SubjectId;
+                    var vlue1 = ClassesRow.getLookup().itemById[classID];
+                    this.form.SubjectName.value = ClassesRow.getLookup().itemById[classID].SubjectName;
+                    var i = 1;
                 }
             });
         }

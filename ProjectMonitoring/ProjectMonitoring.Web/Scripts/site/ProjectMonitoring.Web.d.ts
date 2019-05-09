@@ -1928,7 +1928,6 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
     interface ClassesRow {
         Id?: number;
         ClassCode?: string;
-        SubjectId?: number;
         SubjectName?: string;
         SubjectCode?: string;
         MidExamCode?: string;
@@ -1938,14 +1937,13 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
     }
     namespace ClassesRow {
         const idProperty = "Id";
-        const nameProperty = "ClassCode";
+        const nameProperty = "SubjectCode";
         const localTextPrefix = "ProjectMonitoring.Classes";
         const lookupKey = "dbo.Classes";
         function getLookup(): Q.Lookup<ClassesRow>;
         const enum Fields {
             Id = "Id",
             ClassCode = "ClassCode",
-            SubjectId = "SubjectId",
             SubjectName = "SubjectName",
             SubjectCode = "SubjectCode",
             MidExamCode = "MidExamCode",
