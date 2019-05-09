@@ -40,6 +40,23 @@ namespace ProjectMonitoring.ProjectMonitoring.Repositories
         private class MySaveHandler : SaveRequestHandler<MyRow> { }
         private class MyDeleteHandler : DeleteRequestHandler<MyRow> { }
         private class MyRetrieveHandler : RetrieveRequestHandler<MyRow> { }
-        private class MyListHandler : ListRequestHandler<MyRow> { }
+        private class MyListHandler : ListRequestHandler<MyRow>
+        {
+            /// <summary>
+            ///     Tạo bộ lọc chỉ hiển thị link SCM tương ứng với User hiện tại
+            ///     không hiển thị của User khác
+            /// </summary>
+            /// <param name="query"></param>
+            protected override void ApplyFilters(SqlQuery query)
+            {
+                base.ApplyFilters(query);
+                // Lấy thông tin của user đang đăng nhập
+                var currentUser = (UserDefinition)Authorization.UserDefinition;
+                // Nếu user hiện tại không có quyền admin
+                if (!Authorization.HasPermission(Administration.PermissionKeys.Security))
+                    // thì chỉ hiển thị thông tin của chính mình
+                    query.Where(fld.UserClassUserId == currentUser.UserId);
+            }
+        }
     }
 }

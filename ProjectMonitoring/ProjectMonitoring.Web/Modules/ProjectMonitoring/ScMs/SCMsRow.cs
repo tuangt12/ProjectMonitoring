@@ -47,14 +47,14 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.UserClassId[this] = value; }
         }
 
-        [DisplayName("Scm Type Name"), Expression("jScmType.[Name]")]
+        [DisplayName("Type"), Expression("jScmType.[Name]")]
         public String ScmTypeName
         {
             get { return Fields.ScmTypeName[this]; }
             set { Fields.ScmTypeName[this] = value; }
         }
 
-        [DisplayName("User Class User Id"), Expression("jUserClass.[UserId]")]
+        [DisplayName("Author"), Expression("jUserClass.[UserId]")]
         public Int32? UserClassUserId
         {
             get { return Fields.UserClassUserId[this]; }

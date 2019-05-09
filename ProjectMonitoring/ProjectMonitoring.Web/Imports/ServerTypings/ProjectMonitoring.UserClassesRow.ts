@@ -5,6 +5,7 @@
         ClassId?: number;
         UserUserCode?: string;
         UserName?: string;
+        UserDisplayName?: string;
         UserBirthday?: string;
         UserPhone?: string;
         UserEmail?: string;
@@ -31,6 +32,7 @@
             ClassId = "ClassId",
             UserUserCode = "UserUserCode",
             UserName = "UserName",
+            UserDisplayName = "UserDisplayName",
             UserBirthday = "UserBirthday",
             UserPhone = "UserPhone",
             UserEmail = "UserEmail",

@@ -1,0 +1,41 @@
+﻿<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+<script>
+
+    $(document).ready(function () {
+        function getCommits(user, repo, branch, callback) {
+            $.ajax({
+                url: "https://api.github.com/repos/" + user + "/" + repo + "/commits?sha=" + branch,
+                dataType: 'jsonp',
+                success: callback
+            });
+        }
+
+        $(function () {
+            $('#github-commits').getCommits(
+                { user: 'tuangt', repo: 'ProjectMonitoring', branch: 'User_Interface_Try1' });
+        });
+    }
+</script>
+
+
+<div id="~_Tabs" class="s-DialogContent">
+    <div id="~_Toolbar" class="s-DialogToolbar">
+    </div>
+    <div class="s-Form">
+        <form id="~_Form" action="">
+            <div class="fieldset ui-widget ui-widget-content ui-corner-all">
+                <div id="~_PropertyGrid"></div>
+                <div class="clear">
+                    <div class="field totalCommits">
+                        <label class="caption" for="ProjectMonitoring_ProjectMonitoring_SCMsDialog7_totalCommits" title="Total Commits">Total Commits</label>
+                        <input type="text" class="editor flexify s-StringEditor" id="ProjectMonitoring_ProjectMonitoring_SCMsDialog7_totalCommits" name="totalCommits" contenteditable="false">
+                        <div class="vx"></div>
+                        <div class="clear">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
