@@ -1,4 +1,5 @@
-﻿<div id="~_Tabs" class="s-DialogContent">
+﻿
+<div id="~_Tabs" class="s-DialogContent">
     <div id="~_Toolbar" class="s-DialogToolbar">
     </div>
     <div class="s-Form">
@@ -7,10 +8,11 @@
                 <div id="~_PropertyGrid"></div>
                 <div class="clear">
                     <div class="field totalCommits">
-                        <label class="caption" for="ProjectMonitoring_ProjectMonitoring_SCMsDialog7_totalCommits" title="Total Commits">Total Commits</label>
-                        <input type="text" class="editor flexify s-StringEditor" id="ProjectMonitoring_ProjectMonitoring_SCMsDialog7_totalCommits" name="totalCommits" contenteditable="false">
+                        <label class="caption" for="ProjectMonitoring_ProjectMonitoring_SCMsDialog_totalCommits" title="Total Commits">Total Commits</label>
+                        <input type="text" class="editor flexify s-StringEditor" id="ProjectMonitoring_ProjectMonitoring_SCMsDialog_totalCommits" name="totalCommits" disabled>
                         <div class="vx"></div>
                         <div class="clear">
+
                         </div>
                     </div>
 
@@ -18,4 +20,64 @@
             </div>
         </form>
     </div>
+
+    <script>
+        // jQuery chạy khi đoạn cript load
+        // Sau khi đoạn code html phía trên được load, thì mới có được Id, Class của accs phần thử
+        // lúc này mới có thể getElement được
+        $(document).ready(function () {
+            var parser;
+            // Lấy giá trị của ô textbox tương ứng với label SCM Link
+            // Do id của trường này là dạng động để không trùng tại các vị trí khác nhau
+            // nên không thể sử dụng getElementById
+            var scmValue = document.getElementsByName("ScmLink")[0].value;
+            console.log("hello" + scmValue);
+            // Lấy parser từng phần của đường link
+            // bằng cách tạo ra một link ẩn để get từng phần tử của nó
+            // vì giá trị nhận được phía trên vốn chỉ là dạng text
+            parser = document.createElement('a');
+            parser.href = scmValue;
+
+            // Tạo request tới API của gitHub
+            var request = new XMLHttpRequest();
+            request.open('GET', "https://api.github.com/repos" + parser.pathname + "/contributors", true);
+            console.log(parser.pathname);
+
+            // biến đếm tổng số Commits tại thời điểm lấy (thời điểm load form này lên)
+            var totalCommits;
+            request.onload = function () {
+                // Nếu Request thành công
+                if (request.status >= 200 && request.status < 400) {
+                    // Success!
+                    var data = JSON.parse(request.responseText);
+
+                    totalCommits = 0;
+                    // Duyệt hết tất cả chuỗi JSON để lấy về và cộng tất cả commit của từng contributor một
+                    for (var i = 0; i < data.length; i++) {
+                        totalCommits += data[i].contributions;
+                    }
+
+                    // Gán giá trị cho ô Total Commits bằng giá trị đếm được
+                    document.getElementById("ProjectMonitoring_ProjectMonitoring_SCMsDialog_totalCommits").value = totalCommits;
+
+                    // Nếu Request thất bại
+                    // Lưu ý ở đây có thể thất bại do vượt quá số lần quy định cho phép của GitHub
+                    // Không thể request quá nhiều lần
+                } else {
+                    // Hiển thị giá trị thể hiện không lấy được dữ liệu commit
+                    document.getElementById("ProjectMonitoring_ProjectMonitoring_SCMsDialog_totalCommits").value = "error";
+
+                }
+            };
+
+            request.onerror = function () {
+                // There was a connection error of some sort
+                alert("We caught an error when trying connect to server!");
+            };
+
+            request.send();
+
+        });
+
+    </script>
 </div>
