@@ -21,63 +21,100 @@
         </form>
     </div>
 
-    <script>
-        // jQuery chạy khi đoạn cript load
-        // Sau khi đoạn code html phía trên được load, thì mới có được Id, Class của accs phần thử
-        // lúc này mới có thể getElement được
-        $(document).ready(function () {
-            var parser;
-            // Lấy giá trị của ô textbox tương ứng với label SCM Link
-            // Do id của trường này là dạng động để không trùng tại các vị trí khác nhau
-            // nên không thể sử dụng getElementById
-            var scmValue = document.getElementsByName("ScmLink")[0].value;
-            console.log("hello" + scmValue);
-            // Lấy parser từng phần của đường link
-            // bằng cách tạo ra một link ẩn để get từng phần tử của nó
-            // vì giá trị nhận được phía trên vốn chỉ là dạng text
-            parser = document.createElement('a');
-            parser.href = scmValue;
+    <div onload="getLink"></div>
 
-            // Tạo request tới API của gitHub
-            var request = new XMLHttpRequest();
-            request.open('GET', "https://api.github.com/repos" + parser.pathname + "/contributors", true);
-            console.log(parser.pathname);
-
-            // biến đếm tổng số Commits tại thời điểm lấy (thời điểm load form này lên)
-            var totalCommits;
-            request.onload = function () {
-                // Nếu Request thành công
-                if (request.status >= 200 && request.status < 400) {
-                    // Success!
-                    var data = JSON.parse(request.responseText);
-
-                    totalCommits = 0;
-                    // Duyệt hết tất cả chuỗi JSON để lấy về và cộng tất cả commit của từng contributor một
-                    for (var i = 0; i < data.length; i++) {
-                        totalCommits += data[i].contributions;
-                    }
-
-                    // Gán giá trị cho ô Total Commits bằng giá trị đếm được
-                    document.getElementById("ProjectMonitoring_ProjectMonitoring_SCMsDialog_totalCommits").value = totalCommits;
-
-                    // Nếu Request thất bại
-                    // Lưu ý ở đây có thể thất bại do vượt quá số lần quy định cho phép của GitHub
-                    // Không thể request quá nhiều lần
-                } else {
-                    // Hiển thị giá trị thể hiện không lấy được dữ liệu commit
-                    document.getElementById("ProjectMonitoring_ProjectMonitoring_SCMsDialog_totalCommits").value = "error";
-
-                }
-            };
-
-            request.onerror = function () {
-                // There was a connection error of some sort
-                alert("We caught an error when trying connect to server!");
-            };
-
-            request.send();
-
-        });
-
-    </script>
 </div>
+<script>
+
+    //setTimeout(getLink, 5000);
+    // jQuery chạy khi đoạn cript load
+    // Sau khi đoạn code html phía trên được load, thì mới có được Id, Class của accs phần thử
+    // lúc này mới có thể getElement được
+    var interval;
+    function spam() {
+        console.log("spam");
+
+        // Lấy ra element tương ứng id
+        // Do id này động và thay đổi 1 giá trị số sau cụm SCMsDialog
+        // nên cần dùng querySelector và so khớp id phần đầu và phần cuối
+        try {
+            var id = document.querySelector('[id^="ProjectMonitoring_ProjectMonitoring_SCMsDialog"]' && '[id$="_ScmLink"]').id;
+            console.log(id);
+        } catch (e) { return };
+        var elem = document.getElementById(id);
+
+        try {
+            // Kiểm tra có tồn tại element
+            // khác null
+            // đã được defined
+            if (elem && elem !== 'null' && elem !== 'undefined') {
+                // Nếu nếu có giá trị trong input
+                if (elem.value) {
+                    console.log(elem.value);
+                    // Tắt Interval
+                    window.clearInterval(interval);
+                    // gọi tới hàm để insert số lượng commit vào ô Total Commits
+                    insertTotalCommit(elem.value);
+                }
+            } else {
+                console.log("not found");
+            }
+        } catch (e) { };
+    }
+
+    // Thực hiện thao tác chuyển nội dung lấy được từ textbox của field ScmLink sang dạng link
+    // Tách lấy phần pathname dùng parser
+    // Lưu ý: parser có thể không hoạt động tốt ở IE nên sẽ phải dùng cách tách string đối với IE
+    // Lấy giá trị pathname vừa tách được để ghép vào đường dẫn api GitHub
+    // Từ đó điền tổng số commit hiện tại vào ô Total Commits
+    function insertTotalCommit(scmValue) {
+        var parser;
+        // Lấy parser từng phần của đường link
+        // bằng cách tạo ra một link ẩn để get từng phần tử của nó
+        // vì giá trị nhận được phía trên vốn chỉ là dạng text
+        parser = document.createElement('a');
+        parser.href = scmValue;
+        // Tạo request tới API của gitHub
+        var request = new XMLHttpRequest();
+        request.open('GET', "https://api.github.com/repos" + parser.pathname + "/contributors", true);
+
+        // biến đếm tổng số Commits tại thời điểm lấy (thời điểm load form này lên)
+        var totalCommits;
+        request.onload = function () {
+            // Nếu Request thành công
+            if (request.status >= 200 && request.status < 400) {
+                // Success!
+                var data = JSON.parse(request.responseText);
+
+                totalCommits = 0;
+                // Duyệt hết tất cả chuỗi JSON để lấy về và cộng tất cả commit của từng contributor một
+                for (var i = 0; i < data.length; i++) {
+                    totalCommits += data[i].contributions;
+                }
+
+                // Gán giá trị cho ô Total Commits bằng giá trị đếm được
+                document.getElementById("ProjectMonitoring_ProjectMonitoring_SCMsDialog_totalCommits").value = totalCommits;
+
+                // Nếu Request thất bại
+                // Lưu ý ở đây có thể thất bại do vượt quá số lần quy định cho phép của GitHub
+                // Không thể request quá nhiều lần
+            } else {
+                // Hiển thị giá trị thể hiện không lấy được dữ liệu commit
+                document.getElementById("ProjectMonitoring_ProjectMonitoring_SCMsDialog_totalCommits").value = "error";
+
+            }
+        };
+
+        request.onerror = function () {
+            // There was a connection error of some sort
+            alert("We caught an error when trying connect to server!");
+        };
+
+        request.send();
+    }
+    
+    // Set hàm spam chạy mỗi giây một lần
+    // lấy handler của hàm setInterval
+    interval = setInterval(spam, 1000);
+
+</script>
