@@ -13,14 +13,15 @@ namespace ProjectMonitoring.ProjectMonitoring.Columns
     [BasedOnRow(typeof(Entities.UserClassesRow), CheckNames = true)]
     public class UserClassesColumns
     {
-        //[EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
-        //public Int32 Id { get; set; }
-        //public String UserUserCode { get; set; }
-        [EditLink, Width(200)]
+        [EditLink, DisplayName("Db.Shared.RecordId"), AlignCenter]
+        public Int32 Id { get; set; }
+
+        [EditLink, Width(100)]
         public String ClassClassCode { get; set; }
+
         [Width(200)]
+        // TODO : Hiển thị dạng SubjectCode + SubjectName
         public String ClassSubjectCode { get; set; }
-        [Width(250)]
-        public String SubjectName { get; set; }
+
     }
 }
