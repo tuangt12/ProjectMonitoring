@@ -19,7 +19,7 @@ namespace ProjectMonitoring.ProjectMonitoring {
                 var classID = Q.toId(this.form.ClassId.value);
                 if (classID != null) {
 
-                    this.form.SubjectName.value = ClassesRow.getLookup().itemById[classID].SubjectName;
+                    this.form.ClassSubjectCode.value = ClassesRow.getLookup().itemById[classID].SubjectName;
                     var i = 1;
                 }
             });
