@@ -345,9 +345,9 @@ namespace ProjectMonitoring.Administration.Repositories
                 Row.ClassList = Connection.List<ProjectMonitoring.Entities.UserClassesRow>(q => q
                     .SelectTableFields()
                     // Lấy ra trường ClassCode trong UserClassesRow
+                    .Select(mc.Id)
                     .Select(mc.ClassClassCode)
                     .Select(mc.ClassSubjectCode)
-                    .Select(mc.SubjectName)
                     // Với điều kiện UserId trong bảng trùng với UserId hiện tại
                     .Where(mc.UserId == Row.UserId.Value));
             }

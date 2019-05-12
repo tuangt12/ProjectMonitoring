@@ -384,9 +384,9 @@ namespace MVC
                 public const string PostsIndex = "~/Modules/ProjectMonitoring/Posts/PostsIndex.cshtml";
             }
 
-            public static class ScMs
+            public static class SCMs
             {
-                public const string SCMsIndex = "~/Modules/ProjectMonitoring/ScMs/SCMsIndex.cshtml";
+                public const string SCMsIndex = "~/Modules/ProjectMonitoring/SCMs/SCMsIndex.cshtml";
             }
 
             public static class ScmTypes

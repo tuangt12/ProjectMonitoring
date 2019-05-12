@@ -2194,7 +2194,7 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
 declare namespace ProjectMonitoring.ProjectMonitoring {
     interface UserClassesForm {
         ClassId: Serenity.LookupEditor;
-        SubjectName: Serenity.StringEditor;
+        ClassSubjectCode: Serenity.StringEditor;
     }
     class UserClassesForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -2213,8 +2213,6 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         UserBirthday?: string;
         UserPhone?: string;
         UserEmail?: string;
-        SubjectId?: number;
-        SubjectName?: string;
         ClassClassCode?: string;
         ClassSubjectCode?: string;
         ClassMidExamCode?: string;
@@ -2237,8 +2235,6 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
             UserBirthday = "UserBirthday",
             UserPhone = "UserPhone",
             UserEmail = "UserEmail",
-            SubjectId = "SubjectId",
-            SubjectName = "SubjectName",
             ClassClassCode = "ClassClassCode",
             ClassSubjectCode = "ClassSubjectCode",
             ClassMidExamCode = "ClassMidExamCode",
