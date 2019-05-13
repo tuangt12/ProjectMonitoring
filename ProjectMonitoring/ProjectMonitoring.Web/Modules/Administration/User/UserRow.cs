@@ -21,7 +21,7 @@ namespace ProjectMonitoring.Administration.Entities
     public sealed class UserRow : LoggingRow, IIdRow, INameRow, IIsActiveRow
     {
         // Id trong bảng User (thuộc database Default)
-        [DisplayName("User Id"), Identity]
+        [DisplayName("User Id"), Identity, AlignCenter]
         public Int32? UserId
         {
             get { return Fields.UserId[this]; }

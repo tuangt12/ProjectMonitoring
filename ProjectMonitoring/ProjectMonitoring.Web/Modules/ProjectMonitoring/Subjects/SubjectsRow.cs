@@ -23,14 +23,14 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
 
     public sealed class SubjectsRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Id"), Identity]
+        [DisplayName("Id"), Identity, AlignCenter]
         public Int32? Id
         {
             get { return Fields.Id[this]; }
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Subject Code"), Size(10), QuickSearch]
+        [DisplayName("Subject Code"), Size(10), PrimaryKey, QuickSearch]
         public String SubjectCode
         {
             get { return Fields.SubjectCode[this]; }

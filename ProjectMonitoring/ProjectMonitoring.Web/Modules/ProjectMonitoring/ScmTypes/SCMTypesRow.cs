@@ -19,7 +19,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
 
     public sealed class SCMTypesRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Id"), PrimaryKey]
+        [DisplayName("Id"), PrimaryKey, AlignCenter]
         public Int32? Id
         {
             get { return Fields.Id[this]; }
