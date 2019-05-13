@@ -37,7 +37,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.SubjectCode[this] = value; }
         }
 
-        [DisplayName("Name"), Size(50)]
+        [DisplayName("Name"), Size(50), QuickSearch]
         public String Name
         {
             get { return Fields.Name[this]; }
