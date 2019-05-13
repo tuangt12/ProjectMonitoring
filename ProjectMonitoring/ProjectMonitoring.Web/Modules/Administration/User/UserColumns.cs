@@ -8,7 +8,7 @@ namespace ProjectMonitoring.Administration.Columns
     [BasedOnRow(typeof(Entities.UserRow), CheckNames = true)]
     public class UserColumns
     {
-        [EditLink, AlignRight, Width(55)]
+        [EditLink, AlignCenter, Width(55)]
         public String UserId { get; set; }
         [EditLink, AlignCenter, Width(90)]
         public String UserCode { get; set; }
@@ -18,9 +18,9 @@ namespace ProjectMonitoring.Administration.Columns
         public String DisplayName { get; set; }
         [AlignRight]
         public DateTime? Birthday { get; set; }
-        [Width(130)]
+        [Width(130), AlignRight]
         public String Phone { get; set; }
-        [Width(60)]
+        [Width(60), AlignCenter]
         public String Level { get; set; }
 
         [Width(250)]

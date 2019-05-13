@@ -9,6 +9,12 @@ namespace ProjectMonitoring.ProjectMonitoring.Columns
     public class ClassesUserColumns
     {
         /// <summary>
+        ///     Hiển thị ID theo bảng UserClass
+        /// </summary>
+        [AlignCenter]
+        public String Id { get; set; }
+
+        /// <summary>
         ///     Hiển thị mã số sinh viên
         /// </summary>
         [AlignCenter, Width(90)]

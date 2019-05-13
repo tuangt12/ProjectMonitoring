@@ -13,7 +13,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Columns
     [BasedOnRow(typeof(Entities.SCMTypesRow), CheckNames = true)]
     public class SCMTypesColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
+        [EditLink, DisplayName("Db.Shared.RecordId"), AlignCenter]
         public Int32 Id { get; set; }
         [EditLink]
         public String Name { get; set; }

@@ -10,7 +10,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Columns
     [BasedOnRow(typeof(Entities.SCMsRow), CheckNames = true)]
     public class SCMsColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
+        [EditLink, DisplayName("Db.Shared.RecordId"), AlignCenter]
         public Int32 Id { get; set; }
 
         // Phân loại GitHub hay GitLab

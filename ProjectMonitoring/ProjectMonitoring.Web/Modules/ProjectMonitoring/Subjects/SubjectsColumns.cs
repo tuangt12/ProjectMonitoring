@@ -13,7 +13,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Columns
     [BasedOnRow(typeof(Entities.SubjectsRow), CheckNames = true)]
     public class SubjectsColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
+        [EditLink, DisplayName("Db.Shared.RecordId"), AlignCenter]
         public Int32 Id { get; set; }
         [EditLink]
         public String SubjectCode { get; set; }
