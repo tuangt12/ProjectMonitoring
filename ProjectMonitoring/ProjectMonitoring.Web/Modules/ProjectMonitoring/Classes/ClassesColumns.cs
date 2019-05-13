@@ -21,6 +21,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Columns
         public String MidExamCode { get; set; }
         public String FinalExamCode { get; set; }
         public DateTime StartDate { get; set; }
+        [AlignCenter]
         public Int32 IsFinished { get; set; }
     }
 }
