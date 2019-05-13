@@ -2381,6 +2381,7 @@ declare namespace ProjectMonitoring.Administration {
         protected getService(): string;
         constructor(container: JQuery);
         protected getDefaultSortBy(): UserRow.Fields[];
+        protected getQuickSearchFields(): Serenity.QuickSearchField[];
     }
 }
 declare namespace ProjectMonitoring.Administration {
@@ -3023,6 +3024,7 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getQuickSearchFields(): Serenity.QuickSearchField[];
     }
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {

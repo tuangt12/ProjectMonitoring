@@ -2543,6 +2543,18 @@ var ProjectMonitoring;
             UserGrid.prototype.getDefaultSortBy = function () {
                 return ["Username" /* Username */];
             };
+            UserGrid.prototype.getQuickSearchFields = function () {
+                var fld = Administration.UserRow.Fields;
+                var txt = function (s) { return Q.text("Db." +
+                    Administration.UserRow.localTextPrefix + "." + s).toLowerCase(); };
+                return [
+                    { name: "", title: "all" },
+                    { name: "Username" /* Username */, title: txt("Username" /* Username */) },
+                    { name: "UserCode" /* UserCode */, title: txt("UserCode" /* UserCode */) },
+                    { name: "DisplayName" /* DisplayName */, title: txt("DisplayName" /* DisplayName */) },
+                    { name: "Level" /* Level */, title: txt("Level" /* Level */) }
+                ];
+            };
             UserGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], UserGrid);
@@ -5537,6 +5549,16 @@ var ProjectMonitoring;
             ClassesGrid.prototype.getIdProperty = function () { return ProjectMonitoring.ClassesRow.idProperty; };
             ClassesGrid.prototype.getLocalTextPrefix = function () { return ProjectMonitoring.ClassesRow.localTextPrefix; };
             ClassesGrid.prototype.getService = function () { return ProjectMonitoring.ClassesService.baseUrl; };
+            ClassesGrid.prototype.getQuickSearchFields = function () {
+                var fld = ProjectMonitoring.ClassesRow.Fields;
+                var txt = function (s) { return Q.text("Db." +
+                    ProjectMonitoring.ClassesRow.localTextPrefix + "." + s).toLowerCase(); };
+                return [
+                    { name: "", title: "all" },
+                    { name: "ClassCode" /* ClassCode */, title: txt("ClassCode" /* ClassCode */) },
+                    { name: "SubjectCode" /* SubjectCode */, title: txt("SubjectCode" /* SubjectCode */) }
+                ];
+            };
             ClassesGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], ClassesGrid);
