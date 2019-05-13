@@ -12,5 +12,16 @@ namespace ProjectMonitoring.ProjectMonitoring {
         constructor(container: JQuery) {
             super(container);
         }
+
+        protected getQuickSearchFields(): Serenity.QuickSearchField[] {
+            let fld = ClassesRow.Fields;
+            let txt = (s) => Q.text("Db." +
+                ClassesRow.localTextPrefix + "." + s).toLowerCase();
+            return [
+                { name: "", title: "all" },
+                { name: fld.ClassCode, title: txt(fld.ClassCode) },
+                { name: fld.SubjectCode, title: txt(fld.SubjectCode) }
+            ];
+        }
     }
 }
