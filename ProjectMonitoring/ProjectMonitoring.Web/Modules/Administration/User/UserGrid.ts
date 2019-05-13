@@ -16,5 +16,18 @@
         protected getDefaultSortBy() {
             return [UserRow.Fields.Username];
         }
+
+        protected getQuickSearchFields(): Serenity.QuickSearchField[] {
+            let fld = UserRow.Fields;
+            let txt = (s) => Q.text("Db." +
+                UserRow.localTextPrefix + "." + s).toLowerCase();
+            return [
+                { name: "", title: "all" },
+                { name: fld.Username, title: txt(fld.Username) },
+                { name: fld.UserCode, title: txt(fld.UserCode) },
+                { name: fld.DisplayName, title: txt(fld.DisplayName) },
+                { name: fld.Level, title: txt(fld.Level) }
+            ];
+        }
     }
 }
