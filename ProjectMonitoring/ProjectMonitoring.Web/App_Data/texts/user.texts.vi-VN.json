@@ -56,7 +56,7 @@
   "Db.ProjectMonitoring.UserClasses.UserName": "Tên đăng nhập",
   "Db.ProjectMonitoring.UserClasses.UserPhone": "Số điện thoại",
   "Db.ProjectMonitoring.UserClasses.UserUserCode": "Mã số SV",
-  "Forms.Membership.Login.FormTitle": "Welcome to SERENE (Serenity Application Template)",
+  "Forms.Membership.Login.FormTitle": "Hệ thống Quản lý đồ án sinh viên SOICT",
   "Navigation.ProjectMonitoring": "Quản lý đồ án",
   "Navigation.ProjectMonitoring/Account": "Quản lý tài khoản",
   "Navigation.ProjectMonitoring/Classes": "Quản lý lớp học",
