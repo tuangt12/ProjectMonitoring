@@ -1955,6 +1955,7 @@
     <Compile Include="Modules\Administration\User\Authentication\LdapDirectoryService.cs" />
     <Compile Include="Modules\Administration\User\Authentication\IDirectoryService.cs" />
     <Compile Include="Modules\Administration\User\Authentication\ScriptUserDefinition.cs" />
+    <Compile Include="Modules\Administration\User\UserCodeLookup.cs" />
     <Compile Include="Modules\Administration\User\UserColumns.cs" />
     <Compile Include="Modules\AdminLTE\AdminLTEController.cs" />
     <Compile Include="Modules\AdminLTE\Charts\ChartsController.cs" />
@@ -2145,6 +2146,7 @@
     <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesPage.cs" />
     <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesRepository.cs" />
     <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesRow.cs" />
+    <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesIdLookup.cs" />
     <Compile Include="Modules\Texts.cs" />
     <Compile Include="Modules\Membership\Account\AccountPage.cs" />
     <Compile Include="Modules\Administration\User\Authentication\AuthorizationService.cs" />

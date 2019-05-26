@@ -1,13 +1,9 @@
 ﻿
 namespace ProjectMonitoring.ProjectMonitoring.Columns
 {
-    using Serenity;
     using Serenity.ComponentModel;
-    using Serenity.Data;
     using System;
     using System.ComponentModel;
-    using System.Collections.Generic;
-    using System.IO;
 
     [ColumnsScript("ProjectMonitoring.Posts")]
     [BasedOnRow(typeof(Entities.PostsRow), CheckNames = true)]
@@ -19,9 +15,11 @@ namespace ProjectMonitoring.ProjectMonitoring.Columns
         public String Title { get; set; }
         public String ContentPost { get; set; }
         [AlignCenter]
+        [QuickFilter, LookupEditor(typeof(Lookups.UserClassesIdLookup))]
         public Int32 UserClassId { get; set; }
         public DateTime CreateDate { get; set; }
         [Width(100)]
+        [QuickFilter, LookupEditor(typeof(Administration.Lookups.UserCodeLookup))]
         public String CreateBy { get; set; }
     }
 }
