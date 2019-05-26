@@ -1,13 +1,8 @@
 ﻿
 namespace ProjectMonitoring.ProjectMonitoring.Forms
 {
-    using Serenity;
     using Serenity.ComponentModel;
-    using Serenity.Data;
     using System;
-    using System.ComponentModel;
-    using System.Collections.Generic;
-    using System.IO;
 
     [FormScript("ProjectMonitoring.Classes")]
     [BasedOnRow(typeof(Entities.ClassesRow), CheckNames = true)]

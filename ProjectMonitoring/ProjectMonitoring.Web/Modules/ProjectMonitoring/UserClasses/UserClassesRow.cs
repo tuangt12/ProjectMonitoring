@@ -2,13 +2,11 @@
 namespace ProjectMonitoring.ProjectMonitoring.Entities
 {
     using Newtonsoft.Json;
-    using Serenity;
     using Serenity.ComponentModel;
     using Serenity.Data;
     using Serenity.Data.Mapping;
     using System;
     using System.ComponentModel;
-    using System.IO;
 
     [ConnectionKey("ProjectMonitoring"), Module("ProjectMonitoring"), TableName("[ProjectMonitoring].[dbo].[UserClasses]")]
     [DisplayName("User Classes"), InstanceName("User Classes")]
@@ -47,6 +45,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
         }
 
         [DisplayName("User Code"), Expression("jUser.[UserCode]")]
+        [LookupInclude]
         public String UserUserCode
         {
             get { return Fields.UserUserCode[this]; }
@@ -54,6 +53,8 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
         }
 
         [DisplayName("User Name"), Expression("jUser.[Username]")]
+        [LookupInclude]
+        [MinSelectLevel(SelectLevel.Always)]
         public String UserName
         {
             get { return Fields.UserName[this]; }

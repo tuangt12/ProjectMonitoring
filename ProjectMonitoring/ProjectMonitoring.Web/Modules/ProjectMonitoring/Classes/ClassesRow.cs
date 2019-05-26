@@ -2,13 +2,11 @@
 namespace ProjectMonitoring.ProjectMonitoring.Entities
 {
     using Newtonsoft.Json;
-    using Serenity;
     using Serenity.ComponentModel;
     using Serenity.Data;
     using Serenity.Data.Mapping;
     using System;
     using System.ComponentModel;
-    using System.IO;
 
     [ConnectionKey("ProjectMonitoring"), Module("ProjectMonitoring"), TableName("[dbo].[Classes]")]
     [DisplayName("Classes"), InstanceName("Classes")]

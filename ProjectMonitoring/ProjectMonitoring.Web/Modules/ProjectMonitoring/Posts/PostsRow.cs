@@ -1,13 +1,11 @@
 ﻿
 namespace ProjectMonitoring.ProjectMonitoring.Entities
 {
-    using Serenity;
     using Serenity.ComponentModel;
     using Serenity.Data;
     using Serenity.Data.Mapping;
     using System;
     using System.ComponentModel;
-    using System.IO;
 
     [ConnectionKey("ProjectMonitoring"), Module("ProjectMonitoring"), TableName("[dbo].[Posts]")]
     [DisplayName("Posts"), InstanceName("Posts")]

@@ -1,7 +1,6 @@
 ﻿
 namespace ProjectMonitoring.ProjectMonitoring.Pages
 {
-    using Serenity;
     using Serenity.Web;
     using System.Web.Mvc;
 

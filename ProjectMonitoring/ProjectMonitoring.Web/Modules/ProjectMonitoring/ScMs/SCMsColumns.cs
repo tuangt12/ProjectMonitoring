@@ -5,7 +5,6 @@ namespace ProjectMonitoring.ProjectMonitoring.Columns
     using System;
     using System.ComponentModel;
 
-
     [ColumnsScript("ProjectMonitoring.SCMs")]
     [BasedOnRow(typeof(Entities.SCMsRow), CheckNames = true)]
     public class SCMsColumns
