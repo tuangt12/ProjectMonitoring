@@ -28,7 +28,7 @@
   "Db.ProjectMonitoring.SCMs.EntitySingular": "Liên kết ngoài",
   "Db.ProjectMonitoring.SCMs.Id": "ID",
   "Db.ProjectMonitoring.SCMs.ScmLink": "Liên kết",
-  "Db.ProjectMonitoring.SCMs.ScmTypeId": "ID",
+  "Db.ProjectMonitoring.SCMs.ScmTypeId": "Loại liên kết",
   "Db.ProjectMonitoring.SCMs.ScmTypeName": "Loại",
   "Db.ProjectMonitoring.SCMs.UserClassClassId": "ID lớp học",
   "Db.ProjectMonitoring.SCMs.UserClassId": "ID UserClass",
@@ -81,5 +81,6 @@
   "Permission.PM:SCMType:View": "Quyền xem",
   "Permission.PM:Subject:Delete": "Quyền xóa",
   "Permission.PM:Subject:Modify": "Quyền tạo/ chỉnh sửa",
-  "Permission.PM:Subject:View": "Quyền xem"
+  "Permission.PM:Subject:View": "Quyền xem",
+  "Site.Dashboard.WelcomeMessage": "Chào mừng đến với hệ thống Quản lý đồ án"
 }
