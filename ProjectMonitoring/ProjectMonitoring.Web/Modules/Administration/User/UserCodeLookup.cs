@@ -15,7 +15,7 @@ namespace ProjectMonitoring.Administration.Lookups
 
         protected override void PrepareQuery(SqlQuery query)
         {
-            var fld = Administration.Entities.UserRow.Fields;
+            var fld = Entities.UserRow.Fields;
             query.Distinct(true)
                 .Select(fld.UserCode)
                 .Where(
