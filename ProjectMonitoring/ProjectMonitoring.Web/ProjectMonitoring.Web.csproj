@@ -825,7 +825,6 @@
     <Content Include="Content\toastr.less" />
     <Content Include="Scripts\site\ProjectMonitoring.Web.js" />
     <Content Include="wkhtmltopdf-license.txt" />
-    <Content Include="Modules\ProjectMonitoring\Classes\ViewPage1.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
