@@ -82,5 +82,7 @@
   "Permission.PM:Subject:Delete": "Quyền xóa",
   "Permission.PM:Subject:Modify": "Quyền tạo/ chỉnh sửa",
   "Permission.PM:Subject:View": "Quyền xem",
-  "Site.Dashboard.WelcomeMessage": "Chào mừng đến với hệ thống Quản lý đồ án"
+  "Site.Dashboard.WelcomeMessage": "Chào mừng đến với hệ thống Quản lý đồ án",
+  "Site.Layout.FooterCopyright": "Bản quyền (c) 2019.",
+  "Site.Layout.FooterInfo": "Quản lý đồ án - SOICT"
 }
