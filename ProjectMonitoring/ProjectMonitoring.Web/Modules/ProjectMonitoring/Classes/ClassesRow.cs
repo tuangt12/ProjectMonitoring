@@ -44,6 +44,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
 
         [DisplayName("Subject Code"), Size(10), Column("SubjectCode"), ForeignKey("[dbo].[Subjects]", "SubjectCode"), LeftJoin("jSubject"), TextualField("ClassSubjectCode")]
         [QuickSearch]
+        [LookupEditor(typeof(Lookups.SubjectsCodeLookup))]
         public String SubjectCode
         {
             get { return Fields.SubjectCode[this]; }
