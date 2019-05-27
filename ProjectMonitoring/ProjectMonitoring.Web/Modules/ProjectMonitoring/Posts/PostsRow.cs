@@ -54,19 +54,12 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.CreateDate[this] = value; }
         }
 
-        [DisplayName("Create By"), ForeignKey("[ProjectMonitoring_Default_v1].[dbo].[Users]", "UserId"), LeftJoin("jCreateBy"), TextualField("CreateByUserCode")]
+        [DisplayName("Create By"), ForeignKey("[ProjectMonitoring_Default_v1].[dbo].[Users]", "UserCode"), LeftJoin("jCreateBy"), TextualField("CreateByUserCode")]
         [LookupEditor(typeof(Administration.Lookups.UserCodeLookup))]
-        public Int32? CreateBy
+        public String CreateBy
         {
             get { return Fields.CreateBy[this]; }
             set { Fields.CreateBy[this] = value; }
-        }
-
-        [DisplayName("Create By User Code"), Expression("jCreateBy.[UserCode]")]
-        public String CreateByUserCode
-        {
-            get { return Fields.CreateByUserCode[this]; }
-            set { Fields.CreateByUserCode[this] = value; }
         }
 
         [DisplayName("Create By User Name"), Expression("jCreateBy.[Username]")]
@@ -121,9 +114,8 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             public StringField ContentPost;
             public Int32Field UserClassId;
             public DateTimeField CreateDate;
-            public Int32Field CreateBy;
+            public StringField CreateBy;
 
-            public StringField CreateByUserCode;
             public StringField CreateByUsername;
             public DateTimeField CreateByBirthday;
             public StringField CreateByPhone;

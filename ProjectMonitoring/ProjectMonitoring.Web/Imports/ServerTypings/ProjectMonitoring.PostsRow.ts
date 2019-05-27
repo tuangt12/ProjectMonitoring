@@ -5,8 +5,7 @@
         ContentPost?: string;
         UserClassId?: number;
         CreateDate?: string;
-        CreateBy?: number;
-        CreateByUserCode?: string;
+        CreateBy?: string;
         CreateByUsername?: string;
         CreateByBirthday?: string;
         CreateByPhone?: string;
@@ -30,7 +29,6 @@
             UserClassId = "UserClassId",
             CreateDate = "CreateDate",
             CreateBy = "CreateBy",
-            CreateByUserCode = "CreateByUserCode",
             CreateByUsername = "CreateByUsername",
             CreateByBirthday = "CreateByBirthday",
             CreateByPhone = "CreateByPhone",

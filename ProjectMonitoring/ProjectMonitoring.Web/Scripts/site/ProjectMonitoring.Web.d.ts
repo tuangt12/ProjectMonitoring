@@ -1912,7 +1912,7 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
 declare namespace ProjectMonitoring.ProjectMonitoring {
     interface ClassesForm {
         ClassCode: Serenity.StringEditor;
-        SubjectCode: Serenity.StringEditor;
+        SubjectCode: Serenity.LookupEditor;
         MidExamCode: Serenity.StringEditor;
         FinalExamCode: Serenity.StringEditor;
         StartDate: Serenity.DateEditor;
@@ -1995,8 +1995,7 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         ContentPost?: string;
         UserClassId?: number;
         CreateDate?: string;
-        CreateBy?: number;
-        CreateByUserCode?: string;
+        CreateBy?: string;
         CreateByUsername?: string;
         CreateByBirthday?: string;
         CreateByPhone?: string;
@@ -2015,7 +2014,6 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
             UserClassId = "UserClassId",
             CreateDate = "CreateDate",
             CreateBy = "CreateBy",
-            CreateByUserCode = "CreateByUserCode",
             CreateByUsername = "CreateByUsername",
             CreateByBirthday = "CreateByBirthday",
             CreateByPhone = "CreateByPhone",
@@ -2044,7 +2042,7 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {
     interface SCMsForm {
-        ScmTypeId: Serenity.IntegerEditor;
+        ScmTypeId: Serenity.LookupEditor;
         ScmLink: Serenity.StringEditor;
         UserClassId: Serenity.IntegerEditor;
     }
