@@ -1978,9 +1978,9 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
     interface PostsForm {
         Title: Serenity.StringEditor;
         ContentPost: Serenity.StringEditor;
-        UserClassId: Serenity.IntegerEditor;
+        UserClassId: Serenity.LookupEditor;
         CreateDate: Serenity.DateEditor;
-        CreateBy: Serenity.IntegerEditor;
+        CreateBy: Serenity.LookupEditor;
     }
     class PostsForm extends Serenity.PrefixedContext {
         static formKey: string;

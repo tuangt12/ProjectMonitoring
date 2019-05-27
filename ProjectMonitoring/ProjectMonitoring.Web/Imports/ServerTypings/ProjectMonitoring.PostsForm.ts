@@ -2,9 +2,9 @@
     export interface PostsForm {
         Title: Serenity.StringEditor;
         ContentPost: Serenity.StringEditor;
-        UserClassId: Serenity.IntegerEditor;
+        UserClassId: Serenity.LookupEditor;
         CreateDate: Serenity.DateEditor;
-        CreateBy: Serenity.IntegerEditor;
+        CreateBy: Serenity.LookupEditor;
     }
 
     export class PostsForm extends Serenity.PrefixedContext {
@@ -19,7 +19,7 @@
 
                 var s = Serenity;
                 var w0 = s.StringEditor;
-                var w1 = s.IntegerEditor;
+                var w1 = s.LookupEditor;
                 var w2 = s.DateEditor;
 
                 Q.initFormType(PostsForm, [

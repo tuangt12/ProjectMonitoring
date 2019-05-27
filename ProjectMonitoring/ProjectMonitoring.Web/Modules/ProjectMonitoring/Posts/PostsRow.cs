@@ -40,6 +40,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
         }
 
         [DisplayName("User Class Id")]
+        [LookupEditor(typeof(Lookups.UserClassesIdLookup))]
         public Int32? UserClassId
         {
             get { return Fields.UserClassId[this]; }
@@ -54,6 +55,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
         }
 
         [DisplayName("Create By"), ForeignKey("[ProjectMonitoring_Default_v1].[dbo].[Users]", "UserId"), LeftJoin("jCreateBy"), TextualField("CreateByUserCode")]
+        [LookupEditor(typeof(Administration.Lookups.UserCodeLookup))]
         public Int32? CreateBy
         {
             get { return Fields.CreateBy[this]; }

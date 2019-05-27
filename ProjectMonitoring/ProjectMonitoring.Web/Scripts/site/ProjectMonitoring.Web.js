@@ -1742,7 +1742,7 @@ var ProjectMonitoring;
                     PostsForm.init = true;
                     var s = Serenity;
                     var w0 = s.StringEditor;
-                    var w1 = s.IntegerEditor;
+                    var w1 = s.LookupEditor;
                     var w2 = s.DateEditor;
                     Q.initFormType(PostsForm, [
                         'Title', w0,
