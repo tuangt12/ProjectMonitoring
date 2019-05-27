@@ -376,7 +376,6 @@ namespace MVC
             public static class Classes
             {
                 public const string ClassesIndex = "~/Modules/ProjectMonitoring/Classes/ClassesIndex.cshtml";
-                public const string ViewPage1 = "~/Modules/ProjectMonitoring/Classes/ViewPage1.cshtml";
             }
 
             public static class Posts

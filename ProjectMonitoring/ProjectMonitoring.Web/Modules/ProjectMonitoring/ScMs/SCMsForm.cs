@@ -3,7 +3,6 @@ namespace ProjectMonitoring.ProjectMonitoring.Forms
 {
     using Serenity.ComponentModel;
     using System;
-    using System.ComponentModel;
 
     [FormScript("ProjectMonitoring.SCMs")]
     [BasedOnRow(typeof(Entities.SCMsRow), CheckNames = true)]

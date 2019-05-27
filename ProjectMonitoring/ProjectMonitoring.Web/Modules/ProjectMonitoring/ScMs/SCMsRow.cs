@@ -25,6 +25,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
         }
 
         [DisplayName("SCM Type"), Column("SCMTypeId"), ForeignKey("[dbo].[SCMTypes]", "Id"), LeftJoin("jScmType"), TextualField("ScmTypeName")]
+        [LookupEditor(typeof(Lookups.SCMTypeIdLookup))]
         public Int32? ScmTypeId
         {
             get { return Fields.ScmTypeId[this]; }

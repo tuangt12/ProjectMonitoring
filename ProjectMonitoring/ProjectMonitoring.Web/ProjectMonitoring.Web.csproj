@@ -2140,6 +2140,8 @@
     <Compile Include="Modules\Northwind\NorthwindTexts.cs" />
     <Compile Include="Modules\ProjectMonitoring\Classes\ClassesUserColumns.cs" />
     <Compile Include="Modules\ProjectMonitoring\ProjectMonitoringPermissionKeys.cs" />
+    <Compile Include="Modules\ProjectMonitoring\SCMTypes\SCMTypeIdLookup.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Subjects\SubjectsCodeLookup.cs" />
     <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesColumns.cs" />
     <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesEndpoint.cs" />
     <Compile Include="Modules\ProjectMonitoring\UserClasses\UserClassesForm.cs" />

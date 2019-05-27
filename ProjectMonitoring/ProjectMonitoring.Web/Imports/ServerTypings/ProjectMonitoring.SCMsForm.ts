@@ -1,6 +1,6 @@
 ﻿namespace ProjectMonitoring.ProjectMonitoring {
     export interface SCMsForm {
-        ScmTypeId: Serenity.IntegerEditor;
+        ScmTypeId: Serenity.LookupEditor;
         ScmLink: Serenity.StringEditor;
         UserClassId: Serenity.IntegerEditor;
     }
@@ -16,13 +16,14 @@
                 SCMsForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.IntegerEditor;
+                var w0 = s.LookupEditor;
                 var w1 = s.StringEditor;
+                var w2 = s.IntegerEditor;
 
                 Q.initFormType(SCMsForm, [
                     'ScmTypeId', w0,
                     'ScmLink', w1,
-                    'UserClassId', w0
+                    'UserClassId', w2
                 ]);
             }
         }
