@@ -8096,3 +8096,7 @@ section.content > .s-DataGrid {
 .s-ProjectMonitoring-UserClassesEditDialog .s-PropertyGrid .categories {
   height: 120px;
 }
+
+.s-ProjectMonitoring-PostsDialog .CreateDate .ui-datepicker-trigger {
+    display: none
+}

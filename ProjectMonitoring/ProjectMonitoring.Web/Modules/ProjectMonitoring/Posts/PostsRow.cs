@@ -48,6 +48,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
         }
 
         [DisplayName("Create Date")]
+        [ReadOnly(true)]
         public DateTime? CreateDate
         {
             get { return Fields.CreateDate[this]; }
