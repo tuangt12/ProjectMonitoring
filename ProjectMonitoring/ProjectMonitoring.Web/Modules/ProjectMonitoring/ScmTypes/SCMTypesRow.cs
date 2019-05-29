@@ -14,6 +14,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
     [ReadPermission(PermissionKeys.SCMType.View)]
     [ModifyPermission(PermissionKeys.SCMType.Modify)]
     [DeletePermission(PermissionKeys.SCMType.Delete)]
+    [LookupScript("dbo.SCMsTypes")]
 
     public sealed class SCMTypesRow : Row, IIdRow, INameRow
     {
@@ -24,7 +25,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Name"), Size(50), QuickSearch]
+        [DisplayName("Name"), Size(50), QuickSearch, LookupInclude]
         public String Name
         {
             get { return Fields.Name[this]; }
