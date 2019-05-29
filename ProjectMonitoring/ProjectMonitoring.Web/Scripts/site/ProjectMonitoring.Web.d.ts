@@ -1977,7 +1977,7 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
 declare namespace ProjectMonitoring.ProjectMonitoring {
     interface PostsForm {
         Title: Serenity.StringEditor;
-        ContentPost: Serenity.StringEditor;
+        ContentPost: Serenity.TextAreaEditor;
         UserClassId: Serenity.LookupEditor;
         CreateDate: Serenity.DateEditor;
         CreateBy: Serenity.LookupEditor;

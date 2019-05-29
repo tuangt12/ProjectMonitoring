@@ -1743,14 +1743,15 @@ var ProjectMonitoring;
                     PostsForm.init = true;
                     var s = Serenity;
                     var w0 = s.StringEditor;
-                    var w1 = s.LookupEditor;
-                    var w2 = s.DateEditor;
+                    var w1 = s.TextAreaEditor;
+                    var w2 = s.LookupEditor;
+                    var w3 = s.DateEditor;
                     Q.initFormType(PostsForm, [
                         'Title', w0,
-                        'ContentPost', w0,
-                        'UserClassId', w1,
-                        'CreateDate', w2,
-                        'CreateBy', w1
+                        'ContentPost', w1,
+                        'UserClassId', w2,
+                        'CreateDate', w3,
+                        'CreateBy', w2
                     ]);
                 }
                 return _this;
