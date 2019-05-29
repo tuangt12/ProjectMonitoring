@@ -1,8 +1,8 @@
 ﻿namespace ProjectMonitoring.ProjectMonitoring {
     export interface SCMsForm {
-        ScmTypeId: Serenity.LookupEditor;
+        ScmTypeId: SCMsTypeLookupEditor;
         ScmLink: Serenity.StringEditor;
-        UserClassId: Serenity.IntegerEditor;
+        UserClassId: Serenity.LookupEditor;
     }
 
     export class SCMsForm extends Serenity.PrefixedContext {
@@ -16,9 +16,9 @@
                 SCMsForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.LookupEditor;
+                var w0 = SCMsTypeLookupEditor;
                 var w1 = s.StringEditor;
-                var w2 = s.IntegerEditor;
+                var w2 = s.LookupEditor;
 
                 Q.initFormType(SCMsForm, [
                     'ScmTypeId', w0,

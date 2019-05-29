@@ -2042,9 +2042,9 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {
     interface SCMsForm {
-        ScmTypeId: Serenity.LookupEditor;
+        ScmTypeId: SCMsTypeLookupEditor;
         ScmLink: Serenity.StringEditor;
-        UserClassId: Serenity.IntegerEditor;
+        UserClassId: Serenity.LookupEditor;
     }
     class SCMsForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -2115,6 +2115,8 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         const idProperty = "Id";
         const nameProperty = "Name";
         const localTextPrefix = "ProjectMonitoring.SCMTypes";
+        const lookupKey = "dbo.SCMsTypes";
+        function getLookup(): Q.Lookup<SCMTypesRow>;
         const enum Fields {
             Id = "Id",
             Name = "Name"
@@ -3078,6 +3080,13 @@ declare namespace ProjectMonitoring.ProjectMonitoring {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+    }
+}
+declare namespace ProjectMonitoring.ProjectMonitoring {
+    class SCMsTypeLookupEditor extends Serenity.LookupEditorBase<Serenity.LookupEditorOptions, ProjectMonitoring.SCMTypesRow> {
+        constructor(container: JQuery, options: Serenity.LookupEditorOptions);
+        protected getLookupKey(): string;
+        protected getItemText(item: ProjectMonitoring.SCMTypesRow, lookup: Q.Lookup<ProjectMonitoring.SCMTypesRow>): any;
     }
 }
 declare namespace ProjectMonitoring.ProjectMonitoring {
