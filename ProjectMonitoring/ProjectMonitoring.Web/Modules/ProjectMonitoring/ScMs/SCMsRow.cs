@@ -40,6 +40,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
         }
 
         [DisplayName("User Class"), ForeignKey("[dbo].[UserClasses]", "Id"), LeftJoin("jUserClass")]
+        [QuickFilter, LookupEditor(typeof(ProjectMonitoring.Lookups.UserClassesIdLookup))]
         public Int32? UserClassId
         {
             get { return Fields.UserClassId[this]; }
