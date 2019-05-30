@@ -61,7 +61,7 @@ namespace ProjectMonitoring.Administration.Entities
         }
 
         // Hệ đang học
-        [DisplayName("Level"), Size(100), NotNull, QuickSearch, LookupInclude]
+        [DisplayName("Level"), Size(100), NotNull, QuickSearch, LookupInclude]       
         public String Level
         {
             get { return Fields.UserCode[this]; }

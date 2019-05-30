@@ -21,6 +21,7 @@ namespace ProjectMonitoring.Administration.Columns
         [Width(130), AlignRight]
         public String Phone { get; set; }
         [Width(60), AlignCenter]
+        [QuickFilter, LookupEditor(typeof(Lookups.UserLevelLookup))]
         public String Level { get; set; }
 
         [Width(250)]
