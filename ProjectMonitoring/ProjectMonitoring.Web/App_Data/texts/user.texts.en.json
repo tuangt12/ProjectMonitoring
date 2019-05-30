@@ -1,4 +1,8 @@
 {
   "Db.Administration.User.Birthday": "Birthday",
-  "Forms.Membership.Login.FormTitle": "Welcome to PAT Project Monitoring"
+  "Db.ProjectMonitoring.Posts.UserClassId": "ID Topic",
+  "Forms.Membership.Login.FormTitle": "Welcome to PAT Project Monitoring",
+  "Site.Dashboard.ContentDescription": "Welcome to Project Monitoring",
+  "Site.Dashboard.WelcomeMessage": "Welcome to Project Monitoring",
+  "Site.Layout.FooterRights": "All Rights Reserved."
 }
