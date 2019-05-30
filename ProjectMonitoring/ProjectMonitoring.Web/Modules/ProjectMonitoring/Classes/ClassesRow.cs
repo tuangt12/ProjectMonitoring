@@ -73,6 +73,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
         }
 
         [DisplayName("Is Finished")]
+        [LookupEditor(typeof(Lookups.ClassesIsFinishedLookup))]
         public Int32? IsFinished
         {
             get { return Fields.IsFinished[this]; }

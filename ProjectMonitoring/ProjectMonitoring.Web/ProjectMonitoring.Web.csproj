@@ -1783,6 +1783,7 @@
     <Compile Include="Modules\Administration\User\Authentication\LdapDirectoryService.cs" />
     <Compile Include="Modules\Administration\User\Authentication\IDirectoryService.cs" />
     <Compile Include="Modules\Administration\User\Authentication\ScriptUserDefinition.cs" />
+    <Compile Include="Modules\Administration\User\UserLevelLookup.cs" />
     <Compile Include="Modules\Administration\User\UserCodeLookup.cs" />
     <Compile Include="Modules\Administration\User\UserColumns.cs" />
     <Compile Include="Modules\Northwind\Customer\CustomerGrossSalesRow.cs" />
@@ -1929,6 +1930,7 @@
     <Compile Include="Modules\Northwind\Territory\TerritoryColumns.cs" />
     <Compile Include="Modules\Northwind\NorthwindTexts.cs" />
     <Compile Include="Modules\ProjectMonitoring\Classes\ClassesUserColumns.cs" />
+    <Compile Include="Modules\ProjectMonitoring\Classes\ClassesIsFinishedLookup.cs" />
     <Compile Include="Modules\ProjectMonitoring\ProjectMonitoringPermissionKeys.cs" />
     <Compile Include="Modules\ProjectMonitoring\SCMTypes\SCMTypeIdLookup.cs" />
     <Compile Include="Modules\ProjectMonitoring\Subjects\SubjectsCodeLookup.cs" />

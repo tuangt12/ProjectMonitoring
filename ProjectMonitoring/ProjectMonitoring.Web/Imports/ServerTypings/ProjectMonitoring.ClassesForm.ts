@@ -5,7 +5,7 @@
         MidExamCode: Serenity.StringEditor;
         FinalExamCode: Serenity.StringEditor;
         StartDate: Serenity.DateEditor;
-        IsFinished: Serenity.IntegerEditor;
+        IsFinished: Serenity.LookupEditor;
     }
 
     export class ClassesForm extends Serenity.PrefixedContext {
@@ -22,7 +22,6 @@
                 var w0 = s.StringEditor;
                 var w1 = s.LookupEditor;
                 var w2 = s.DateEditor;
-                var w3 = s.IntegerEditor;
 
                 Q.initFormType(ClassesForm, [
                     'ClassCode', w0,
@@ -30,7 +29,7 @@
                     'MidExamCode', w0,
                     'FinalExamCode', w0,
                     'StartDate', w2,
-                    'IsFinished', w3
+                    'IsFinished', w1
                 ]);
             }
         }

@@ -1335,14 +1335,13 @@ var ProjectMonitoring;
                     var w0 = s.StringEditor;
                     var w1 = s.LookupEditor;
                     var w2 = s.DateEditor;
-                    var w3 = s.IntegerEditor;
                     Q.initFormType(ClassesForm, [
                         'ClassCode', w0,
                         'SubjectCode', w1,
                         'MidExamCode', w0,
                         'FinalExamCode', w0,
                         'StartDate', w2,
-                        'IsFinished', w3
+                        'IsFinished', w1
                     ]);
                 }
                 return _this;
