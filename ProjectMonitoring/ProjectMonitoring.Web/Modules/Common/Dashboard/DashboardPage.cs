@@ -1,8 +1,6 @@
 ﻿
 namespace ProjectMonitoring.Common.Pages
 {
-    using Northwind;
-    using Northwind.Entities;
     using Serenity;
     using Serenity.Data;
     using System;
@@ -14,6 +12,11 @@ namespace ProjectMonitoring.Common.Pages
         [Authorize, HttpGet, Route("~/")]
         public ActionResult Index()
         {
+            var cachedModel = new DashboardPageModel()
+            {
+
+            };
+            /*
             var cachedModel = TwoLevelCache.GetLocalStoreOnly("DashboardPageModel", TimeSpan.FromMinutes(5),
                 OrderRow.Fields.GenerationKey, () =>
                 {
@@ -31,6 +34,7 @@ namespace ProjectMonitoring.Common.Pages
                     }
                     return model;
                 });
+                */
             return View(MVC.Views.Common.Dashboard.DashboardIndex, cachedModel);
         }
     }

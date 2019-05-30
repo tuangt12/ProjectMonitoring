@@ -1289,7 +1289,6 @@
     <Content Include="Scripts\adminlte\app.min.js" />
     <Content Include="Scripts\adminlte\demo.js" />
     <Content Include="Scripts\adminlte\pages\dashboard.js" />
-    <Content Include="Scripts\adminlte\pages\dashboard2.js" />
     <Content Include="Scripts\bootstrap-slider\bootstrap-slider.css" />
     <Content Include="Scripts\bootstrap-slider\bootstrap-slider.js" />
     <Content Include="Scripts\bootstrap-slider\bootstrap-slider.min.css" />
@@ -1964,7 +1963,6 @@
     <Compile Include="Modules\AdminLTE\Charts\ChartsController.cs" />
     <Compile Include="Modules\AdminLTE\Examples\ExamplesController.cs" />
     <Compile Include="Modules\AdminLTE\Mailbox\MailboxController.cs" />
-    <Compile Include="Modules\AdminLTE\AdminLTENavigation.cs" />
     <Compile Include="Modules\AdminLTE\Tables\TablesController.cs" />
     <Compile Include="Modules\AdminLTE\Forms\FormsController.cs" />
     <Compile Include="Modules\AdminLTE\UIElements\UIElementsController.cs" />
@@ -1972,18 +1970,14 @@
     <Compile Include="Modules\BasicSamples\BasicSamplesHelper.cs" />
     <Compile Include="Modules\BasicSamples\BasicSamplesModels.cs" />
     <Compile Include="Modules\BasicSamples\BasicSamplesPage.cs" />
-    <Compile Include="Modules\BasicSamples\Dialogs\BasicSamplesNavigation.Dialogs.cs" />
     <Compile Include="Modules\BasicSamples\Dialogs\BasicSamplesPage.Dialogs.cs" />
     <Compile Include="Modules\BasicSamples\Dialogs\PopulateLinkedData\PopulateLinkedDataForm.cs" />
-    <Compile Include="Modules\BasicSamples\DynamicNavigation\DynamicNavigationSample.cs" />
-    <Compile Include="Modules\BasicSamples\Editors\BasicSamplesNavigation.Editors.cs" />
     <Compile Include="Modules\BasicSamples\Editors\BasicSamplesPage.Editors.cs" />
     <Compile Include="Modules\BasicSamples\Editors\StaticTextBlock\StaticTextBlockForm.cs" />
     <Compile Include="Modules\BasicSamples\Editors\SelectWithHardcodedValues\HardcodedValuesForm.cs" />
     <Compile Include="Modules\BasicSamples\Editors\ChangingLookupText\ChangingLookupTextForm.cs" />
     <Compile Include="Modules\BasicSamples\Editors\FilteredLookupInDetail\FilteredLookupInDetailForm.cs" />
     <Compile Include="Modules\BasicSamples\Editors\LookupFilterByMultipleValues\LookupFilterByMultipleForm.cs" />
-    <Compile Include="Modules\BasicSamples\Grids\BasicSamplesNavigation.Grids.cs" />
     <Compile Include="Modules\BasicSamples\Grids\BasicSamplesPage.Grids.cs" />
     <Compile Include="Modules\BasicSamples\Grids\InlineImageInGrid\InlineImageInGridColumns.cs" />
     <Compile Include="Modules\BasicSamples\Grids\ProductExcelImport\ProductExcelImportForm.cs" />
@@ -1998,7 +1992,6 @@
     <Compile Include="Modules\BasicSamples\Grids\VSGalleryQA\VSGalleryQAEndpoint.cs" />
     <Compile Include="Modules\BasicSamples\Grids\VSGalleryQA\VSGalleryQAPost.cs" />
     <Compile Include="Modules\BasicSamples\Grids\VSGalleryQA\VSGalleryQAThread.cs" />
-    <Compile Include="Modules\BasicSamples\BasicSamplesNavigation.cs" />
     <Compile Include="Modules\Common\Helpers\EmailHelper.cs" />
     <Compile Include="Modules\Common\Helpers\ExcelImportRequest.cs" />
     <Compile Include="Modules\Common\Dashboard\DashboardPageModel.cs" />
