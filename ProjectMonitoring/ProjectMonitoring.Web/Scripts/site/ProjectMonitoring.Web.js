@@ -313,346 +313,6 @@ var ProjectMonitoring;
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
 (function (ProjectMonitoring) {
-    var BasicSamples;
-    (function (BasicSamples) {
-        var BasicSamplesService;
-        (function (BasicSamplesService) {
-            BasicSamplesService.baseUrl = 'BasicSamples/BasicSamples';
-            [
-                'OrdersByShipper',
-                'OrderBulkAction'
-            ].forEach(function (x) {
-                BasicSamplesService[x] = function (r, s, o) {
-                    return Q.serviceRequest(BasicSamplesService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(BasicSamplesService = BasicSamples.BasicSamplesService || (BasicSamples.BasicSamplesService = {}));
-    })(BasicSamples = ProjectMonitoring.BasicSamples || (ProjectMonitoring.BasicSamples = {}));
-})(ProjectMonitoring || (ProjectMonitoring = {}));
-var ProjectMonitoring;
-(function (ProjectMonitoring) {
-    var BasicSamples;
-    (function (BasicSamples) {
-        var ChangingLookupTextForm = /** @class */ (function (_super) {
-            __extends(ChangingLookupTextForm, _super);
-            function ChangingLookupTextForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!ChangingLookupTextForm.init) {
-                    ChangingLookupTextForm.init = true;
-                    var s = Serenity;
-                    var w0 = BasicSamples.ChangingLookupTextEditor;
-                    var w1 = s.DecimalEditor;
-                    var w2 = s.IntegerEditor;
-                    Q.initFormType(ChangingLookupTextForm, [
-                        'ProductID', w0,
-                        'UnitPrice', w1,
-                        'Quantity', w2,
-                        'Discount', w1
-                    ]);
-                }
-                return _this;
-            }
-            ChangingLookupTextForm.formKey = 'BasicSamples.ChangingLookupText';
-            return ChangingLookupTextForm;
-        }(Serenity.PrefixedContext));
-        BasicSamples.ChangingLookupTextForm = ChangingLookupTextForm;
-    })(BasicSamples = ProjectMonitoring.BasicSamples || (ProjectMonitoring.BasicSamples = {}));
-})(ProjectMonitoring || (ProjectMonitoring = {}));
-var ProjectMonitoring;
-(function (ProjectMonitoring) {
-    var BasicSamples;
-    (function (BasicSamples) {
-        var CustomerGrossSalesService;
-        (function (CustomerGrossSalesService) {
-            CustomerGrossSalesService.baseUrl = 'BasicSamples/CustomerGrossSales';
-            [
-                'List'
-            ].forEach(function (x) {
-                CustomerGrossSalesService[x] = function (r, s, o) {
-                    return Q.serviceRequest(CustomerGrossSalesService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(CustomerGrossSalesService = BasicSamples.CustomerGrossSalesService || (BasicSamples.CustomerGrossSalesService = {}));
-    })(BasicSamples = ProjectMonitoring.BasicSamples || (ProjectMonitoring.BasicSamples = {}));
-})(ProjectMonitoring || (ProjectMonitoring = {}));
-var ProjectMonitoring;
-(function (ProjectMonitoring) {
-    var BasicSamples;
-    (function (BasicSamples) {
-        var DragDropSampleForm = /** @class */ (function (_super) {
-            __extends(DragDropSampleForm, _super);
-            function DragDropSampleForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!DragDropSampleForm.init) {
-                    DragDropSampleForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.StringEditor;
-                    Q.initFormType(DragDropSampleForm, [
-                        'Title', w0
-                    ]);
-                }
-                return _this;
-            }
-            DragDropSampleForm.formKey = 'BasicSamples.DragDropSample';
-            return DragDropSampleForm;
-        }(Serenity.PrefixedContext));
-        BasicSamples.DragDropSampleForm = DragDropSampleForm;
-    })(BasicSamples = ProjectMonitoring.BasicSamples || (ProjectMonitoring.BasicSamples = {}));
-})(ProjectMonitoring || (ProjectMonitoring = {}));
-var ProjectMonitoring;
-(function (ProjectMonitoring) {
-    var BasicSamples;
-    (function (BasicSamples) {
-        var DragDropSampleRow;
-        (function (DragDropSampleRow) {
-            DragDropSampleRow.idProperty = 'Id';
-            DragDropSampleRow.nameProperty = 'Title';
-            DragDropSampleRow.localTextPrefix = 'Northwind.DragDropSample';
-        })(DragDropSampleRow = BasicSamples.DragDropSampleRow || (BasicSamples.DragDropSampleRow = {}));
-    })(BasicSamples = ProjectMonitoring.BasicSamples || (ProjectMonitoring.BasicSamples = {}));
-})(ProjectMonitoring || (ProjectMonitoring = {}));
-var ProjectMonitoring;
-(function (ProjectMonitoring) {
-    var BasicSamples;
-    (function (BasicSamples) {
-        var DragDropSampleService;
-        (function (DragDropSampleService) {
-            DragDropSampleService.baseUrl = 'BasicSamples/DragDropSample';
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List'
-            ].forEach(function (x) {
-                DragDropSampleService[x] = function (r, s, o) {
-                    return Q.serviceRequest(DragDropSampleService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(DragDropSampleService = BasicSamples.DragDropSampleService || (BasicSamples.DragDropSampleService = {}));
-    })(BasicSamples = ProjectMonitoring.BasicSamples || (ProjectMonitoring.BasicSamples = {}));
-})(ProjectMonitoring || (ProjectMonitoring = {}));
-var ProjectMonitoring;
-(function (ProjectMonitoring) {
-    var BasicSamples;
-    (function (BasicSamples) {
-        var FilteredLookupInDetailForm = /** @class */ (function (_super) {
-            __extends(FilteredLookupInDetailForm, _super);
-            function FilteredLookupInDetailForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!FilteredLookupInDetailForm.init) {
-                    FilteredLookupInDetailForm.init = true;
-                    var s = Serenity;
-                    var w0 = ProjectMonitoring.Northwind.CustomerEditor;
-                    var w1 = s.DateEditor;
-                    var w2 = s.LookupEditor;
-                    var w3 = BasicSamples.FilteredLookupDetailEditor;
-                    Q.initFormType(FilteredLookupInDetailForm, [
-                        'CustomerID', w0,
-                        'OrderDate', w1,
-                        'CategoryID', w2,
-                        'DetailList', w3
-                    ]);
-                }
-                return _this;
-            }
-            FilteredLookupInDetailForm.formKey = 'BasicSamples.FilteredLookupInDetail';
-            return FilteredLookupInDetailForm;
-        }(Serenity.PrefixedContext));
-        BasicSamples.FilteredLookupInDetailForm = FilteredLookupInDetailForm;
-    })(BasicSamples = ProjectMonitoring.BasicSamples || (ProjectMonitoring.BasicSamples = {}));
-})(ProjectMonitoring || (ProjectMonitoring = {}));
-var ProjectMonitoring;
-(function (ProjectMonitoring) {
-    var BasicSamples;
-    (function (BasicSamples) {
-        var HardcodedValuesForm = /** @class */ (function (_super) {
-            __extends(HardcodedValuesForm, _super);
-            function HardcodedValuesForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!HardcodedValuesForm.init) {
-                    HardcodedValuesForm.init = true;
-                    var s = Serenity;
-                    var w0 = BasicSamples.HardcodedValuesEditor;
-                    Q.initFormType(HardcodedValuesForm, [
-                        'SomeValue', w0
-                    ]);
-                }
-                return _this;
-            }
-            HardcodedValuesForm.formKey = 'BasicSamples.HarcodedValues';
-            return HardcodedValuesForm;
-        }(Serenity.PrefixedContext));
-        BasicSamples.HardcodedValuesForm = HardcodedValuesForm;
-    })(BasicSamples = ProjectMonitoring.BasicSamples || (ProjectMonitoring.BasicSamples = {}));
-})(ProjectMonitoring || (ProjectMonitoring = {}));
-var ProjectMonitoring;
-(function (ProjectMonitoring) {
-    var BasicSamples;
-    (function (BasicSamples) {
-        var LookupFilterByMultipleForm = /** @class */ (function (_super) {
-            __extends(LookupFilterByMultipleForm, _super);
-            function LookupFilterByMultipleForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!LookupFilterByMultipleForm.init) {
-                    LookupFilterByMultipleForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.StringEditor;
-                    var w1 = s.ImageUploadEditor;
-                    var w2 = s.BooleanEditor;
-                    var w3 = s.LookupEditor;
-                    var w4 = BasicSamples.ProduceSeafoodCategoryEditor;
-                    var w5 = s.DecimalEditor;
-                    var w6 = s.IntegerEditor;
-                    Q.initFormType(LookupFilterByMultipleForm, [
-                        'ProductName', w0,
-                        'ProductImage', w1,
-                        'Discontinued', w2,
-                        'SupplierID', w3,
-                        'CategoryID', w4,
-                        'QuantityPerUnit', w0,
-                        'UnitPrice', w5,
-                        'UnitsInStock', w6,
-                        'UnitsOnOrder', w6,
-                        'ReorderLevel', w6
-                    ]);
-                }
-                return _this;
-            }
-            LookupFilterByMultipleForm.formKey = 'BasicSamples.LookupFilterByMultiple';
-            return LookupFilterByMultipleForm;
-        }(Serenity.PrefixedContext));
-        BasicSamples.LookupFilterByMultipleForm = LookupFilterByMultipleForm;
-    })(BasicSamples = ProjectMonitoring.BasicSamples || (ProjectMonitoring.BasicSamples = {}));
-})(ProjectMonitoring || (ProjectMonitoring = {}));
-var ProjectMonitoring;
-(function (ProjectMonitoring) {
-    var BasicSamples;
-    (function (BasicSamples) {
-        var PopulateLinkedDataForm = /** @class */ (function (_super) {
-            __extends(PopulateLinkedDataForm, _super);
-            function PopulateLinkedDataForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!PopulateLinkedDataForm.init) {
-                    PopulateLinkedDataForm.init = true;
-                    var s = Serenity;
-                    var w0 = ProjectMonitoring.Northwind.CustomerEditor;
-                    var w1 = s.StringEditor;
-                    var w2 = s.DateEditor;
-                    var w3 = s.LookupEditor;
-                    var w4 = ProjectMonitoring.Northwind.OrderDetailsEditor;
-                    Q.initFormType(PopulateLinkedDataForm, [
-                        'CustomerID', w0,
-                        'CustomerContactName', w1,
-                        'CustomerContactTitle', w1,
-                        'CustomerCity', w1,
-                        'CustomerRegion', w1,
-                        'CustomerCountry', w1,
-                        'CustomerPhone', w1,
-                        'CustomerFax', w1,
-                        'OrderDate', w2,
-                        'RequiredDate', w2,
-                        'EmployeeID', w3,
-                        'DetailList', w4
-                    ]);
-                }
-                return _this;
-            }
-            PopulateLinkedDataForm.formKey = 'BasicSamples.PopulateLinkedData';
-            return PopulateLinkedDataForm;
-        }(Serenity.PrefixedContext));
-        BasicSamples.PopulateLinkedDataForm = PopulateLinkedDataForm;
-    })(BasicSamples = ProjectMonitoring.BasicSamples || (ProjectMonitoring.BasicSamples = {}));
-})(ProjectMonitoring || (ProjectMonitoring = {}));
-var ProjectMonitoring;
-(function (ProjectMonitoring) {
-    var BasicSamples;
-    (function (BasicSamples) {
-        var ProductExcelImportForm = /** @class */ (function (_super) {
-            __extends(ProductExcelImportForm, _super);
-            function ProductExcelImportForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!ProductExcelImportForm.init) {
-                    ProductExcelImportForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.ImageUploadEditor;
-                    Q.initFormType(ProductExcelImportForm, [
-                        'FileName', w0
-                    ]);
-                }
-                return _this;
-            }
-            ProductExcelImportForm.formKey = 'BasicSamples.ProductExcelImport';
-            return ProductExcelImportForm;
-        }(Serenity.PrefixedContext));
-        BasicSamples.ProductExcelImportForm = ProductExcelImportForm;
-    })(BasicSamples = ProjectMonitoring.BasicSamples || (ProjectMonitoring.BasicSamples = {}));
-})(ProjectMonitoring || (ProjectMonitoring = {}));
-var ProjectMonitoring;
-(function (ProjectMonitoring) {
-    var BasicSamples;
-    (function (BasicSamples) {
-        var ProductExcelImportService;
-        (function (ProductExcelImportService) {
-            ProductExcelImportService.baseUrl = 'BasicSamples/ProductExcelImport';
-            [
-                'ExcelImport'
-            ].forEach(function (x) {
-                ProductExcelImportService[x] = function (r, s, o) {
-                    return Q.serviceRequest(ProductExcelImportService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(ProductExcelImportService = BasicSamples.ProductExcelImportService || (BasicSamples.ProductExcelImportService = {}));
-    })(BasicSamples = ProjectMonitoring.BasicSamples || (ProjectMonitoring.BasicSamples = {}));
-})(ProjectMonitoring || (ProjectMonitoring = {}));
-var ProjectMonitoring;
-(function (ProjectMonitoring) {
-    var BasicSamples;
-    (function (BasicSamples) {
-        var StaticTextBlockForm = /** @class */ (function (_super) {
-            __extends(StaticTextBlockForm, _super);
-            function StaticTextBlockForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!StaticTextBlockForm.init) {
-                    StaticTextBlockForm.init = true;
-                    var s = Serenity;
-                    var w0 = ProjectMonitoring.StaticTextBlock;
-                    var w1 = s.StringEditor;
-                    Q.initFormType(StaticTextBlockForm, [
-                        'StaticText', w0,
-                        'SomeInput', w1,
-                        'HtmlList', w0,
-                        'FromLocalText', w0,
-                        'DisplayFieldValue', w0
-                    ]);
-                }
-                return _this;
-            }
-            StaticTextBlockForm.formKey = 'BasicSamples.StaticTextBlock';
-            return StaticTextBlockForm;
-        }(Serenity.PrefixedContext));
-        BasicSamples.StaticTextBlockForm = StaticTextBlockForm;
-    })(BasicSamples = ProjectMonitoring.BasicSamples || (ProjectMonitoring.BasicSamples = {}));
-})(ProjectMonitoring || (ProjectMonitoring = {}));
-var ProjectMonitoring;
-(function (ProjectMonitoring) {
-    var BasicSamples;
-    (function (BasicSamples) {
-        var VSGalleryQAService;
-        (function (VSGalleryQAService) {
-            VSGalleryQAService.baseUrl = 'BasicSamples/VSGalleryQA';
-            [
-                'List'
-            ].forEach(function (x) {
-                VSGalleryQAService[x] = function (r, s, o) {
-                    return Q.serviceRequest(VSGalleryQAService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(VSGalleryQAService = BasicSamples.VSGalleryQAService || (BasicSamples.VSGalleryQAService = {}));
-    })(BasicSamples = ProjectMonitoring.BasicSamples || (ProjectMonitoring.BasicSamples = {}));
-})(ProjectMonitoring || (ProjectMonitoring = {}));
-var ProjectMonitoring;
-(function (ProjectMonitoring) {
     var Common;
     (function (Common) {
         var UserPreferenceRow;
@@ -2053,7 +1713,7 @@ var ProjectMonitoring;
 (function (ProjectMonitoring_19) {
     var Texts;
     (function (Texts) {
-        ProjectMonitoring_19.ProjectMonitoring['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { Birthday: 1, ClassList: 1, DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Level: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Phone: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserCode: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Northwind: { Category: { CategoryID: 1, CategoryName: 1, Description: 1, Picture: 1 }, CategoryLang: { CategoryId: 1, CategoryName: 1, Description: 1, Id: 1, LanguageId: 1 }, Customer: { Address: 1, City: 1, CompanyName: 1, ContactName: 1, ContactTitle: 1, Country: 1, CustomerID: 1, Email: 1, Fax: 1, ID: 1, LastContactDate: 1, LastContactedBy: 1, NoteList: 1, Phone: 1, PostalCode: 1, Region: 1, Representatives: 1, SendBulletin: 1 }, CustomerCustomerDemo: { CustomerAddress: 1, CustomerCity: 1, CustomerCompanyName: 1, CustomerContactName: 1, CustomerContactTitle: 1, CustomerCountry: 1, CustomerFax: 1, CustomerID: 1, CustomerPhone: 1, CustomerPostalCode: 1, CustomerRegion: 1, CustomerTypeCustomerDesc: 1, CustomerTypeID: 1, ID: 1 }, CustomerDemographic: { CustomerDesc: 1, CustomerTypeID: 1, ID: 1 }, CustomerDetails: { Email: 1, Id: 1, LastContactDate: 1, LastContactedBy: 1, LastContactedByAddress: 1, LastContactedByBirthDate: 1, LastContactedByCity: 1, LastContactedByCountry: 1, LastContactedByExtension: 1, LastContactedByFirstName: 1, LastContactedByHireDate: 1, LastContactedByHomePhone: 1, LastContactedByLastName: 1, LastContactedByNotes: 1, LastContactedByPhoto: 1, LastContactedByPhotoPath: 1, LastContactedByPostalCode: 1, LastContactedByRegion: 1, LastContactedByReportsTo: 1, LastContactedByTitle: 1, LastContactedByTitleOfCourtesy: 1, SendBulletin: 1 }, CustomerGrossSales: { ContactName: 1, CustomerId: 1, GrossAmount: 1, ProductId: 1, ProductName: 1 }, CustomerRepresentatives: { CustomerId: 1, EmployeeId: 1, RepresentativeId: 1 }, DragDropSample: { Id: 1, ParentId: 1, Title: 1 }, Employee: { Address: 1, BirthDate: 1, City: 1, Country: 1, EmployeeID: 1, Extension: 1, FirstName: 1, FullName: 1, Gender: 1, HireDate: 1, HomePhone: 1, LastName: 1, Notes: 1, Photo: 1, PhotoPath: 1, PostalCode: 1, Region: 1, ReportsTo: 1, ReportsToAddress: 1, ReportsToBirthDate: 1, ReportsToCity: 1, ReportsToCountry: 1, ReportsToExtension: 1, ReportsToFirstName: 1, ReportsToFullName: 1, ReportsToHireDate: 1, ReportsToHomePhone: 1, ReportsToLastName: 1, ReportsToNotes: 1, ReportsToPhoto: 1, ReportsToPhotoPath: 1, ReportsToPostalCode: 1, ReportsToRegion: 1, ReportsToReportsTo: 1, ReportsToTitle: 1, ReportsToTitleOfCourtesy: 1, Title: 1, TitleOfCourtesy: 1 }, EmployeeTerritory: { EmployeeAddress: 1, EmployeeBirthDate: 1, EmployeeCity: 1, EmployeeCountry: 1, EmployeeExtension: 1, EmployeeFirstName: 1, EmployeeHireDate: 1, EmployeeHomePhone: 1, EmployeeID: 1, EmployeeLastName: 1, EmployeeNotes: 1, EmployeePhoto: 1, EmployeePhotoPath: 1, EmployeePostalCode: 1, EmployeeRegion: 1, EmployeeReportsTo: 1, EmployeeTitle: 1, EmployeeTitleOfCourtesy: 1, TerritoryID: 1, TerritoryRegionID: 1, TerritoryTerritoryDescription: 1 }, Note: { EntityId: 1, EntityType: 1, InsertDate: 1, InsertUserDisplayName: 1, InsertUserId: 1, NoteId: 1, Text: 1 }, Order: { CustomerCity: 1, CustomerCompanyName: 1, CustomerContactName: 1, CustomerContactTitle: 1, CustomerCountry: 1, CustomerFax: 1, CustomerID: 1, CustomerPhone: 1, CustomerRegion: 1, DetailList: 1, EmployeeFullName: 1, EmployeeGender: 1, EmployeeID: 1, EmployeeReportsToFullName: 1, Freight: 1, OrderDate: 1, OrderID: 1, RequiredDate: 1, ShipAddress: 1, ShipCity: 1, ShipCountry: 1, ShipName: 1, ShipPostalCode: 1, ShipRegion: 1, ShipVia: 1, ShipViaCompanyName: 1, ShipViaPhone: 1, ShippedDate: 1, ShippingState: 1 }, OrderDetail: { DetailID: 1, Discount: 1, LineTotal: 1, OrderCustomerID: 1, OrderDate: 1, OrderEmployeeID: 1, OrderID: 1, OrderShipCity: 1, OrderShipCountry: 1, OrderShipVia: 1, OrderShippedDate: 1, ProductDiscontinued: 1, ProductID: 1, ProductName: 1, ProductQuantityPerUnit: 1, ProductSupplierID: 1, ProductUnitPrice: 1, Quantity: 1, UnitPrice: 1 }, Product: { CategoryDescription: 1, CategoryID: 1, CategoryName: 1, CategoryPicture: 1, Discontinued: 1, ProductID: 1, ProductImage: 1, ProductName: 1, QuantityPerUnit: 1, ReorderLevel: 1, SupplierAddress: 1, SupplierCity: 1, SupplierCompanyName: 1, SupplierContactName: 1, SupplierContactTitle: 1, SupplierCountry: 1, SupplierFax: 1, SupplierHomePage: 1, SupplierID: 1, SupplierPhone: 1, SupplierPostalCode: 1, SupplierRegion: 1, UnitPrice: 1, UnitsInStock: 1, UnitsOnOrder: 1 }, ProductLang: { Id: 1, LanguageId: 1, ProductId: 1, ProductName: 1 }, ProductLog: { CategoryID: 1, ChangingUserId: 1, Discontinued: 1, OperationType: 1, ProductID: 1, ProductImage: 1, ProductLogID: 1, ProductName: 1, QuantityPerUnit: 1, ReorderLevel: 1, SupplierID: 1, UnitPrice: 1, UnitsInStock: 1, UnitsOnOrder: 1, ValidFrom: 1, ValidUntil: 1 }, Region: { RegionDescription: 1, RegionID: 1 }, SalesByCategory: { CategoryId: 1, CategoryName: 1, ProductName: 1, ProductSales: 1 }, Shipper: { CompanyName: 1, Phone: 1, ShipperID: 1 }, Supplier: { Address: 1, City: 1, CompanyName: 1, ContactName: 1, ContactTitle: 1, Country: 1, Fax: 1, HomePage: 1, Phone: 1, PostalCode: 1, Region: 1, SupplierID: 1 }, Territory: { ID: 1, RegionDescription: 1, RegionID: 1, TerritoryDescription: 1, TerritoryID: 1 } }, ProjectMonitoring: { Classes: { ClassCode: 1, FinalExamCode: 1, Id: 1, IsFinished: 1, MidExamCode: 1, StartDate: 1, SubjectCode: 1, SubjectName: 1 }, Posts: { ContentPost: 1, CreateBy: 1, CreateByBirthday: 1, CreateByEmail: 1, CreateByPhone: 1, CreateByUsername: 1, CreateDate: 1, Id: 1, Title: 1, UserClassId: 1 }, SCMTypes: { Id: 1, Name: 1 }, SCMs: { Id: 1, ScmLink: 1, ScmTypeId: 1, ScmTypeName: 1, UserClassClassId: 1, UserClassId: 1, UserClassUserId: 1 }, Subjects: { Id: 1, Name: 1, SubjectCode: 1 }, UserClasses: { ClassClassCode: 1, ClassFinalExamCode: 1, ClassId: 1, ClassIsFinished: 1, ClassMidExamCode: 1, ClassStartDate: 1, ClassSubjectCode: 1, Id: 1, UserBirthday: 1, UserDisplayName: 1, UserEmail: 1, UserId: 1, UserName: 1, UserPhone: 1, UserUserCode: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, NorthwindPhone: 1, NorthwindPhoneMultiple: 1, SavePrimaryKeyError: 1 } });
+        ProjectMonitoring_19.ProjectMonitoring['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { Birthday: 1, ClassList: 1, DisplayName: 1, Email: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, Level: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Phone: 1, Source: 1, UpdateDate: 1, UpdateUserId: 1, UserCode: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, Northwind: { Category: { CategoryID: 1, CategoryName: 1, Description: 1, Picture: 1 }, CategoryLang: { CategoryId: 1, CategoryName: 1, Description: 1, Id: 1, LanguageId: 1 }, Customer: { Address: 1, City: 1, CompanyName: 1, ContactName: 1, ContactTitle: 1, Country: 1, CustomerID: 1, Email: 1, Fax: 1, ID: 1, LastContactDate: 1, LastContactedBy: 1, NoteList: 1, Phone: 1, PostalCode: 1, Region: 1, Representatives: 1, SendBulletin: 1 }, CustomerCustomerDemo: { CustomerAddress: 1, CustomerCity: 1, CustomerCompanyName: 1, CustomerContactName: 1, CustomerContactTitle: 1, CustomerCountry: 1, CustomerFax: 1, CustomerID: 1, CustomerPhone: 1, CustomerPostalCode: 1, CustomerRegion: 1, CustomerTypeCustomerDesc: 1, CustomerTypeID: 1, ID: 1 }, CustomerDemographic: { CustomerDesc: 1, CustomerTypeID: 1, ID: 1 }, CustomerDetails: { Email: 1, Id: 1, LastContactDate: 1, LastContactedBy: 1, LastContactedByAddress: 1, LastContactedByBirthDate: 1, LastContactedByCity: 1, LastContactedByCountry: 1, LastContactedByExtension: 1, LastContactedByFirstName: 1, LastContactedByHireDate: 1, LastContactedByHomePhone: 1, LastContactedByLastName: 1, LastContactedByNotes: 1, LastContactedByPhoto: 1, LastContactedByPhotoPath: 1, LastContactedByPostalCode: 1, LastContactedByRegion: 1, LastContactedByReportsTo: 1, LastContactedByTitle: 1, LastContactedByTitleOfCourtesy: 1, SendBulletin: 1 }, CustomerGrossSales: { ContactName: 1, CustomerId: 1, GrossAmount: 1, ProductId: 1, ProductName: 1 }, CustomerRepresentatives: { CustomerId: 1, EmployeeId: 1, RepresentativeId: 1 }, Employee: { Address: 1, BirthDate: 1, City: 1, Country: 1, EmployeeID: 1, Extension: 1, FirstName: 1, FullName: 1, Gender: 1, HireDate: 1, HomePhone: 1, LastName: 1, Notes: 1, Photo: 1, PhotoPath: 1, PostalCode: 1, Region: 1, ReportsTo: 1, ReportsToAddress: 1, ReportsToBirthDate: 1, ReportsToCity: 1, ReportsToCountry: 1, ReportsToExtension: 1, ReportsToFirstName: 1, ReportsToFullName: 1, ReportsToHireDate: 1, ReportsToHomePhone: 1, ReportsToLastName: 1, ReportsToNotes: 1, ReportsToPhoto: 1, ReportsToPhotoPath: 1, ReportsToPostalCode: 1, ReportsToRegion: 1, ReportsToReportsTo: 1, ReportsToTitle: 1, ReportsToTitleOfCourtesy: 1, Title: 1, TitleOfCourtesy: 1 }, EmployeeTerritory: { EmployeeAddress: 1, EmployeeBirthDate: 1, EmployeeCity: 1, EmployeeCountry: 1, EmployeeExtension: 1, EmployeeFirstName: 1, EmployeeHireDate: 1, EmployeeHomePhone: 1, EmployeeID: 1, EmployeeLastName: 1, EmployeeNotes: 1, EmployeePhoto: 1, EmployeePhotoPath: 1, EmployeePostalCode: 1, EmployeeRegion: 1, EmployeeReportsTo: 1, EmployeeTitle: 1, EmployeeTitleOfCourtesy: 1, TerritoryID: 1, TerritoryRegionID: 1, TerritoryTerritoryDescription: 1 }, Note: { EntityId: 1, EntityType: 1, InsertDate: 1, InsertUserDisplayName: 1, InsertUserId: 1, NoteId: 1, Text: 1 }, Order: { CustomerCity: 1, CustomerCompanyName: 1, CustomerContactName: 1, CustomerContactTitle: 1, CustomerCountry: 1, CustomerFax: 1, CustomerID: 1, CustomerPhone: 1, CustomerRegion: 1, DetailList: 1, EmployeeFullName: 1, EmployeeGender: 1, EmployeeID: 1, EmployeeReportsToFullName: 1, Freight: 1, OrderDate: 1, OrderID: 1, RequiredDate: 1, ShipAddress: 1, ShipCity: 1, ShipCountry: 1, ShipName: 1, ShipPostalCode: 1, ShipRegion: 1, ShipVia: 1, ShipViaCompanyName: 1, ShipViaPhone: 1, ShippedDate: 1, ShippingState: 1 }, OrderDetail: { DetailID: 1, Discount: 1, LineTotal: 1, OrderCustomerID: 1, OrderDate: 1, OrderEmployeeID: 1, OrderID: 1, OrderShipCity: 1, OrderShipCountry: 1, OrderShipVia: 1, OrderShippedDate: 1, ProductDiscontinued: 1, ProductID: 1, ProductName: 1, ProductQuantityPerUnit: 1, ProductSupplierID: 1, ProductUnitPrice: 1, Quantity: 1, UnitPrice: 1 }, Product: { CategoryDescription: 1, CategoryID: 1, CategoryName: 1, CategoryPicture: 1, Discontinued: 1, ProductID: 1, ProductImage: 1, ProductName: 1, QuantityPerUnit: 1, ReorderLevel: 1, SupplierAddress: 1, SupplierCity: 1, SupplierCompanyName: 1, SupplierContactName: 1, SupplierContactTitle: 1, SupplierCountry: 1, SupplierFax: 1, SupplierHomePage: 1, SupplierID: 1, SupplierPhone: 1, SupplierPostalCode: 1, SupplierRegion: 1, UnitPrice: 1, UnitsInStock: 1, UnitsOnOrder: 1 }, ProductLang: { Id: 1, LanguageId: 1, ProductId: 1, ProductName: 1 }, ProductLog: { CategoryID: 1, ChangingUserId: 1, Discontinued: 1, OperationType: 1, ProductID: 1, ProductImage: 1, ProductLogID: 1, ProductName: 1, QuantityPerUnit: 1, ReorderLevel: 1, SupplierID: 1, UnitPrice: 1, UnitsInStock: 1, UnitsOnOrder: 1, ValidFrom: 1, ValidUntil: 1 }, Region: { RegionDescription: 1, RegionID: 1 }, SalesByCategory: { CategoryId: 1, CategoryName: 1, ProductName: 1, ProductSales: 1 }, Shipper: { CompanyName: 1, Phone: 1, ShipperID: 1 }, Supplier: { Address: 1, City: 1, CompanyName: 1, ContactName: 1, ContactTitle: 1, Country: 1, Fax: 1, HomePage: 1, Phone: 1, PostalCode: 1, Region: 1, SupplierID: 1 }, Territory: { ID: 1, RegionDescription: 1, RegionID: 1, TerritoryDescription: 1, TerritoryID: 1 } }, ProjectMonitoring: { Classes: { ClassCode: 1, FinalExamCode: 1, Id: 1, IsFinished: 1, MidExamCode: 1, StartDate: 1, SubjectCode: 1, SubjectName: 1 }, Posts: { ContentPost: 1, CreateBy: 1, CreateByBirthday: 1, CreateByEmail: 1, CreateByPhone: 1, CreateByUsername: 1, CreateDate: 1, Id: 1, Title: 1, UserClassId: 1 }, SCMTypes: { Id: 1, Name: 1 }, SCMs: { Id: 1, ScmLink: 1, ScmTypeId: 1, ScmTypeName: 1, UserClassClassId: 1, UserClassId: 1, UserClassUserId: 1 }, Subjects: { Id: 1, Name: 1, SubjectCode: 1 }, UserClasses: { ClassClassCode: 1, ClassFinalExamCode: 1, ClassId: 1, ClassIsFinished: 1, ClassMidExamCode: 1, ClassStartDate: 1, ClassSubjectCode: 1, Id: 1, UserBirthday: 1, UserDisplayName: 1, UserEmail: 1, UserId: 1, UserName: 1, UserPhone: 1, UserUserCode: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, Dashboard: { ContentDescription: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, NorthwindPhone: 1, NorthwindPhoneMultiple: 1, SavePrimaryKeyError: 1 } });
     })(Texts = ProjectMonitoring_19.Texts || (ProjectMonitoring_19.Texts = {}));
 })(ProjectMonitoring || (ProjectMonitoring = {}));
 var ProjectMonitoring;
@@ -6026,7 +5686,7 @@ var ProjectMonitoring;
             ChartInDialog.prototype.onDialogOpen = function () {
                 var _this = this;
                 _super.prototype.onDialogOpen.call(this);
-                BasicSamples.BasicSamplesService.OrdersByShipper({}, function (response) {
+                BasicSamplesService.OrdersByShipper({}, function (response) {
                     _this.areaChart = new Morris.Area({
                         element: _this.idPrefix + 'Chart',
                         resize: true, parseTime: false,
@@ -6644,7 +6304,7 @@ var ProjectMonitoring;
             __extends(PopulateLinkedDataDialog, _super);
             function PopulateLinkedDataDialog() {
                 var _this = _super.call(this) || this;
-                _this.form = new BasicSamples.PopulateLinkedDataForm(_this.idPrefix);
+                _this.form = new PopulateLinkedDataForm(_this.idPrefix);
                 // "changeSelect2" is only fired when user changes the selection
                 // but "change" is fired when dialog sets customer on load too
                 // so we prefer "changeSelect2", as initial customer details 
@@ -6668,7 +6328,7 @@ var ProjectMonitoring;
                 });
                 return _this;
             }
-            PopulateLinkedDataDialog.prototype.getFormKey = function () { return BasicSamples.PopulateLinkedDataForm.formKey; };
+            PopulateLinkedDataDialog.prototype.getFormKey = function () { return PopulateLinkedDataForm.formKey; };
             PopulateLinkedDataDialog.prototype.getIdProperty = function () { return ProjectMonitoring.Northwind.OrderRow.idProperty; };
             PopulateLinkedDataDialog.prototype.getLocalTextPrefix = function () { return ProjectMonitoring.Northwind.OrderRow.localTextPrefix; };
             PopulateLinkedDataDialog.prototype.getNameProperty = function () { return ProjectMonitoring.Northwind.OrderRow.nameProperty; };
@@ -6929,7 +6589,7 @@ var ProjectMonitoring;
             __extends(ChangingLookupTextDialog, _super);
             function ChangingLookupTextDialog() {
                 var _this = _super.call(this) || this;
-                _this.form = new BasicSamples.ChangingLookupTextForm(_this.idPrefix);
+                _this.form = new ChangingLookupTextForm(_this.idPrefix);
                 _this.form.ProductID.changeSelect2(function (e) {
                     var productID = Q.toId(_this.form.ProductID.value);
                     if (productID != null) {
@@ -6947,7 +6607,7 @@ var ProjectMonitoring;
                 });
                 return _this;
             }
-            ChangingLookupTextDialog.prototype.getFormKey = function () { return BasicSamples.ChangingLookupTextForm.formKey; };
+            ChangingLookupTextDialog.prototype.getFormKey = function () { return ChangingLookupTextForm.formKey; };
             ChangingLookupTextDialog.prototype.getLocalTextPrefix = function () { return ProjectMonitoring.Northwind.OrderDetailRow.localTextPrefix; };
             ChangingLookupTextDialog.prototype.updateInterface = function () {
                 _super.prototype.updateInterface.call(this);
@@ -7078,13 +6738,13 @@ var ProjectMonitoring;
             __extends(FilteredLookupInDetailDialog, _super);
             function FilteredLookupInDetailDialog() {
                 var _this = _super.call(this) || this;
-                _this.form = new BasicSamples.FilteredLookupInDetailForm(_this.idPrefix);
+                _this.form = new FilteredLookupInDetailForm(_this.idPrefix);
                 _this.form.CategoryID.change(function (e) {
                     _this.form.DetailList.categoryID = Q.toId(_this.form.CategoryID.value);
                 });
                 return _this;
             }
-            FilteredLookupInDetailDialog.prototype.getFormKey = function () { return BasicSamples.FilteredLookupInDetailForm.formKey; };
+            FilteredLookupInDetailDialog.prototype.getFormKey = function () { return FilteredLookupInDetailForm.formKey; };
             FilteredLookupInDetailDialog.prototype.getIdProperty = function () { return ProjectMonitoring.Northwind.OrderRow.idProperty; };
             FilteredLookupInDetailDialog.prototype.getLocalTextPrefix = function () { return ProjectMonitoring.Northwind.OrderRow.localTextPrefix; };
             FilteredLookupInDetailDialog.prototype.getNameProperty = function () { return ProjectMonitoring.Northwind.OrderRow.nameProperty; };
@@ -7133,7 +6793,7 @@ var ProjectMonitoring;
             function LookupFilterByMultipleDialog() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
-            LookupFilterByMultipleDialog.prototype.getFormKey = function () { return BasicSamples.LookupFilterByMultipleForm.formKey; };
+            LookupFilterByMultipleDialog.prototype.getFormKey = function () { return LookupFilterByMultipleForm.formKey; };
             LookupFilterByMultipleDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], LookupFilterByMultipleDialog);
@@ -7234,14 +6894,14 @@ var ProjectMonitoring;
             __extends(HardcodedValuesDialog, _super);
             function HardcodedValuesDialog() {
                 var _this = _super.call(this) || this;
-                _this.form = new BasicSamples.HardcodedValuesForm(_this.idPrefix);
+                _this.form = new HardcodedValuesForm(_this.idPrefix);
                 _this.dialogTitle = "Please select some value";
                 _this.form.SomeValue.changeSelect2(function (e) {
                     Q.notifySuccess("You selected item with key: " + _this.form.SomeValue.value);
                 });
                 return _this;
             }
-            HardcodedValuesDialog.prototype.getFormKey = function () { return BasicSamples.HardcodedValuesForm.formKey; };
+            HardcodedValuesDialog.prototype.getFormKey = function () { return HardcodedValuesForm.formKey; };
             HardcodedValuesDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], HardcodedValuesDialog);
@@ -7297,11 +6957,11 @@ var ProjectMonitoring;
             __extends(StaticTextBlockDialog, _super);
             function StaticTextBlockDialog() {
                 var _this = _super.call(this) || this;
-                _this.form = new BasicSamples.StaticTextBlockForm(_this.idPrefix);
+                _this.form = new StaticTextBlockForm(_this.idPrefix);
                 _this.dialogTitle = "A form with static text blocks";
                 return _this;
             }
-            StaticTextBlockDialog.prototype.getFormKey = function () { return BasicSamples.StaticTextBlockForm.formKey; };
+            StaticTextBlockDialog.prototype.getFormKey = function () { return StaticTextBlockForm.formKey; };
             /**
              * Here we override loadInitialEntity method to set value for "DisplayFieldValue" field.
              * If this was an EntityDialog, your field value would be originating from server side entity.
@@ -7358,7 +7018,7 @@ var ProjectMonitoring;
              */
             OrderBulkAction.prototype.executeForBatch = function (batch) {
                 var _this = this;
-                BasicSamples.BasicSamplesService.OrderBulkAction({
+                BasicSamplesService.OrderBulkAction({
                     OrderIDs: batch.map(function (x) { return Q.parseInteger(x); })
                 }, function (response) { return _this.set_successCount(_this.get_successCount() + batch.length); }, {
                     blockUI: false,
@@ -7598,14 +7258,14 @@ var ProjectMonitoring;
             __extends(DragDropSampleDialog, _super);
             function DragDropSampleDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new BasicSamples.DragDropSampleForm(_this.idPrefix);
+                _this.form = new DragDropSampleForm(_this.idPrefix);
                 return _this;
             }
-            DragDropSampleDialog.prototype.getFormKey = function () { return BasicSamples.DragDropSampleForm.formKey; };
-            DragDropSampleDialog.prototype.getIdProperty = function () { return BasicSamples.DragDropSampleRow.idProperty; };
-            DragDropSampleDialog.prototype.getLocalTextPrefix = function () { return BasicSamples.DragDropSampleRow.localTextPrefix; };
-            DragDropSampleDialog.prototype.getNameProperty = function () { return BasicSamples.DragDropSampleRow.nameProperty; };
-            DragDropSampleDialog.prototype.getService = function () { return BasicSamples.DragDropSampleService.baseUrl; };
+            DragDropSampleDialog.prototype.getFormKey = function () { return DragDropSampleForm.formKey; };
+            DragDropSampleDialog.prototype.getIdProperty = function () { return DragDropSampleRow.idProperty; };
+            DragDropSampleDialog.prototype.getLocalTextPrefix = function () { return DragDropSampleRow.localTextPrefix; };
+            DragDropSampleDialog.prototype.getNameProperty = function () { return DragDropSampleRow.nameProperty; };
+            DragDropSampleDialog.prototype.getService = function () { return DragDropSampleService.baseUrl; };
             DragDropSampleDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], DragDropSampleDialog);
@@ -7624,7 +7284,7 @@ var ProjectMonitoring;
                 var _this = _super.call(this, container) || this;
                 new Serenity.TreeGridMixin({
                     grid: _this,
-                    toggleField: "Title" /* Title */,
+                    toggleField: DragDropSampleRow.Fields.Title,
                     getParentId: function (x) { return x.ParentId; },
                     initialCollapse: function () { return false; },
                 });
@@ -7707,7 +7367,7 @@ var ProjectMonitoring;
                     if ($(e.target).hasClass('s-EditLink') && _this.canMoveUnder(item, target)) {
                         // this will move our primary drag source under new parent
                         var moveItem = function (onSuccess) {
-                            BasicSamples.DragDropSampleService.Update({
+                            DragDropSampleService.Update({
                                 EntityId: item.Id,
                                 Entity: {
                                     ParentId: target.Id
@@ -7728,7 +7388,7 @@ var ProjectMonitoring;
                                         var _this = this;
                                         if (children.length) {
                                             var x = children.shift();
-                                            BasicSamples.DragDropSampleService.Update({
+                                            DragDropSampleService.Update({
                                                 EntityId: x.Id,
                                                 Entity: {
                                                     ParentId: oldParentId || null
@@ -7757,9 +7417,9 @@ var ProjectMonitoring;
             }
             DragDropSampleGrid.prototype.getColumnsKey = function () { return 'BasicSamples.DragDropSample'; };
             DragDropSampleGrid.prototype.getDialogType = function () { return BasicSamples.DragDropSampleDialog; };
-            DragDropSampleGrid.prototype.getIdProperty = function () { return BasicSamples.DragDropSampleRow.idProperty; };
-            DragDropSampleGrid.prototype.getLocalTextPrefix = function () { return BasicSamples.DragDropSampleRow.localTextPrefix; };
-            DragDropSampleGrid.prototype.getService = function () { return BasicSamples.DragDropSampleService.baseUrl; };
+            DragDropSampleGrid.prototype.getIdProperty = function () { return DragDropSampleRow.idProperty; };
+            DragDropSampleGrid.prototype.getLocalTextPrefix = function () { return DragDropSampleRow.localTextPrefix; };
+            DragDropSampleGrid.prototype.getService = function () { return DragDropSampleService.baseUrl; };
             /**
              * This method will determine if item can be moved under a given target
              * An item can't be moved under itself, under one of its children
@@ -8192,7 +7852,7 @@ var ProjectMonitoring;
             __extends(ProductExcelImportDialog, _super);
             function ProductExcelImportDialog() {
                 var _this = _super.call(this) || this;
-                _this.form = new BasicSamples.ProductExcelImportForm(_this.idPrefix);
+                _this.form = new ProductExcelImportForm(_this.idPrefix);
                 return _this;
             }
             ProductExcelImportDialog.prototype.getDialogTitle = function () {
@@ -8211,7 +7871,7 @@ var ProjectMonitoring;
                                 Q.notifyError("Please select a file!");
                                 return;
                             }
-                            BasicSamples.ProductExcelImportService.ExcelImport({
+                            ProductExcelImportService.ExcelImport({
                                 FileName: _this.form.FileName.value.Filename
                             }, function (response) {
                                 Q.notifyInfo('Inserted: ' + (response.Inserted || 0) +
@@ -8465,7 +8125,7 @@ var ProjectMonitoring;
             CustomerGrossSalesGrid.prototype.getIdProperty = function () { return "__id"; };
             CustomerGrossSalesGrid.prototype.getNameProperty = function () { return ProjectMonitoring.Northwind.CustomerGrossSalesRow.nameProperty; };
             CustomerGrossSalesGrid.prototype.getLocalTextPrefix = function () { return ProjectMonitoring.Northwind.CustomerGrossSalesRow.localTextPrefix; };
-            CustomerGrossSalesGrid.prototype.getService = function () { return BasicSamples.CustomerGrossSalesService.baseUrl; };
+            CustomerGrossSalesGrid.prototype.getService = function () { return CustomerGrossSalesService.baseUrl; };
             /**
              * This method is called to preprocess data returned from the list service
              */
@@ -8484,7 +8144,7 @@ var ProjectMonitoring;
                 var buttons = [];
                 buttons.push(ProjectMonitoring.Common.ExcelExportHelper.createToolButton({
                     grid: this,
-                    service: BasicSamples.CustomerGrossSalesService.baseUrl + '/ListExcel',
+                    service: CustomerGrossSalesService.baseUrl + '/ListExcel',
                     onViewSubmit: function () { return _this.onViewSubmit(); },
                     separator: true
                 }));
@@ -8639,7 +8299,7 @@ var ProjectMonitoring;
             }
             VSGalleryQAGrid.prototype.getColumnsKey = function () { return "BasicSamples.VSGalleryQA"; };
             VSGalleryQAGrid.prototype.getIdProperty = function () { return "ThreadId"; };
-            VSGalleryQAGrid.prototype.getService = function () { return BasicSamples.VSGalleryQAService.baseUrl; };
+            VSGalleryQAGrid.prototype.getService = function () { return VSGalleryQAService.baseUrl; };
             VSGalleryQAGrid.prototype.getButtons = function () {
                 return [];
             };
