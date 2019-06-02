@@ -2,6 +2,7 @@
 /// <reference path="../../Common/Helpers/GridEditorBase.ts" />
 namespace ProjectMonitoring.ProjectMonitoring {
     @Serenity.Decorators.registerEditor()
+    @Serenity.Decorators.maximizable()
     export class UserClassesEditor
         extends Common.GridEditorBase<UserClassesRow> {
         protected getColumnsKey() { return "ProjectMonitoring.UserClasses"; }

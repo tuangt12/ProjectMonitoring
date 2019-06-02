@@ -8086,15 +8086,15 @@ section.content > .s-DataGrid {
 }
 
 .s-ProjectMonitoring-UserClassesEditDialog > .size {
-  width: 450px;
+  width: 650px;
 }
 
 .s-ProjectMonitoring-UserClassesEditDialog .caption {
-  width: 120px;
+  width: 150px;
 }
 
 .s-ProjectMonitoring-UserClassesEditDialog .s-PropertyGrid .categories {
-  height: 120px;
+  height: 150px;
 }
 
 .s-ProjectMonitoring-PostsDialog .CreateDate .ui-datepicker-trigger {
