@@ -9,8 +9,11 @@ namespace ProjectMonitoring.ProjectMonitoring.Forms
     public class UserClassesForm
     {
         // UserId sẽ được lấy tự động với user tương ứng đang được chỉnh sửa
-        //public Int32 UserId { get; set; }
+        //public Int32 UserId { get; set; }       
+       
         public Int32 ClassId { get; set; }
         public String ClassSubjectCode { get; set; }
+        public String Name { get; set; }
+        public String Point { get; set; }
     }
 }

@@ -15,9 +15,11 @@ namespace ProjectMonitoring.ProjectMonitoring.Columns
         [EditLink, Width(100)]
         public String ClassClassCode { get; set; }
 
-        [Width(200)]
+        [Width(150)]
         // TODO : Hiển thị dạng SubjectCode + SubjectName
         public String ClassSubjectCode { get; set; }
-
+        public String Name { get; set; }
+        [Width(100)]
+        public String Point { get; set; }
     }
 }

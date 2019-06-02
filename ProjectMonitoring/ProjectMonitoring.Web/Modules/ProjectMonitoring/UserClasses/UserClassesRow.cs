@@ -44,6 +44,20 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.ClassId[this] = value; }
         }
 
+        [DisplayName("Topic Name")]
+        public String Name
+        {
+            get { return Fields.Name[this]; }
+            set { Fields.Name[this] = value; }
+        }
+
+        [DisplayName("Point")]
+        public String Point
+        {
+            get { return Fields.Point[this]; }
+            set { Fields.Point[this] = value; }
+        }
+
         [DisplayName("User Code"), Expression("jUser.[UserCode]")]
         [LookupInclude]
         public String UserUserCode
@@ -97,6 +111,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
         }
 
         [DisplayName("Subject"), Expression("jClass.[SubjectCode]")]
+        //[LookupEditor(typeof(Lookups.SubjectsCodeLookup))]
         public String ClassSubjectCode
         {
             get { return Fields.ClassSubjectCode[this]; }
@@ -148,6 +163,8 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             public Int32Field Id;
             public Int32Field UserId;
             public Int32Field ClassId;
+            public StringField Name;
+            public StringField Point;
 
             public StringField UserUserCode;
             public StringField UserName;

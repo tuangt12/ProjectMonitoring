@@ -2,6 +2,8 @@
     export interface UserClassesForm {
         ClassId: Serenity.LookupEditor;
         ClassSubjectCode: Serenity.StringEditor;
+        Name: Serenity.StringEditor;
+        Point: Serenity.StringEditor;
     }
 
     export class UserClassesForm extends Serenity.PrefixedContext {
@@ -20,7 +22,9 @@
 
                 Q.initFormType(UserClassesForm, [
                     'ClassId', w0,
-                    'ClassSubjectCode', w1
+                    'ClassSubjectCode', w1,
+                    'Name', w1,
+                    'Point', w1
                 ]);
             }
         }

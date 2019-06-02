@@ -3,6 +3,8 @@
         Id?: number;
         UserId?: number;
         ClassId?: number;
+        Name?: string;
+        Point?: string;
         UserUserCode?: string;
         UserName?: string;
         UserDisplayName?: string;
@@ -30,6 +32,8 @@
             Id = "Id",
             UserId = "UserId",
             ClassId = "ClassId",
+            Name = "Name",
+            Point = "Point",
             UserUserCode = "UserUserCode",
             UserName = "UserName",
             UserDisplayName = "UserDisplayName",

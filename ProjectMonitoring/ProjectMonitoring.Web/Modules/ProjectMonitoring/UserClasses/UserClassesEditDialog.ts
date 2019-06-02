@@ -3,6 +3,7 @@
 namespace ProjectMonitoring.ProjectMonitoring {
 
     @Serenity.Decorators.registerClass()
+    @Serenity.Decorators.maximizable()
     export class UserClassesEditDialog extends
         Common.GridEditorDialog<UserClassesRow> {
         protected getFormKey() { return UserClassesForm.formKey; }
@@ -20,9 +21,20 @@ namespace ProjectMonitoring.ProjectMonitoring {
                 if (classID != null) {
 
                     this.form.ClassSubjectCode.value = ClassesRow.getLookup().itemById[classID].SubjectName;
-                    var i = 1;
+
                 }
             });
+        }
+
+        // Thay đổi giao diện
+        // Khi đăng nhập với tư cách không phải admin thì sẽ không cho phép nhập/ chỉnh sửa điểm
+        protected updateInterface(): void {
+            super.updateInterface();
+            // Nếu kiểm tra mà không có quyền admin
+            if (!Authorization.hasPermission("Administration:Security")) {
+                // Tìm tới trường Point và disable
+                Serenity.EditorUtils.setReadonly(this.form.Point.element, true);
+            }
         }
     }
 }
