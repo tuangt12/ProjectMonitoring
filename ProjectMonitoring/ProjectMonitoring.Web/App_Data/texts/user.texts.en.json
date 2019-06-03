@@ -1,6 +1,9 @@
 {
   "Db.Administration.User.Birthday": "Birthday",
   "Db.ProjectMonitoring.Posts.UserClassId": "ID Topic",
+  "Db.ProjectMonitoring.UserClasses.EntityPlural": "Topics",
+  "Db.ProjectMonitoring.UserClasses.EntitySingular": "Topic",
+  "Db.ProjectMonitoring.UserClasses.Id": "ID Topic",
   "Forms.Membership.Login.FormTitle": "Welcome to PAT Project Monitoring",
   "Site.Dashboard.ContentDescription": "Welcome to Project Monitoring",
   "Site.Dashboard.WelcomeMessage": "Welcome to Project Monitoring",

@@ -279,7 +279,7 @@ var ProjectMonitoring;
         (function (UserRow) {
             UserRow.idProperty = 'UserId';
             UserRow.isActiveProperty = 'IsActive';
-            UserRow.nameProperty = 'Username';
+            UserRow.nameProperty = 'UserCode';
             UserRow.localTextPrefix = 'Administration.User';
             UserRow.lookupKey = 'Administration.User';
             function getLookup() {
@@ -1659,6 +1659,8 @@ var ProjectMonitoring;
                     var w0 = s.LookupEditor;
                     var w1 = s.StringEditor;
                     Q.initFormType(UserClassesForm, [
+                        'UserId', w0,
+                        'UserDisplayName', w1,
                         'ClassId', w0,
                         'ClassSubjectCode', w1,
                         'Name', w1,
@@ -5248,6 +5250,7 @@ var ProjectMonitoring;
                 return _super.call(this, container) || this;
             }
             ClassesUserGrid.prototype.getColumnsKey = function () { return 'ProjectMonitoring.ClassesUser'; };
+            ClassesUserGrid.prototype.getDialogType = function () { return ProjectMonitoring.UserClassesEditDialog; };
             ClassesUserGrid.prototype.getIdProperty = function () { return ProjectMonitoring.UserClassesRow.idProperty; };
             ClassesUserGrid.prototype.getLocalTextPrefix = function () { return ProjectMonitoring.UserClassesRow.localTextPrefix; };
             ClassesUserGrid.prototype.getService = function () { return ProjectMonitoring.UserClassesService.baseUrl; };
@@ -5259,6 +5262,7 @@ var ProjectMonitoring;
             ClassesUserGrid.prototype.getInitialTitle = function () {
                 return null;
             };
+            // Ghi đè để loại bỏ phân trang
             ClassesUserGrid.prototype.usePager = function () {
                 return false;
             };
@@ -5283,7 +5287,8 @@ var ProjectMonitoring;
                 configurable: true
             });
             ClassesUserGrid = __decorate([
-                Serenity.Decorators.registerClass()
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive()
             ], ClassesUserGrid);
             return ClassesUserGrid;
         }(Serenity.EntityGrid));
@@ -5535,16 +5540,49 @@ var ProjectMonitoring;
         var UserClassesDialog = /** @class */ (function (_super) {
             __extends(UserClassesDialog, _super);
             function UserClassesDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
+                var _this = _super.call(this) || this;
                 _this.form = new ProjectMonitoring.UserClassesForm(_this.idPrefix);
+                _this.form = new ProjectMonitoring.UserClassesForm(_this.idPrefix);
+                // Tự động điền tên môn học khi chọn lớp
+                _this.form.ClassId.changeSelect2(function (e) {
+                    var classID = Q.toId(_this.form.ClassId.value);
+                    if (classID != null) {
+                        _this.form.ClassSubjectCode.value = ProjectMonitoring.ClassesRow.getLookup().itemById[classID].SubjectName;
+                    }
+                });
+                // Tự động điền tên sinh viên khi chọn mã số sinh viên
+                _this.form.UserId.changeSelect2(function (e) {
+                    var userId = Q.toId(_this.form.UserId.value);
+                    if (userId != null) {
+                        _this.form.UserDisplayName.value = ProjectMonitoring_33.Administration.UserRow.getLookup().itemById[userId].DisplayName;
+                    }
+                });
                 return _this;
             }
             UserClassesDialog.prototype.getFormKey = function () { return ProjectMonitoring.UserClassesForm.formKey; };
             UserClassesDialog.prototype.getIdProperty = function () { return ProjectMonitoring.UserClassesRow.idProperty; };
             UserClassesDialog.prototype.getLocalTextPrefix = function () { return ProjectMonitoring.UserClassesRow.localTextPrefix; };
             UserClassesDialog.prototype.getService = function () { return ProjectMonitoring.UserClassesService.baseUrl; };
+            // Thay đổi giao diện
+            // Khi đăng nhập với tư cách không phải admin thì sẽ không cho phép nhập/ chỉnh sửa điểm
+            UserClassesDialog.prototype.updateInterface = function () {
+                _super.prototype.updateInterface.call(this);
+                // Nếu kiểm tra mà không có quyền admin
+                if (!ProjectMonitoring_33.Authorization.hasPermission("Administration:Security")) {
+                    // Tìm tới trường Name, Point và disable
+                    // Vì các trường bên trên đã mặc định ở trạng thái không cho phép cập nhật rồi
+                    // mà khi không có quyền Create New thì chắc chắn các trường khác sẽ ở dạng disable
+                    Serenity.EditorUtils.setReadonly(this.form.Name.element, true);
+                    Serenity.EditorUtils.setReadonly(this.form.Point.element, true);
+                    // Ẩn tất cả các button Save/ Delete
+                    this.toolbar.findButton('save-and-close-button').toggle(false);
+                    this.toolbar.findButton('apply-changes-button').toggle(false);
+                    this.toolbar.findButton('delete-button').toggle(false);
+                }
+            };
             UserClassesDialog = __decorate([
-                Serenity.Decorators.registerClass()
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.maximizable()
             ], UserClassesDialog);
             return UserClassesDialog;
         }(Serenity.EntityDialog));
@@ -5561,10 +5599,18 @@ var ProjectMonitoring;
             function UserClassesEditDialog() {
                 var _this = _super.call(this) || this;
                 _this.form = new ProjectMonitoring.UserClassesForm(_this.idPrefix);
+                // Tự động điền tên môn học khi chọn lớp
                 _this.form.ClassId.changeSelect2(function (e) {
                     var classID = Q.toId(_this.form.ClassId.value);
                     if (classID != null) {
                         _this.form.ClassSubjectCode.value = ProjectMonitoring.ClassesRow.getLookup().itemById[classID].SubjectName;
+                    }
+                });
+                // Tự động điền tên sinh viên khi chọn mã số sinh viên
+                _this.form.UserId.changeSelect2(function (e) {
+                    var userId = Q.toId(_this.form.UserId.value);
+                    if (userId != null) {
+                        _this.form.UserDisplayName.value = ProjectMonitoring_34.Administration.UserRow.getLookup().itemById[userId].DisplayName;
                     }
                 });
                 return _this;
@@ -5655,6 +5701,28 @@ var ProjectMonitoring;
             UserClassesGrid.prototype.getIdProperty = function () { return ProjectMonitoring.UserClassesRow.idProperty; };
             UserClassesGrid.prototype.getLocalTextPrefix = function () { return ProjectMonitoring.UserClassesRow.localTextPrefix; };
             UserClassesGrid.prototype.getService = function () { return ProjectMonitoring.UserClassesService.baseUrl; };
+            // Không hiển thị nút thêm Topic mới tại đây khi đăng nhập với quyền sinh viên
+            // Sinh viên nếu muốn đăng ký một lớp mới (đăng ký đề tài) thì đã có trong phần quản lý tài khoản của mình
+            UserClassesGrid.prototype.getButtons = function () {
+                var buttons = _super.prototype.getButtons.call(this);
+                // Nếu kiểm tra mà không có quyền admin
+                if (!ProjectMonitoring_36.Authorization.hasPermission("Administration:Security")) {
+                    buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                }
+                return buttons;
+            };
+            // Chỉ hiển thị các filter khi đăng nhập với quyền quản trị
+            // Khi đăng nhập với tư cách là sinh viên thì đã mặc định chỉ lọc các lớp mà sinh viên đó tham gia rồi
+            // nên không cần filter nữa
+            UserClassesGrid.prototype.getQuickFilters = function () {
+                var filters = _super.prototype.getQuickFilters.call(this);
+                // Kiểm tra quyền
+                if (!ProjectMonitoring_36.Authorization.hasPermission("Administration:Security")) {
+                    // Trả về list filter rỗng (xóa tất cả các filter)
+                    return [];
+                }
+                return filters;
+            };
             UserClassesGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], UserClassesGrid);

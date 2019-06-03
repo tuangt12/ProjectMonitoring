@@ -13,6 +13,6 @@ using Administration = ProjectMonitoring.Administration.Pages;
 [assembly: NavigationLink(2400, "ProjectMonitoring/Subjects", typeof(MyPages.SubjectsController), icon: "fa-book")]
 [assembly: NavigationLink(2500, "ProjectMonitoring/SCMs", typeof(MyPages.SCMsController), icon: "fa-link")]
 [assembly: NavigationLink(2600, "ProjectMonitoring/SCMTypes", typeof(MyPages.SCMTypesController), icon: "fa-github-square")]
-
+[assembly: NavigationLink(2700, "ProjectMonitoring/User Classes", typeof(MyPages.UserClassesController), icon: null)]
 
 

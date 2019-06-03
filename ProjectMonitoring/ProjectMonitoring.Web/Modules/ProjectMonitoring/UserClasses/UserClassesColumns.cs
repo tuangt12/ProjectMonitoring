@@ -12,7 +12,15 @@ namespace ProjectMonitoring.ProjectMonitoring.Columns
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignCenter]
         public Int32 Id { get; set; }
 
+        [EditLink, AlignCenter, Width(90)]
+        [QuickFilter]
+        public String UserUserCode { get; set; }
+
+        [Width(150)]
+        public String UserDisplayName { get; set; }
+
         [EditLink, Width(100)]
+        [QuickFilter]
         public String ClassClassCode { get; set; }
 
         [Width(150)]

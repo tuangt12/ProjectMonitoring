@@ -101,5 +101,22 @@ namespace ProjectMonitoring.ProjectMonitoring
             public const string View = "PM:Subject:View";
         }
 
+        /// <summary>
+        ///         Thiết đặt quyền cho bảng UserClasses
+        /// </summary>
+        public class UserClasses
+        {
+            // Quyền xóa
+            [ImplicitPermission(General), ImplicitPermission(View)]
+            public const string Delete = "PM:UserClasses:Delete";
+
+            // Quyền chỉnh sửa
+            [Description("Create/Update"), ImplicitPermission(General), ImplicitPermission(View)]
+            public const string Modify = "PM:UserClasses:Modify";
+
+            // Quyền xem
+            public const string View = "PM:UserClasses:View";
+        }
+
     }
 }

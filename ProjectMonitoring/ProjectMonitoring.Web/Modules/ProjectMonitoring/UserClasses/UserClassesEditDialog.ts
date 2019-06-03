@@ -16,12 +16,21 @@ namespace ProjectMonitoring.ProjectMonitoring {
             super();
             this.form = new UserClassesForm(this.idPrefix);
 
+            // Tự động điền tên môn học khi chọn lớp
             this.form.ClassId.changeSelect2(e => {
                 var classID = Q.toId(this.form.ClassId.value);
                 if (classID != null) {
 
                     this.form.ClassSubjectCode.value = ClassesRow.getLookup().itemById[classID].SubjectName;
+                }
+            });
 
+            // Tự động điền tên sinh viên khi chọn mã số sinh viên
+            this.form.UserId.changeSelect2(e => {
+                var userId = Q.toId(this.form.UserId.value);
+                if (userId != null) {
+
+                    this.form.UserDisplayName.value = Administration.UserRow.getLookup().itemById[userId].DisplayName;
                 }
             });
         }
@@ -36,5 +45,6 @@ namespace ProjectMonitoring.ProjectMonitoring {
                 Serenity.EditorUtils.setReadonly(this.form.Point.element, true);
             }
         }
+       
     }
 }

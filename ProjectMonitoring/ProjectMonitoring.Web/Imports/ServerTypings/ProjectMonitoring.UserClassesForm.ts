@@ -1,5 +1,7 @@
 ﻿namespace ProjectMonitoring.ProjectMonitoring {
     export interface UserClassesForm {
+        UserId: Serenity.LookupEditor;
+        UserDisplayName: Serenity.StringEditor;
         ClassId: Serenity.LookupEditor;
         ClassSubjectCode: Serenity.StringEditor;
         Name: Serenity.StringEditor;
@@ -21,6 +23,8 @@
                 var w1 = s.StringEditor;
 
                 Q.initFormType(UserClassesForm, [
+                    'UserId', w0,
+                    'UserDisplayName', w1,
                     'ClassId', w0,
                     'ClassSubjectCode', w1,
                     'Name', w1,

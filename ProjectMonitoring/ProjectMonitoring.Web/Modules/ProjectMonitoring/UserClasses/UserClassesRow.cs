@@ -12,8 +12,9 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
     [DisplayName("User Classes"), InstanceName("User Classes")]
 
     // xác định quyền tương ứng cho bảng UserClasses
-    [ReadPermission(PermissionKeys.General)]
-    [ModifyPermission(PermissionKeys.General)]
+    [ReadPermission(PermissionKeys.UserClasses.View)]
+    [ModifyPermission(PermissionKeys.UserClasses.Modify)]
+    [DeletePermission(PermissionKeys.UserClasses.Delete)]
 
     [JsonConverter(typeof(JsonRowConverter))]
     [LookupScript("dbo.UserClasses")]
@@ -29,6 +30,8 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
 
         // Danh sách User được lấy từ bảng User
         [DisplayName("User"), ForeignKey("[ProjectMonitoring_Default_v1].[dbo].[Users]", "UserId"), LeftJoin("jUser"), TextualField("UserUserCode")]
+        [LookupEditor(typeof(Administration.Entities.UserRow))]
+        [Updatable(false)]
         public Int32? UserId
         {
             get { return Fields.UserId[this]; }
@@ -38,6 +41,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
         // Danh sách Class được lấy từ bảng Class
         [DisplayName("Class"), ForeignKey("[ProjectMonitoring].[dbo].[Classes]", "Id"), LeftJoin("jClass"), TextualField("ClassClassCode")]
         [LookupEditor("dbo.Classes")]
+        [Updatable(false)]
         public Int32? ClassId
         {
             get { return Fields.ClassId[this]; }
@@ -58,8 +62,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.Point[this] = value; }
         }
 
-        [DisplayName("User Code"), Expression("jUser.[UserCode]")]
-        [LookupInclude]
+        [DisplayName("User Code"), Expression("jUser.[UserCode]"), LookupInclude]        
         public String UserUserCode
         {
             get { return Fields.UserUserCode[this]; }
@@ -75,7 +78,8 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             set { Fields.UserName[this] = value; }
         }
 
-        [DisplayName("Student Name"), Expression("jUser.[DisplayName]")]
+        [DisplayName("Student Name"), Expression("jUser.[DisplayName]"), LookupInclude]
+        [Updatable(false)]
         public String UserDisplayName
         {
             get { return Fields.UserDisplayName[this]; }
@@ -111,7 +115,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
         }
 
         [DisplayName("Subject"), Expression("jClass.[SubjectCode]")]
-        //[LookupEditor(typeof(Lookups.SubjectsCodeLookup))]
+        [Updatable(false)]
         public String ClassSubjectCode
         {
             get { return Fields.ClassSubjectCode[this]; }
