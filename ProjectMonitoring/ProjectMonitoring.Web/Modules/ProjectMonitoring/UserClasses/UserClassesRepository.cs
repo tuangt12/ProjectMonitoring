@@ -40,6 +40,22 @@ namespace ProjectMonitoring.ProjectMonitoring.Repositories
         private class MySaveHandler : SaveRequestHandler<MyRow> { }
         private class MyDeleteHandler : DeleteRequestHandler<MyRow> { }
         private class MyRetrieveHandler : RetrieveRequestHandler<MyRow> { }
-        private class MyListHandler : ListRequestHandler<MyRow> { }
+        private class MyListHandler : ListRequestHandler<MyRow>
+        {
+            /// <summary>
+            ///         Áp dụng bộ lọc để chỉ lọc ra user hiện đang đăng nhập để hiển thị
+            /// </summary>
+            /// <param name="query">câu lệnh sql</param>
+            protected override void ApplyFilters(SqlQuery query)
+            {
+                base.ApplyFilters(query);
+                // Lấy thông tin của user đang đăng nhập
+                var user = (UserDefinition)Authorization.UserDefinition;
+                // Nếu user hiện tại không có quyền admin
+                if (!Authorization.HasPermission(Administration.PermissionKeys.Security))
+                    // thì chỉ hiển thị thông tin của chính mình
+                    query.Where(fld.UserId == user.UserId);
+            }
+        }
     }
 }
