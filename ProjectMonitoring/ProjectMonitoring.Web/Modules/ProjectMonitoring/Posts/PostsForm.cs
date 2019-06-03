@@ -15,6 +15,10 @@ namespace ProjectMonitoring.ProjectMonitoring.Forms
         public Int32 UserClassId { get; set; }
         [DefaultValue("now")]
         public DateTime CreateDate { get; set; }
-        public String CreateBy { get; set; }
+        public String CreateBy { get; set; }   
+        [HalfWidth]
+        public String AttachFilePost { get; set; }
+        [HalfWidth]
+        public String AttachImagePost { get; set; }
     }
 }

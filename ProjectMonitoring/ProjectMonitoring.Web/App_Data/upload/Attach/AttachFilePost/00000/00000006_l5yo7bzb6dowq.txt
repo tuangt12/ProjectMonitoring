@@ -1,0 +1,10 @@
+[EditLink, DisplayName("Db.Shared.RecordId"), AlignCenter]
+        public Int32 Id { get; set; }
+        [EditLink, QuickFilter, LookupEditor("dbo.Posts")]
+        public String Title { get; set; }
+        public String ContentPost { get; set; }
+        [AlignCenter, QuickFilter, LookupEditor("dbo.UserClasses")]
+        public Int32 UserClassId { get; set; }
+        public DateTime CreateDate { get; set; }
+        [QuickFilter, LookupEditor(typeof(Administration.Entities.UserRow),FilterField ="UserCode")]
+        public String CreateBy { get; set; }

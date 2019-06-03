@@ -2,6 +2,7 @@
 namespace ProjectMonitoring.ProjectMonitoring {
 
     @Serenity.Decorators.registerClass()
+    @Serenity.Decorators.maximizable()
     export class PostsDialog extends Serenity.EntityDialog<PostsRow, any> {
         protected getFormKey() { return PostsForm.formKey; }
         protected getIdProperty() { return PostsRow.idProperty; }

@@ -40,7 +40,8 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
         }
 
         [DisplayName("User Class Id")]
-        [LookupEditor(typeof(Lookups.UserClassesIdLookup))]
+        [LookupEditor("dbo.UserClasses")]
+        [Updatable(false)]
         public Int32? UserClassId
         {
             get { return Fields.UserClassId[this]; }
@@ -57,10 +58,27 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
 
         [DisplayName("Create By"), ForeignKey("[ProjectMonitoring_Default_v1].[dbo].[Users]", "UserCode"), LeftJoin("jCreateBy"), TextualField("CreateByUserCode")]
         [LookupEditor(typeof(Administration.Lookups.UserCodeLookup))]
+        [Updatable(false)]
         public String CreateBy
         {
             get { return Fields.CreateBy[this]; }
             set { Fields.CreateBy[this] = value; }
+        }
+
+        [DisplayName("Attach File")]
+        [FileUploadEditor(FilenameFormat = "Attach/AttachFilePost/~", CopyToHistory = true)]
+        public String AttachFilePost
+        {
+            get { return Fields.AttachFilePost[this]; }
+            set { Fields.AttachFilePost[this] = value; }
+        }
+
+        [DisplayName("Attach Image")]
+        [ImageUploadEditor(FilenameFormat = "Attach/Image/~", CopyToHistory = true)]
+        public String AttachImagePost
+        {
+            get { return Fields.AttachImagePost[this]; }
+            set { Fields.AttachImagePost[this] = value; }
         }
 
         [DisplayName("Create By User Name"), Expression("jCreateBy.[Username]")]
@@ -116,6 +134,8 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
             public Int32Field UserClassId;
             public DateTimeField CreateDate;
             public StringField CreateBy;
+            public StringField AttachFilePost;
+            public StringField AttachImagePost;
 
             public StringField CreateByUsername;
             public DateTimeField CreateByBirthday;

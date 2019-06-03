@@ -21,6 +21,7 @@
 
     export namespace UserClassesRow {
         export const idProperty = 'Id';
+        export const nameProperty = 'Name';
         export const localTextPrefix = 'ProjectMonitoring.UserClasses';
         export const lookupKey = 'dbo.UserClasses';
 

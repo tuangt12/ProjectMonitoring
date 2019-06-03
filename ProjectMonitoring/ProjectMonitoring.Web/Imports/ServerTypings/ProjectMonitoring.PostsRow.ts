@@ -6,6 +6,8 @@
         UserClassId?: number;
         CreateDate?: string;
         CreateBy?: string;
+        AttachFilePost?: string;
+        AttachImagePost?: string;
         CreateByUsername?: string;
         CreateByBirthday?: string;
         CreateByPhone?: string;
@@ -29,6 +31,8 @@
             UserClassId = "UserClassId",
             CreateDate = "CreateDate",
             CreateBy = "CreateBy",
+            AttachFilePost = "AttachFilePost",
+            AttachImagePost = "AttachImagePost",
             CreateByUsername = "CreateByUsername",
             CreateByBirthday = "CreateByBirthday",
             CreateByPhone = "CreateByPhone",
