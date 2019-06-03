@@ -19,7 +19,7 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
     [JsonConverter(typeof(JsonRowConverter))]
     [LookupScript("dbo.UserClasses")]
 
-    public sealed class UserClassesRow : Row, IIdRow
+    public sealed class UserClassesRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity, AlignCenter]
         public Int32? Id
@@ -153,6 +153,11 @@ namespace ProjectMonitoring.ProjectMonitoring.Entities
         IIdField IIdRow.IdField
         {
             get { return Fields.Id; }
+        }
+
+        StringField INameRow.NameField
+        {
+            get { return Fields.Name; }
         }
 
         public static readonly RowFields Fields = new RowFields().Init();
