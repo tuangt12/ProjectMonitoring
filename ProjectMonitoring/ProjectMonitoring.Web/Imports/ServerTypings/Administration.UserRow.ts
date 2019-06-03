@@ -26,7 +26,7 @@
     export namespace UserRow {
         export const idProperty = 'UserId';
         export const isActiveProperty = 'IsActive';
-        export const nameProperty = 'Username';
+        export const nameProperty = 'UserCode';
         export const localTextPrefix = 'Administration.User';
         export const lookupKey = 'Administration.User';
 

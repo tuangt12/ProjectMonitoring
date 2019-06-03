@@ -158,7 +158,7 @@ namespace ProjectMonitoring.Administration.Entities
 
         StringField INameRow.NameField
         {
-            get { return Fields.Username; }
+            get { return Fields.UserCode; }
         }
 
         Int16Field IIsActiveRow.IsActiveField
