@@ -17,6 +17,8 @@
   "Db.ProjectMonitoring.Classes.StartDate": "Ngày bắt đầu",
   "Db.ProjectMonitoring.Classes.SubjectCode": "Mã môn học",
   "Db.ProjectMonitoring.Classes.SubjectName": "Tên môn học",
+  "Db.ProjectMonitoring.Posts.AttachFilePost": "Đính kèm tệp tin",
+  "Db.ProjectMonitoring.Posts.AttachImagePost": "Đính kèm ảnh",
   "Db.ProjectMonitoring.Posts.ContentPost": "Nội dung",
   "Db.ProjectMonitoring.Posts.CreateBy": "Người tạo",
   "Db.ProjectMonitoring.Posts.CreateDate": "Ngày tạo",
