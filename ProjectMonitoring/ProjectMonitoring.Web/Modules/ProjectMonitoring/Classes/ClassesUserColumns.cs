@@ -25,5 +25,18 @@ namespace ProjectMonitoring.ProjectMonitoring.Columns
         /// </summary>
         [Width(150)]
         public String UserDisplayName { get; set; }
+
+        /// <summary>
+        ///     Hiển thị tên đề tài
+        /// </summary>
+        [Width(250)]
+        public String Name { get; set; }
+
+        /// <summary>
+        ///     Hiển thị điểm
+        /// </summary>
+        [Width(50)]
+        public String Point { get; set; }
+
     }
 }

@@ -3,8 +3,10 @@
 namespace ProjectMonitoring.ProjectMonitoring {
 
     @Serenity.Decorators.registerClass()
+    @Serenity.Decorators.responsive()
     export class ClassesUserGrid extends Serenity.EntityGrid<UserClassesRow, any> {
         protected getColumnsKey() { return 'ProjectMonitoring.ClassesUser'; }
+        protected getDialogType() { return <any>UserClassesEditDialog; }
         protected getIdProperty() { return UserClassesRow.idProperty; }
         protected getLocalTextPrefix() { return UserClassesRow.localTextPrefix; }
         protected getService() { return UserClassesService.baseUrl; }
@@ -23,6 +25,7 @@ namespace ProjectMonitoring.ProjectMonitoring {
             return null;
         }
 
+        // Ghi đè để loại bỏ phân trang
         protected usePager() {
             return false;
         }
@@ -47,5 +50,6 @@ namespace ProjectMonitoring.ProjectMonitoring {
                 this.refresh();
             }
         }
+        
     }
 }
